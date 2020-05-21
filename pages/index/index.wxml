@@ -1,0 +1,42 @@
+<view class="container">
+  <view class="page-body">
+    <view class="page-section">
+      <view class="page-section-title">
+        <text>正在热映</text>
+      </view>
+      <view class="page-section-spacing">
+        <scroll-view class="scroll-view_H" scroll-x="true" bindscroll="scroll" style="width: 100%">
+          <view id="demo1" class="scroll-view-item_H demo-text-1" bindtap="bindViewTap"></view>
+          <view id="demo2"  class="scroll-view-item_H demo-text-2" bindtap="bindViewTap"></view>
+          <view id="demo3" class="scroll-view-item_H demo-text-3" bindtap="bindViewTap"></view>
+          <view id="demo3" class="scroll-view-item_H demo-text-3" bindtap="bindViewTap"></view>
+          <view id="demo3" class="scroll-view-item_H demo-text-3" bindtap="bindViewTap"></view>
+        </scroll-view>
+      </view>
+    </view>
+    <view class="page-section">
+      <view class="page-section-title">
+        <text>热门电影</text>
+      </view>
+      <view class="page-section-spacing">
+        <scroll-view class="scroll-view_H" scroll-x="true" bindscroll="scroll" style="width: 100%">
+          <view id="demo1" class="scroll-view-item_H demo-text-1" bindtap="bindViewTap"></view>
+          <view id="demo2"  class="scroll-view-item_H demo-text-2" bindtap="bindViewTap"></view>
+          <view id="demo3" class="scroll-view-item_H demo-text-3" bindtap="bindViewTap"></view>
+        </scroll-view>
+      </view>
+    </view>
+    <view class="page-section">
+      <view class="page-section-title">
+        <text>电影榜单</text>
+      </view>
+      <view class="page-section-spacing">
+        <scroll-view class="scroll-view_H" scroll-x="true" bindscroll="scroll" style="width: 100%">
+          <view id="demo1" class="scroll-view-item_H demo-text-1" bindtap="bindViewTap"></view>
+          <view id="demo2"  class="scroll-view-item_H demo-text-2" bindtap="bindViewTap"></view>
+          <view id="demo3" class="scroll-view-item_H demo-text-3" bindtap="bindViewTap"></view>
+        </scroll-view>
+      </view>
+    </view>
+  </view>
+</view>

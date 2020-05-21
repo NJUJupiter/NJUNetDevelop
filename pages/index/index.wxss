@@ -1,0 +1,18 @@
+.page-section-spacing{
+  margin-top: 10rpx;
+  margin-bottom: 50rpx;
+  width: 600rpx;
+  background:rgb(235, 233, 233);
+}
+.scroll-view_H{
+  white-space: nowrap;
+}
+.scroll-view-item_H{
+  margin-top:5rpx;
+  margin-left:5rpx;
+  margin-right:5rpx;
+  display: inline-block;
+  width: 138rpx;
+  height: 198rpx;
+  background:rgb(166, 226, 253);
+}

@@ -2,7 +2,7 @@
   "pages": [
     "pages/index/index",
     "pages/profile/profile",
-    "pages/detail/detial",
+    "pages/detail/detail",
     "pages/comments/comments",
     "pages/history/history"
   ],
@@ -33,5 +33,6 @@
       }
     ]
   },
+
   "sitemapLocation": "sitemap.json"
 }
