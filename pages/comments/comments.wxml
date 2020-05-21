@@ -1,0 +1,102 @@
+<scroll-view style="">
+  <view class="box">
+    <view class="inner">
+     <view>
+      <image class="img1" src="//inews.gtimg.com/newsapp_bt/0/10753699398/1000"></image>
+     </view>
+     <view>
+       <view>天气之子</view>
+       <text class="inner1">高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天</text>
+     </view>
+    </view>
+  </view>
+  <view class="box">
+    <view class="inner">
+     <view>
+      <image class="img1" src="//inews.gtimg.com/newsapp_bt/0/10753699398/1000"></image>
+     </view>
+     <view>
+       <view>天气之子</view>
+       <text class="inner1">高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天</text>
+     </view>
+    </view>
+  </view>
+  <view class="box">
+    <view class="inner">
+     <view>
+      <image class="img1" src="//inews.gtimg.com/newsapp_bt/0/10753699398/1000"></image>
+     </view>
+     <view>
+       <view>天气之子</view>
+       <text class="inner1">高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天</text>
+     </view>
+    </view>
+  </view>
+  <view class="box">
+    <view class="inner">
+     <view>
+      <image class="img1" src="/images/天气之子.png"></image>
+     </view>
+     <view>
+       <view>天气之子</view>
+       <text class="inner1">高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天</text>
+     </view>
+    </view>
+  </view>
+  <view class="box">
+    <view class="inner">
+     <view>
+      <image class="img1" src="/images/天气之子.png"></image>
+     </view>
+     <view>
+       <view>天气之子</view>
+       <text class="inner1">高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天</text>
+     </view>
+    </view>
+  </view>
+  <view class="box">
+    <view class="inner">
+     <view>
+      <image class="img1" src="/images/天气之子.png"></image>
+     </view>
+     <view>
+       <view>天气之子</view>
+       <text class="inner1">高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天</text>
+     </view>
+    </view>
+  </view>
+  <view class="box">
+    <view class="inner">
+     <view>
+      <image class="img1" src="/images/天气之子.png"></image>
+     </view>
+     <view>
+       <view>天气之子</view>
+       <text class="inner1">高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天</text>
+     </view>
+    </view>
+  </view>
+  <view class="box">
+    <view class="inner">
+     <view>
+      <image class="img1" src="/images/天气之子.png"></image>
+     </view>
+     <view>
+       <view>天气之子</view>
+       <text class="inner1">高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天</text>
+     </view>
+    </view>
+  </view>
+  <view class="box">
+    <view class="inner">
+     <view>
+      <image class="img1" src="/images/天气之子.png"></image>
+     </view>
+     <view>
+       <view>天气之子</view>
+       <text class="inner1">高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天</text>
+     </view>
+    </view>
+  </view>
+
+</scroll-view>

@@ -1,0 +1,24 @@
+.img1{
+  width: 60px;
+  height: 90px;
+  margin: 5px;
+}
+.box{
+  border: 2px solid black;
+  margin: 10px;
+  border-radius: 20rpx;
+}
+.inner{
+  display: flex;
+  flex-direction: row;
+}
+.inner1{
+  display: -webkit-box;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  font-size: 30rpx;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  margin:5px;
+}

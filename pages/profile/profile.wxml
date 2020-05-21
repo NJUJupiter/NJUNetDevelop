@@ -1,0 +1,30 @@
+<!--profile.wxml-->
+<import src="/template/login/index.wxml" />
+<view class="profile">
+	<view wx:if="{{wxLogin}}" class="userinfo">
+		<image wx:if="{{wxLogin}}" class="userinfo-avatar" src="{{ ava}}" background-size="cover"></image>
+		<text class="userinfo-nickname">{{ nick }}</text>
+	</view>
+  <view wx:else class="userinfo" style="margin-bottom:50rpx;">
+		<image class="userinfo-avatar" src="/assets/nologin.png" background-size="cover"></image>
+		<button class="weui-btn mini-btn" plain="true" size="mini" wx:if="{{canIUse}}" bindtap="goLogin">立即登录</button>
+  </view>
+  
+  <view class="space"></view>
+  <navigator url="/pages/comments/comments">
+  <view class="menu-item">
+    <view class="l">影评记录</view>
+    <image class="next" src="/assets/icon/next.png"></image>
+  </view>
+  </navigator>
+  <view class="line"></view>
+  <navigator url="/pages/history/history">
+  <view class="menu-item">
+    <view class="l">浏览记录</view>
+    <image class="next" src="/assets/icon/next.png"></image>
+  </view>
+  </navigator>
+  <view class="line"></view>
+
+</view>
+<template is="apifmLogin" data="{{wxLogin: wxLogin,isclose:isclose}}" />
