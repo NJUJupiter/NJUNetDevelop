@@ -1,0 +1,88 @@
+package com.netdevelop.demo.service.impl;
+
+import com.netdevelop.demo.dao.MovieDao;
+import com.netdevelop.demo.po.Movie;
+import com.netdevelop.demo.service.MovieService;
+import com.netdevelop.demo.vo.MovieVO;
+import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import java.util.LinkedList;
+import java.util.List;
+
+@Service
+public class MovieServiceImpl implements MovieService {
+    @Autowired
+    private MovieDao movieDao;
+    @Override
+    public List<MovieVO> getSpecifiedMovieType(int type) {
+        List<Movie> movies=movieDao.getSpecifiedMovieType(type);
+        List<MovieVO> movieVOS=new LinkedList<>();
+        for(Movie movie:movies){
+            MovieVO movieVO=new MovieVO();
+            BeanUtils.copyProperties(movie,movieVO);
+            movieVOS.add(movieVO);
+        }
+        return movieVOS;
+    }
+
+    @Override
+    public MovieVO queryMovieById(int movieId) {
+        Movie movie=movieDao.queryMovieById(movieId);
+        MovieVO movieVO=new MovieVO();
+        BeanUtils.copyProperties(movie,movieVO);
+        return movieVO;
+    }
+
+    @Override
+    public int insertMovie(MovieVO movieVO) {
+        Movie movie=new Movie();
+        BeanUtils.copyProperties(movieVO,movie);
+        return movieDao.insertMovie(movie);
+    }
+
+    @Override
+    public List<MovieVO> searchByKeyWords(String key) {
+        List<Movie> movies=movieDao.getAllMovies();
+        boolean [] visited=new boolean[movies.size()];
+        List<MovieVO> movieVOS=new LinkedList<>();
+        for(int i=0;i<movies.size();i++){
+            Movie movie=movies.get(i);
+            if(movie.getMovieName().equals(key)){
+                MovieVO movieVO=new MovieVO();
+                BeanUtils.copyProperties(movie,movieVO);
+                movieVOS.add(movieVO);
+                visited[i]=true;
+            }
+        }
+        for(int i=0;i<movies.size();i++){
+            Movie movie=movies.get(i);
+            if(movie.getMovieName().contains(key)&&visited[i]==false){
+                MovieVO movieVO=new MovieVO();
+                BeanUtils.copyProperties(movie,movieVO);
+                movieVOS.add(movieVO);
+                visited[i]=true;
+            }
+        }
+        for(int i=0;i<movies.size();i++){
+            Movie movie=movies.get(i);
+            if(movie.getActors().equals(key)&&visited[i]==false){
+                MovieVO movieVO=new MovieVO();
+                BeanUtils.copyProperties(movie,movieVO);
+                movieVOS.add(movieVO);
+                visited[i]=true;
+            }
+        }
+        for(int i=0;i<movies.size();i++){
+            Movie movie=movies.get(i);
+            if(movie.getActors().contains(key)&&visited[i]==false){
+                MovieVO movieVO=new MovieVO();
+                BeanUtils.copyProperties(movie,movieVO);
+                movieVOS.add(movieVO);
+                visited[i]=true;
+            }
+        }
+        return movieVOS;
+    }
+}
