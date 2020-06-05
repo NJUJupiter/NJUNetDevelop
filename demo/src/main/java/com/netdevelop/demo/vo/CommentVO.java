@@ -16,8 +16,11 @@ public class CommentVO {
     //评论的内容
     private  String content;
 
+    private String userName;
+
+    private String userAvatar;
     //该评论收到的点赞数
-    private int likes;
+    private Integer likes;
 
     /**
      * 增加对reply的持有
@@ -27,19 +30,27 @@ public class CommentVO {
     //评论为电影打分
     private double score;
 
-    public int getMovieId() {
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public Integer getMovieId() {
         return movieId;
     }
 
-    public void setMovieId(int movieId) {
+    public void setMovieId(Integer movieId) {
         this.movieId = movieId;
     }
 
-    public int getUserId() {
+    public Integer getUserId() {
         return userId;
     }
 
-    public void setUserId(int userId) {
+    public void setUserId(Integer userId) {
         this.userId = userId;
     }
 
@@ -59,20 +70,28 @@ public class CommentVO {
         this.content = content;
     }
 
-    public int getLikes() {
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getUserAvatar() {
+        return userAvatar;
+    }
+
+    public void setUserAvatar(String userAvatar) {
+        this.userAvatar = userAvatar;
+    }
+
+    public Integer getLikes() {
         return likes;
     }
 
-    public void setLikes(int likes) {
+    public void setLikes(Integer likes) {
         this.likes = likes;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 
     public List<ReplyVO> getReplies() {

@@ -39,4 +39,12 @@ public interface CommentService {
      * @param id
      */
     void updateCommentLike(Integer id,Integer change);
+
+    /**
+     * 获得特定数量的评论
+     * @param movieId
+     * @param limited
+     * @return
+     */
+    List<CommentVO> getLimitedComment(Integer movieId,Integer limited);
 }

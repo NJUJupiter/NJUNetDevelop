@@ -15,12 +15,12 @@ public class RecordController {
     private RecordService recordService;
 
     @PostMapping("/addRecord")
-    private ResponseVO addRecord(@RequestBody RecordVO record){
+    public ResponseVO addRecord(@RequestBody RecordVO record){
         return ResponseVO.buildSuccess(recordService.insertRecord(record));
     }
 
     @GetMapping("/getRecordByUid")
-    private ResponseVO getRecordByUid(Integer userId){
+    public ResponseVO getRecordByUid(@RequestParam Integer userId){
         return ResponseVO.buildSuccess(recordService.queryMovieIdByUserId(userId));
     }
 

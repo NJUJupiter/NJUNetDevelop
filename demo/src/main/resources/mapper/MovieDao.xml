@@ -23,8 +23,8 @@
     <insert id="insertMovie" useGeneratedKeys="true" keyProperty="id" keyColumn="id"
             parameterType="com.netdevelop.demo.po.Movie">
         insert into
-        movie(movieName,release_time,description,type,director,actors,likes,imgUrl,score)
-        values (#{movieName},#{releaseTime},#{description},#{type},#{director},#{actors},#{likes},#{imgUrl},#{score})
+        movie(movieName,release_time,description,type,director,writer,actors,likes,imgUrl,score)
+        values (#{movieName},#{releaseTime},#{description},#{type},#{director},#{writer},#{actors},#{likes},#{imgUrl},#{score})
     </insert>
 
 </mapper>

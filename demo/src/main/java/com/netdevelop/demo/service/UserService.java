@@ -20,5 +20,5 @@ public interface UserService {
      */
     ResponseVO login(UserVO userVO);
 
-    ResponseVO updateUserInfo( String sessionKey, String userName, String userImg, String openId);
+    ResponseVO updateUserInfo( Integer id, String userName, String userImg);
 }

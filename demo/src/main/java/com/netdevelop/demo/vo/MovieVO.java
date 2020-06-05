@@ -1,17 +1,17 @@
 package com.netdevelop.demo.vo;
 
-import java.time.LocalDateTime;
-
 public class MovieVO {
     //主键ID
     private Integer id;
     //电影名称
     private String movieName;
     //上映时间
-    private LocalDateTime releaseTime;
+    private String releaseTime;
 
     //多少人想看/点赞
     private Integer likes;
+
+    private String writer;
 
     //电影描述
     private String description;
@@ -103,12 +103,20 @@ public class MovieVO {
         this.movieName = movieName;
     }
 
-    public LocalDateTime getReleaseTime() {
+    public String getReleaseTime() {
         return releaseTime;
     }
 
-    public void setReleaseTime(LocalDateTime releaseTime) {
+    public void setReleaseTime(String releaseTime) {
         this.releaseTime = releaseTime;
+    }
+
+    public String getWriter() {
+        return writer;
+    }
+
+    public void setWriter(String writer) {
+        this.writer = writer;
     }
 
     public Integer getType(){

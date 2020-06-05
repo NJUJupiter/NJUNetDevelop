@@ -14,20 +14,20 @@ public class MovieController {
     private MovieService movieService;
 
     @GetMapping("/type")
-    private ResponseVO getMovieByType(Integer type){
+    public ResponseVO getMovieByType(@RequestParam Integer type){
         return ResponseVO.buildSuccess(movieService.getSpecifiedMovieType(type));
     }
 
     @GetMapping("/{movieId}")
-    private ResponseVO getMovieById(@PathVariable Integer movieId){
+    public ResponseVO getMovieById(@PathVariable Integer movieId){
         return ResponseVO.buildSuccess(movieService.queryMovieById(movieId));
     }
     @PostMapping("/add")
-    private ResponseVO insertMovie(@RequestBody MovieVO movieVO){
+    public ResponseVO insertMovie(@RequestBody MovieVO movieVO){
         return ResponseVO.buildSuccess(movieService.insertMovie(movieVO));
     }
     @GetMapping("/search")
-    private ResponseVO searchByKeyWords(@RequestParam String key){
+    public ResponseVO searchByKeyWords(@RequestParam String key){
         return ResponseVO.buildSuccess(movieService.searchByKeyWords(key));
     }
 }

@@ -18,8 +18,8 @@
     <insert id="insertComment" useGeneratedKeys="true" keyProperty="id" keyColumn="id"
         parameterType="com.netdevelop.demo.po.Comment">
         insert into
-        comment(movie_id,user_id,create_time,content,likes,score)
-        values (#{movieId},#{userId},#{createTime},#{content},#{likes},#{score})
+        comment(movie_id,user_id,create_time,content,likes,score,userName,userAvatar)
+        values (#{movieId},#{userId},#{createTime},#{content},#{likes},#{score},#{userName},#{userAvatar})
     </insert>
 
     <delete id="deleteComment">

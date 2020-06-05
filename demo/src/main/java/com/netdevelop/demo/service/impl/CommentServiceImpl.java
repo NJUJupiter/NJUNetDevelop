@@ -6,6 +6,7 @@ import com.netdevelop.demo.service.CommentService;
 import com.netdevelop.demo.service.ReplyService;
 import com.netdevelop.demo.vo.CommentVO;
 import com.netdevelop.demo.vo.ReplyVO;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -27,13 +28,7 @@ public class CommentServiceImpl implements CommentService {
         List<CommentVO> commentVOS=new LinkedList<>();
         for(Comment comment:commentList){
             CommentVO commentVO=new CommentVO();
-            commentVO.setContent(comment.getContent());
-            commentVO.setCreateTime(comment.getCreateTime());
-            commentVO.setLikes(comment.getLikes());
-            commentVO.setId(comment.getId());
-            commentVO.setUserId(comment.getUserId());
-            commentVO.setMovieId(comment.getMovieId());
-            commentVO.setScore(comment.getScore());
+            BeanUtils.copyProperties(comment,commentVO);
             List<ReplyVO> replies=replyService.selectReplyByCommentId(comment.getId());
             commentVO.setReplies(replies);
             commentVOS.add(commentVO);
@@ -47,13 +42,7 @@ public class CommentServiceImpl implements CommentService {
         List<CommentVO> commentVOS=new LinkedList<>();
         for(Comment comment:commentList){
             CommentVO commentVO=new CommentVO();
-            commentVO.setContent(comment.getContent());
-            commentVO.setCreateTime(comment.getCreateTime());
-            commentVO.setLikes(comment.getLikes());
-            commentVO.setId(comment.getId());
-            commentVO.setUserId(comment.getUserId());
-            commentVO.setMovieId(comment.getMovieId());
-            commentVO.setScore(comment.getScore());
+            BeanUtils.copyProperties(comment,commentVO);
             List<ReplyVO> replies=replyService.selectReplyByCommentId(comment.getId());
             commentVO.setReplies(replies);
             commentVOS.add(commentVO);
@@ -66,12 +55,7 @@ public class CommentServiceImpl implements CommentService {
     public boolean insertComment(CommentVO commentVO) {
         if(commentVO!=null&&!"".equals(commentVO.getContent())&&commentVO.getMovieId()>0&&commentVO.getUserId()>0){
             Comment comment=new Comment();
-            comment.setContent(commentVO.getContent());
-            comment.setCreateTime(commentVO.getCreateTime());
-            comment.setLikes(commentVO.getLikes());
-            comment.setMovieId(commentVO.getMovieId());
-            comment.setUserId(commentVO.getUserId());
-            comment.setScore(commentVO.getScore());
+            BeanUtils.copyProperties(commentVO,comment);
             try {
                 int effectNum=commentDao.insertComment(comment);
                 if(effectNum>0){
@@ -109,5 +93,15 @@ public class CommentServiceImpl implements CommentService {
     @Override
     public void updateCommentLike(Integer id, Integer change) {
         commentDao.updateCommentLike(id,change);
+    }
+
+    @Override
+    public List<CommentVO> getLimitedComment(Integer movieId, Integer limited) {
+        List<CommentVO> commentVOS=this.queryCommentByMovieId(movieId);
+        if(commentVOS.size()<=limited){
+            return commentVOS;
+        }else{
+            return commentVOS.subList(0,limited);
+        }
     }
 }

@@ -16,30 +16,35 @@ public class CommentController {
 
 
     @GetMapping("/getCommentsByMid")
-    private ResponseVO getCommentsBymid( Integer movieId){
+    public ResponseVO getCommentsBymid(@RequestParam Integer movieId){
         return ResponseVO.buildSuccess(commentService.queryCommentByMovieId(movieId));
     }
 
     @PostMapping("/addComment")
-    private ResponseVO addComment(@RequestBody CommentVO comment){
+    public ResponseVO addComment(@RequestBody CommentVO comment){
 
         return ResponseVO.buildSuccess(commentService.insertComment(comment));
     }
 
     @GetMapping("/getCommentsByUid")
-    private ResponseVO getCommentsByuid(Integer userId){
+    public ResponseVO getCommentsByuid(@RequestParam Integer userId){
         return ResponseVO.buildSuccess(commentService.queryCommentByuserId(userId));
     }
 
     @GetMapping("/deleteComment")
-    private ResponseVO deleteCommentsByCid(Integer commentId){
+    public ResponseVO deleteCommentsByCid(@RequestParam Integer commentId){
         return ResponseVO.buildSuccess(commentService.deleteComment(commentId));
     }
 
     @GetMapping("/updateCommentLike")
-    private ResponseVO updateCommentLike(@RequestParam Integer id,@RequestParam Integer change){
+    public ResponseVO updateCommentLike(@RequestParam Integer id,@RequestParam Integer change){
         commentService.updateCommentLike(id,change);
         return ResponseVO.buildSuccess();
+    }
+
+    @GetMapping("/getLimitedComments")
+    public ResponseVO getLimitedComments(@RequestParam Integer movieId, @RequestParam Integer limited){
+        return ResponseVO.buildSuccess(commentService.getLimitedComment(movieId,limited));
     }
 
 

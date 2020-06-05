@@ -10,7 +10,7 @@
         where user_id=#{userId} order by watch_time desc
     </select>
 
-    <insert id="insertRecord"  useGeneratedKeys="true" keyProperty="recordId" keyColumn="recordId"
+    <insert id="insertRecord"  useGeneratedKeys="true" keyProperty="id" keyColumn="id"
             parameterType="com.netdevelop.demo.po.Record">
         insert  into
         record(user_id,movie_id,watch_time)

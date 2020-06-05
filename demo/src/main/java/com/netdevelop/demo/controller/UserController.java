@@ -15,7 +15,7 @@ public class UserController {
     private UserService userService;
 
     @GetMapping("/getUser")
-    private ResponseVO getUserById(Integer userId){
+    public ResponseVO getUserById(@RequestParam Integer userId){
         return ResponseVO.buildSuccess(userService.queryUserByUserId(userId));
     }
 
@@ -25,21 +25,20 @@ public class UserController {
      * @return
      */
     @PostMapping("/login")
-    private ResponseVO login(@RequestBody UserVO userVO){
+    public ResponseVO login(@RequestBody UserVO userVO){
         return userService.login(userVO);
     }
 
     /**
      * 更新user信息
-     * @param sessionKey
+     * @param id
      * @param userName
      * @param userImg
-     * @param openId
-     * @return
+     * @return 用户对象
      */
     @GetMapping("/updateUserInfo")
-    private ResponseVO updateUserInfo(@RequestParam String sessionKey,@RequestParam String userName,@RequestParam String userImg,@RequestParam String openId){
-        return userService.updateUserInfo(sessionKey,userName,userImg,openId);
+    public ResponseVO updateUserInfo(@RequestParam Integer id,@RequestParam String userName,@RequestParam String userImg){
+        return userService.updateUserInfo(id,userName,userImg);
     }
 
 }

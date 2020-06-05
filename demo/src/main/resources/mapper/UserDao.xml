@@ -22,8 +22,8 @@
     </select>
 
     <update id="updateInfo">
-        update user set userName=#{userName},userImg=#{userImg},sessionKey=#{sessionKey}
-        where openId=#{openId}
+        update user set userName=#{userName},userImg=#{userImg}
+        where id=#{id}
     </update>
 
 </mapper>

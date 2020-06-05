@@ -48,7 +48,6 @@ public class UserServiceImpl implements UserService {
         User user1=userDao.registerUser(openId);//去数据库判断用户是否存在该用户
         if(user1!=null)//如果存在该用户
         {
-            userDao.updateInfo(sessionKey,userVO.getUserName(),userVO.getUserImg(),openId);
             return ResponseVO.buildSuccess(userDao.queryUserByUserId(user1.getId()));
         }
         //如果是新用户，就添加用户到数据库中
@@ -62,9 +61,11 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public ResponseVO updateUserInfo(String sessionKey, String userName, String userImg, String openId) {
-        return ResponseVO.buildSuccess(userDao.updateInfo(sessionKey,userName,userImg,openId));
+    public ResponseVO updateUserInfo(Integer id, String userName, String userImg) {
+        userDao.updateInfo(id,userName,userImg);
+        return ResponseVO.buildSuccess(userDao.queryUserByUserId(id));
     }
+
 
 
 }

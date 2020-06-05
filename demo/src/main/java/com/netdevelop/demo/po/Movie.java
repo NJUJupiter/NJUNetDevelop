@@ -1,7 +1,5 @@
 package com.netdevelop.demo.po;
 
-import java.time.LocalDateTime;
-
 public class Movie {
 //电影：id（int），名字（string），上映时间（datetime），描述（string），类型；
 
@@ -10,10 +8,13 @@ public class Movie {
     //电影名称
     private String movieName;
     //上映时间
-    private LocalDateTime releaseTime;
+    private String releaseTime;
 
     //多少人想看/点赞
     private Integer likes;
+
+    //编剧
+    private String writer;
 
     //电影描述
     private String description;
@@ -95,12 +96,20 @@ public class Movie {
         this.movieName = movieName;
     }
 
-    public LocalDateTime getReleaseTime() {
+    public String getReleaseTime() {
         return releaseTime;
     }
 
-    public void setReleaseTime(LocalDateTime releaseTime) {
+    public void setReleaseTime(String releaseTime) {
         this.releaseTime = releaseTime;
+    }
+
+    public String getWriter() {
+        return writer;
+    }
+
+    public void setWriter(String writer) {
+        this.writer = writer;
     }
 
     public Integer getType(){

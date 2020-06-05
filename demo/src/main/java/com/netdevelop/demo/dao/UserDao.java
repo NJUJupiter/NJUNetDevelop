@@ -27,9 +27,9 @@ public interface UserDao {
 
     /**
      *更新信息
-     * @param sessionKey
+     * @param
      * @return
      */
-    int updateInfo(@Param("sessionKey") String sessionKey,@Param("userName") String userName,@Param("userImg") String userImg,@Param("openId") String openId);
+    int updateInfo(@Param("id") Integer id,@Param("userName") String userName,@Param("userImg") String userImg);
 
 }
