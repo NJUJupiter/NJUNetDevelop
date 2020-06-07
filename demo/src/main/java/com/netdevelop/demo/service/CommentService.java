@@ -46,5 +46,5 @@ public interface CommentService {
      * @param limited
      * @return
      */
-    List<CommentVO> getLimitedComment(Integer movieId,Integer limited);
+    List<CommentVO> getLimitedComment(Integer movieId,Integer limited,Integer offset);
 }

@@ -96,12 +96,14 @@ public class CommentServiceImpl implements CommentService {
     }
 
     @Override
-    public List<CommentVO> getLimitedComment(Integer movieId, Integer limited) {
+    public List<CommentVO> getLimitedComment(Integer movieId, Integer limited,Integer offset) {
         List<CommentVO> commentVOS=this.queryCommentByMovieId(movieId);
-        if(commentVOS.size()<=limited){
-            return commentVOS;
+        if(offset>=commentVOS.size()){
+            return null;
+        }else if(commentVOS.size()<offset+limited){
+            return commentVOS.subList(offset,commentVOS.size());
         }else{
-            return commentVOS.subList(0,limited);
+            return commentVOS.subList(offset,offset+limited);
         }
     }
 }

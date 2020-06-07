@@ -42,9 +42,16 @@ public class CommentController {
         return ResponseVO.buildSuccess();
     }
 
+    /**
+     * 当offset大于评论总长时返回null
+     * @param movieId
+     * @param limited
+     * @param offset
+     * @return
+     */
     @GetMapping("/getLimitedComments")
-    public ResponseVO getLimitedComments(@RequestParam Integer movieId, @RequestParam Integer limited){
-        return ResponseVO.buildSuccess(commentService.getLimitedComment(movieId,limited));
+    public ResponseVO getLimitedComments(@RequestParam Integer movieId, @RequestParam Integer limited, @RequestParam Integer offset){
+        return ResponseVO.buildSuccess(commentService.getLimitedComment(movieId,limited,offset));
     }
 
 
