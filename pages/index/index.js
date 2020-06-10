@@ -1,6 +1,9 @@
 const order = ['demo1', 'demo2', 'demo3']
+let store=require("../../utils/store")
 
 Page({
+  onLaunch: function () {
+  },
   onShareAppMessage() {
     return {
       title: 'scroll-view',
@@ -16,6 +19,7 @@ Page({
     wx.navigateTo({
       url: '../detail/detail',
       success: function (res) {
+        console.log(store.getItem("userId"))
         res.eventChannel.emit('acceptDataFromOpenerPage', { name: 'test', recommendContent: 'There\'s no recommend yet' })
       }
     })

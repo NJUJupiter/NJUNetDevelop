@@ -1,13 +1,13 @@
 <!--profile.wxml-->
 <import src="/template/login/index.wxml" />
 <view class="profile">
-	<view wx:if="{{wxLogin}}" class="userinfo">
-		<image wx:if="{{wxLogin}}" class="userinfo-avatar" src="{{ ava}}" background-size="cover"></image>
+	<view wx:if="{{userId!=''}}" class="userinfo">
+		<image wx:if="{{userId!=''}}" class="userinfo-avatar" src="{{ ava}}" background-size="cover"></image>
 		<text class="userinfo-nickname">{{ nick }}</text>
 	</view>
   <view wx:else class="userinfo" style="margin-bottom:50rpx;">
 		<image class="userinfo-avatar" src="/assets/nologin.png" background-size="cover"></image>
-		<button class="weui-btn mini-btn" plain="true" size="mini" wx:if="{{canIUse}}" bindtap="goLogin">立即登录</button>
+		<button class="weui-btn mini-btn" plain="true" size="mini" bindtap="goLogin">微信登录</button>
   </view>
   
   <view class="space"></view>
@@ -27,4 +27,4 @@
   <view class="line"></view>
 
 </view>
-<template is="apifmLogin" data="{{wxLogin: wxLogin,isclose:isclose}}" />
+<template is="apifmLogin" data="{{isclose:isclose,userId:userId}}" />
