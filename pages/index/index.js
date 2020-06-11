@@ -1,7 +1,79 @@
-const order = ['demo1', 'demo2', 'demo3']
+const order = ['demo1', 'demo2', 'demo3','demo4','demo5','demo6']
 let store=require("../../utils/store")
 
 Page({
+  onLoad:function(options){
+    // 获取电影
+    wx.request({
+      url: 'http://localhost:8080/demo/movie/type',
+      method: "GET",
+      data:{
+        type:1
+      },
+      header: {
+        "content-type": "application/x-www-form-urlencoded;charset=utf-8",
+        //token: app.globalData.token
+      },
+      success: res => {
+        console.log(res)
+        if (res.data.success) {
+          this.setData({
+            listRY:res.data.content
+          })
+        } else {
+          wx.showToast({
+            title: '加载出错',
+          })
+        }
+      }
+    })
+    wx.request({
+      url: 'http://localhost:8080/demo/movie/type',
+      method: "GET",
+      data:{
+        type:2
+      },
+      header: {
+        "content-type": "application/x-www-form-urlencoded;charset=utf-8",
+        //token: app.globalData.token
+      },
+      success: res => {
+        console.log(res)
+        if (res.data.success) {
+          this.setData({
+            listRM:res.data.content
+          })
+        } else {
+          wx.showToast({
+            title: '加载出错',
+          })
+        }
+      }
+    })
+    wx.request({
+      url: 'http://localhost:8080/demo/movie/type',
+      method: "GET",
+      data:{
+        type:3
+      },
+      header: {
+        "content-type": "application/x-www-form-urlencoded;charset=utf-8",
+        //token: app.globalData.token
+      },
+      success: res => {
+        console.log(res)
+        if (res.data.success) {
+          this.setData({
+            listBD:res.data.content
+          })
+        } else {
+          wx.showToast({
+            title: '加载出错',
+          })
+        }
+      }
+    })
+  },
   onLaunch: function () {
   },
   onShareAppMessage() {
@@ -12,15 +84,18 @@ Page({
   },
 
   data: {
-    toView: 'green'
+    toView: 'green',
+    listRY:[],
+    listRM:[],
+    listBD:[]
   },
 
-  bindViewTap: function () {
+  bindViewTap: function (e) {
     wx.navigateTo({
       url: '../detail/detail',
       success: function (res) {
         console.log(store.getItem("userId"))
-        res.eventChannel.emit('acceptDataFromOpenerPage', { name: 'test', recommendContent: 'There\'s no recommend yet' })
+        res.eventChannel.emit('acceptDataFromOpenerPage', { id: e.currentTarget.dataset.id })
       }
     })
   },

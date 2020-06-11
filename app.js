@@ -12,7 +12,7 @@ App({
     //   success: res => {
     //     // 发送 res.code 到后台换取 openId, sessionKey, unionId
     //     console.log(res.code)
-    //     if (res.code) {
+    //     if (res.code) {z
     //       wx.request({
     //         url: 'http://localhost:8080/demo/user/login',
     //         method: 'POST',
