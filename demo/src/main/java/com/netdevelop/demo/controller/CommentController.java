@@ -61,8 +61,18 @@ public class CommentController {
 
     @PostMapping("/insertReply")
     public ResponseVO addReply(@RequestBody ReplyVO replyVO){
-        replyService.insertReply(replyVO);
-        return ResponseVO.buildSuccess(true);
+        return replyService.insertReply(replyVO);
     }
+
+    @GetMapping("/updateReplyLike")
+    public ResponseVO updateReplyLike(@RequestParam Integer id,@RequestParam Integer change){
+        return replyService.updateReplyLike(id,change);
+    }
+
+    @GetMapping("/deleteReply")
+    public ResponseVO deleteReply(@RequestParam Integer id){
+        return ResponseVO.buildSuccess(replyService.deleteReply(id));
+    }
+
 
 }

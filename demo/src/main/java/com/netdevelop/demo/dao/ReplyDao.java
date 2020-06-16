@@ -29,4 +29,11 @@ public interface ReplyDao {
      * @return
      */
     int updateReplyFavor(@Param("id")Integer id,@Param("change")Integer change);
+
+    /**
+     * 删除回复
+     * @param id
+     * @return
+     */
+    int deleteReply(@Param("id")Integer id);
 }

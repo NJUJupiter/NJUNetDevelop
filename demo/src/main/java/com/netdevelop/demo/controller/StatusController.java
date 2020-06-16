@@ -50,6 +50,6 @@ public class StatusController {
 
     @GetMapping("/deleteMovieStatus")
     public ResponseVO deleteMovieStatus(@RequestParam Integer userId,@RequestParam Integer movieId){
-        return statusService.deleteCommentStatus(userId,movieId);
+        return statusService.deleteMovieStatus(userId,movieId);
     }
 }

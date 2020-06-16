@@ -20,4 +20,8 @@
         values (#{commentId},#{fromId},#{fromName},#{fromAvatar},#{toId},#{toName},#{toAvatar},#{content},#{favor},#{createTime})
     </insert>
 
+    <delete id="deleteReply">
+        delete from reply where id=#{id}
+    </delete>
+
 </mapper>

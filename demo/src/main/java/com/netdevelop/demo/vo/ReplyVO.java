@@ -52,7 +52,7 @@ public class ReplyVO {
     /**
      * 回复创建的时间
      */
-    private LocalDateTime createTime;
+    private String createTime;
 
     /**
      * 回复收到的点赞
@@ -131,11 +131,11 @@ public class ReplyVO {
         this.content = content;
     }
 
-    public LocalDateTime getCreateTime() {
+    public String getCreateTime() {
         return createTime;
     }
 
-    public void setCreateTime(LocalDateTime createTime) {
+    public void setCreateTime(String createTime) {
         this.createTime = createTime;
     }
 

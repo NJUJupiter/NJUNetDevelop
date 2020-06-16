@@ -209,7 +209,7 @@ CREATE TABLE `Comment` (
                         `movie_id` int(11) DEFAULT NULL,
                         `content` varchar(255) DEFAULT NULL,
                         `likes` int(11) DEFAULT NULL,
-                        `create_time` DATETIME DEFAULT NULL,
+                        `create_time` varchar(255) DEFAULT NULL,
                         `score` double DEFAULT NULL,
                         PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
@@ -241,7 +241,7 @@ CREATE TABLE `Reply` (
                            `to_avatar` varchar(255) DEFAULT NULL,
                            `content` varchar(255) DEFAULT NULL,
                            `favor` int(11) DEFAULT NULL,
-                           `create_time` DATETIME DEFAULT NULL,
+                           `create_time` varchar(255) DEFAULT NULL,
                            PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;

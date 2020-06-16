@@ -12,7 +12,7 @@ public class Comment {
     //发表评论的用户Id
     private Integer userId;
     //评论创建的时间
-    private LocalDateTime createTime;
+    private String createTime;
     //评论的内容
     private  String content;
 
@@ -51,11 +51,12 @@ public class Comment {
         this.userId = userId;
     }
 
-    public LocalDateTime getCreateTime() {
+
+    public String getCreateTime() {
         return createTime;
     }
 
-    public void setCreateTime(LocalDateTime createTime) {
+    public void setCreateTime(String createTime) {
         this.createTime = createTime;
     }
 
