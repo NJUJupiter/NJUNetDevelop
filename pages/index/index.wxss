@@ -1,3 +1,5 @@
+@import "/template/poster/poster.wxss";
+
 .page-section-spacing{
   margin-top: 10rpx;
   margin-bottom: 50rpx;
@@ -16,6 +18,49 @@
   height: 198rpx;
   background:rgb(166, 226, 253);
 }
+.block-movie-row{
+  display: flex;
+  flex-direction: row;
+  padding: 20rpx 0 20rpx 20rpx;
+  background-color: white;
+}
+.block-movie-card {
+  display: flex;
+  flex-direction: row;
+  margin-right: 10rpx;
+}
+.search{
+  width: 98%;
+}
+.search_arr {
+  border: 1px solid #d0d0d0;
+  border-radius: 10rpx;
+  margin-left: 20rpx;
+}
+.search_arr input{
+  margin-left: 60rpx;
+  height: 60rpx;
+  border-radius: 5px;
+}
+.sousuo {
+  padding-left: 40%;
+  width: 15%;
+  line-height: 150%;
+  text-align: center;
+}
+.page_row{
+  display: flex;
+  flex-direction: row
+}
+.searchcion {
+  margin: 10rpx 10rpx 10rpx 10rpx;
+  position: absolute;
+  margin-left:38%;
+  z-index: 2;
+  width: 15px;
+  height: 15px;
+  text-align: center;
+}
 .container {
   height: 100%;
   display: flex;
@@ -25,3 +70,23 @@
   padding: 150rpx 0;
   box-sizing: border-box;
 } 
+.page-section-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 30rpx 20rpx 0rpx 20rpx;
+}
+.page-section-title-more{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.page-section-title-more-text{
+  color: #333333;
+  font-size: 24rpx;
+}
+.page-section-title-more-icon{
+  width: 12rpx;
+  height: 20rpx;
+  padding-left: 6rpx; 
+}

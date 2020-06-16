@@ -43,6 +43,7 @@ Page({
           this.setData({
             listRM:res.data.content
           })
+          console.log(this.data.listRM)
         } else {
           wx.showToast({
             title: '加载出错',
@@ -100,6 +101,24 @@ Page({
     })
   },
 
+  /**
+   * 点击“更多”按钮，携带类别信息到“更多”页面
+   */
+  catchMore: function (event) {
+    //获得区块的标题
+    var title = event.currentTarget.dataset.title
+    console.log(title)
+    //跳转到“更多页”，将区块标题通过category携带过去
+    wx.navigateTo({
+      url: '../more/more?category=' + title
+    })
+  },
+  catchTapMovie(event) {
+    var id = event.currentTarget.dataset.movieid;
+    wx.navigateTo({
+      url: '../detail/detail?movieId=' + id
+    })
+  },
   upper(e) {
     console.log(e)
   },
@@ -117,7 +136,11 @@ Page({
       scrollTop: 0
     })
   },
-
+  search: function () {
+    wx.navigateTo({
+      url: '/pages/search/search'
+    })
+  },
   tap() {
     for (let i = 0; i < order.length; ++i) {
       if (order[i] === this.data.toView) {

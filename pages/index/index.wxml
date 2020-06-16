@@ -1,67 +1,88 @@
+<import src="/template/poster/poster.wxml"/>
+
 <view class="container">
   <view class="page-body">
-    <view class="page-section">
-      <view class="page-section-title">
-        <text>正在热映</text>
-      </view>
-      <view class="page-section-spacing">
-        <scroll-view class="scroll-view_H" scroll-x="true" bindscroll="scroll" style="width: 100%">
-          <view id="demo1" class="scroll-view-item_H demo-text-1" bindtap="bindViewTap" data-id='{{listRY[0].id}}'>
-            <image style='width: 138rpx; height: 198rpx' mode='scaleToFill' src='{{listRY[0].imgUrl}}'></image></view>
-          <view id="demo2"  class="scroll-view-item_H demo-text-2" bindtap="bindViewTap" data-id='{{listRY[1].id}}'>
-            <image style='width: 138rpx; height: 198rpx' mode='scaleToFill' src='{{listRY[1].imgUrl}}'></image></view>
-          <view id="demo3" class="scroll-view-item_H demo-text-3" bindtap="bindViewTap" data-id='{{listRY[2].id}}'>
-            <image style='width: 138rpx; height: 198rpx' mode='scaleToFill' src='{{listRY[2].imgUrl}}'></image></view>
-          <view id="demo4" class="scroll-view-item_H demo-text-4" bindtap="bindViewTap" data-id='{{listRY[3].id}}'>
-            <image style='width: 138rpx; height: 198rpx' mode='scaleToFill' src='{{listRY[3].imgUrl}}'></image></view>
-          <view id="demo5" class="scroll-view-item_H demo-text-5" bindtap="bindViewTap" data-id='{{listRY[4].id}}'>
-            <image style='width: 138rpx; height: 198rpx' mode='scaleToFill' src='{{listRY[4].imgUrl}}'></image></view>
-          <view id="demo6" class="scroll-view-item_H demo-text-6" bindtap="bindViewTap" data-id='{{listRY[5].id}}'>
-            <image style='width: 138rpx; height: 198rpx' mode='scaleToFill' src='{{listRY[5].imgUrl}}'></image></view>
-        </scroll-view>
+
+  <!-- 搜索框 -->
+  <view class='page_row' bindtap="suo">
+    <view class="search">
+      <view class="df search_arr">
+        <icon class="searchcion" size='16' type='search'></icon>
+        <input class="sousuo" disabled placeholder="搜索" bindtap='search'/>
       </view>
     </view>
+  </view>
+
     <view class="page-section">
       <view class="page-section-title">
+           <text>正在热映</text>
+           <view class='page-section-title-more' catchtap='catchMore' data-title="正在热映">
+            <!--更多-->
+            <text class='page-section-title-more-text'>更多</text>
+            <!--右箭头-->
+            <image class="page-section-title-more-icon" src="/assets/icon/next.png"></image>
+          </view>
+        </view>
+
+      <view class="page-section-spacing">
+      <scroll-view class="scroll-view_H" scroll-x="true" bindscroll="scroll" style="width: 100%">
+       <view class='block-movie-row'>
+        <block wx:for="{{listRY}}" wx:for-item="poster" wx:key="id">
+          <!--单个电影海报-->
+          <view class='block-movie-card' bindtap="bindViewTap" data-id='{{poster.id}}'>
+            <template is="template-poster" data="{{...poster}}" />
+          </view>
+        </block>
+      </view>
+     </scroll-view>
+     </view>
+    </view>
+    <view class="page-section">
+       <view class="page-section-title">
         <text>热门电影</text>
-      </view>
+        <view class='page-section-title-more'  catchtap='catchMore' data-title="热门电影">
+            <!--更多-->
+            <text class='page-section-title-more-text'>更多</text>
+            <!--右箭头-->
+            <image class="page-section-title-more-icon" src="/assets/icon/next.png"></image>
+          </view>
+       </view>
       <view class="page-section-spacing">
-        <scroll-view class="scroll-view_H" scroll-x="true" bindscroll="scroll" style="width: 100%">
-          <view id="demo1" class="scroll-view-item_H demo-text-1" bindtap="bindViewTap" data-id='{{listRM[0].id}}'>
-            <image style='width: 138rpx; height: 198rpx' mode='scaleToFill' src='{{listRM[0].imgUrl}}'></image></view>
-          <view id="demo2"  class="scroll-view-item_H demo-text-2" bindtap="bindViewTap" data-id='{{listRM[1].id}}'>
-            <image style='width: 138rpx; height: 198rpx' mode='scaleToFill' src='{{listRM[1].imgUrl}}'></image></view>
-          <view id="demo3" class="scroll-view-item_H demo-text-3" bindtap="bindViewTap" data-id='{{listRM[2].id}}'>
-            <image style='width: 138rpx; height: 198rpx' mode='scaleToFill' src='{{listRM[2].imgUrl}}'></image></view>
-          <view id="demo4" class="scroll-view-item_H demo-text-4" bindtap="bindViewTap" data-id='{{listRM[3].id}}'>
-            <image style='width: 138rpx; height: 198rpx' mode='scaleToFill' src='{{listRM[3].imgUrl}}'></image></view>
-          <view id="demo5" class="scroll-view-item_H demo-text-5" bindtap="bindViewTap" data-id='{{listRM[4].id}}'>
-            <image style='width: 138rpx; height: 198rpx' mode='scaleToFill' src='{{listRM[4].imgUrl}}'></image></view>
-          <view id="demo6" class="scroll-view-item_H demo-text-6" bindtap="bindViewTap" data-id='{{listRM[5].id}}'>
-            <image style='width: 138rpx; height: 198rpx' mode='scaleToFill' src='{{listRM[5].imgUrl}}'></image></view>
-        </scroll-view>
+      <scroll-view class="scroll-view_H" scroll-x="true" bindscroll="scroll" style="width: 100%">
+       <view class='block-movie-row'>
+        <block wx:for="{{listRM}}" wx:for-item="poster" wx:key="id">
+          <!--单个电影海报-->
+          <view class='block-movie-card' bindtap="bindViewTap" data-id='{{poster.id}}'>
+            <template is="template-poster" data="{{...poster}}" />
+          </view>
+        </block>
       </view>
+     </scroll-view>
+     </view>
     </view>
+
     <view class="page-section">
       <view class="page-section-title">
         <text>电影榜单</text>
+        <view class='page-section-title-more'  catchtap='catchMore' data-title='电影榜单'>
+            <!--更多-->
+            <text class='page-section-title-more-text'>更多</text>
+            <!--右箭头-->
+            <image class="page-section-title-more-icon" src="/assets/icon/next.png"></image>
+          </view>
       </view>
       <view class="page-section-spacing">
-        <scroll-view class="scroll-view_H" scroll-x="true" bindscroll="scroll" style="width: 100%">
-          <view id="demo1" class="scroll-view-item_H demo-text-1" bindtap="bindViewTap" data-id='{{listBD[0].id}}'>
-            <image style='width: 138rpx; height: 198rpx' mode='scaleToFill' src='{{listBD[0].imgUrl}}'></image></view>
-          <view id="demo2"  class="scroll-view-item_H demo-text-2" bindtap="bindViewTap" data-id='{{listBD[1].id}}'>
-            <image style='width: 138rpx; height: 198rpx' mode='scaleToFill' src='{{listBD[1].imgUrl}}'></image></view>
-          <view id="demo3" class="scroll-view-item_H demo-text-3" bindtap="bindViewTap" data-id='{{listBD[2].id}}'>
-            <image style='width: 138rpx; height: 198rpx' mode='scaleToFill' src='{{listBD[2].imgUrl}}'></image></view>
-          <view id="demo4" class="scroll-view-item_H demo-text-4" bindtap="bindViewTap" data-id='{{listBD[3].id}}'>
-            <image style='width: 138rpx; height: 198rpx' mode='scaleToFill' src='{{listBD[3].imgUrl}}'></image></view>
-          <view id="demo5" class="scroll-view-item_H demo-text-5" bindtap="bindViewTap" data-id='{{listBD[4].id}}'>
-            <image style='width: 138rpx; height: 198rpx' mode='scaleToFill' src='{{listBD[4].imgUrl}}'></image></view>
-          <view id="demo6" class="scroll-view-item_H demo-text-6" bindtap="bindViewTap" data-id='{{listBD[5].id}}'>
-            <image style='width: 138rpx; height: 198rpx' mode='scaleToFill' src='{{listBD[5].imgUrl}}'></image></view>
-        </scroll-view>
+      <scroll-view class="scroll-view_H" scroll-x="true" bindscroll="scroll" style="width: 100%">
+       <view class='block-movie-row'>
+        <block wx:for="{{listBD}}" wx:for-item="poster" wx:key="id">
+          <!--单个电影海报-->
+          <view class='block-movie-card' bindtap="bindViewTap" data-id='{{poster.id}}'>
+            <template is="template-poster" data="{{...poster}}" />
+          </view>
+        </block>
       </view>
+     </scroll-view>
+     </view>
     </view>
   </view>
 </view>

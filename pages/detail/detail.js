@@ -24,14 +24,18 @@ Page({
    */
   onLoad: function (options) {
     var _this = this;
-    const eventChannel = this.getOpenerEventChannel()
-    eventChannel.on('acceptDataFromOpenerPage', function (dataOfMovies) {
-      //this.data.name=dataOfMovies.name;
-      //this.data.recommendContent=dataOfMovies.recommendContent;
-      _this.data.id = dataOfMovies.id
-      _this.setData({
+    // const eventChannel = this.getOpenerEventChannel()
+    // eventChannel.on('acceptDataFromOpenerPage', function (dataOfMovies) {
+    //   //this.data.name=dataOfMovies.name;
+    //   //this.data.recommendContent=dataOfMovies.recommendContent;
+    //   _this.data.id = dataOfMovies.id
+    //   _this.setData({
+    //     id: _this.data.id
+    //   })
+    // })
+    _this.data.id = options.movieId
+    _this.setData({
         id: _this.data.id
-      })
     })
     mydata.sourceId = _this.data.id
     mydata.commentId = "";

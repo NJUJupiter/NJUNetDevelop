@@ -4,7 +4,12 @@
     "pages/profile/profile",
     "pages/detail/detail",
     "pages/comments/comments",
-    "pages/history/history"
+    "pages/history/history",
+    "pages/search/search",
+    "pages/wantWatch/wantWatch",
+    "pages/more/more",
+    "pages/block/blc",
+    "template/block/block"
   ],
   "window": {
     "backgroundTextStyle": "dark",
@@ -26,6 +31,12 @@
         "text": "首页"
       },
       {
+        "pagePath": "pages/wantWatch/wantWatch",
+        "iconPath": "assets/nav/movie-off.png",
+        "selectedIconPath": "assets/nav/movie-on.png",
+        "text": "想看"
+      },
+      {
         "pagePath": "pages/profile/profile",
         "iconPath": "assets/nav/my-off.png",
         "selectedIconPath": "assets/nav/my-on.png",
@@ -33,6 +44,5 @@
       }
     ]
   },
-
   "sitemapLocation": "sitemap.json"
 }

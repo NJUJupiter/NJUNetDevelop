@@ -1,0 +1,14 @@
+/* pages/more/more.wxss */
+/* 导入电影海报模板wxss */
+@import "/template/poster/poster.wxss";
+
+.more-container {
+  justify-content: space-between;
+  margin: 20rpx 0; 
+  height: 1300rpx;
+}
+
+.more-poster {
+  float: left;
+  padding: 20rpx 0 0 33rpx; 
+}

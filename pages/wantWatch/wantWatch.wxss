@@ -1,0 +1,75 @@
+/* pages/wantWatch/wantWatch.wxss */
+.list{
+  display:flex;
+  border-bottom: 1px solid #dfdfdf;
+}
+.left{
+  width:25%;
+  margin-left:20rpx
+}
+.left image{
+  width:100%;
+  height:280rpx;
+}
+.middle{
+  width:55%; 
+  margin-right:20rpx 
+}
+.right{
+  width:20%;
+}
+.left,.middle,.right{
+  height:280rpx;
+  margin-bottom:20rpx;
+  margin-top:20rpx;
+}
+.row{
+   width:100%; 
+   margin:0 5rpx 5rpx 15rpx;  
+}
+.row-title{
+  font-size:15px;
+  font-weight: bold;
+}
+.row-content,.right-content,.right-content-btn{
+   font-size:13px;
+}
+.row view{
+  display: inline-block;
+  padding-right:5rpx;
+}
+.right-content{
+    color:#F76D61;
+    margin-right:10rpx;
+}
+.right-content-btn{
+  border: 1px solid #F76D61;
+  color:#F76D61;
+  margin-top:20rpx;
+  margin-left:0;
+  width:130rpx;
+  height:55rpx;
+  line-height:55rpx;
+  background-color: #ffffff;
+}
+
+
+.page{
+  margin-top:80rpx;
+  height:100%;
+}
+.page-loading{
+  display:flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  padding-top:10rpx;
+}
+.page-loading .loading-img{
+  margin-right:5rpx;
+  width:30rpx;
+  height:30rpx;
+}
+.sv{
+  height:1000rpx;
+}
