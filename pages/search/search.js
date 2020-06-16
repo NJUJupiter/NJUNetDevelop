@@ -78,6 +78,13 @@ Page({
     });
     console.log("quxiao");
   },
+  //跳转至详情
+  handleRedirect(event) {
+    var id = event.currentTarget.dataset.movieid;
+    wx.navigateTo({
+      url: '../detail/detail?movieId=' + id
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */

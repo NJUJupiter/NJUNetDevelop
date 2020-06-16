@@ -1,0 +1,11 @@
+/* pages/map/map.wxss */
+.page-body{
+	height:100%;
+  width:100%;
+  display:flex;
+	flex-direction:column;
+}
+.page-map{
+  flex:1;
+	width:100%;
+}

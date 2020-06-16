@@ -16,6 +16,10 @@
     <view class="movieInfoText">
       <text class="releaseTimeOfMovie">上映日期：{{movie.releaseTime}}</text>
     </view>
+    <view class="map" catchtap="getMap" data-id='{{movie.id}}'>
+      <image class="mapImg" src="/images/map.png"></image>
+      <text class="mapInfo">想看的人</text>
+    </view>
     <view class="recommend">
       <text class="recommendOfMovie">电影简介：\n{{movie.description}}</text>
     </view>

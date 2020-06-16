@@ -8,7 +8,7 @@
     <scroll-view style="height:1100px;" scroll-y="{{true}}" scroll-top="0" 
     bindscrolltolower="handleScrollToLower">
       <block wx:for="{{list}}" wx:key="{{index}}">
-        <view class="list" data-id="{{item.id}}" bindtap="handleRedirect">
+        <view class="list" catchtap="handleRedirect" data-movieid='{{item.id}}'>
           <view class="left">
             <image src="{{item.imgUrl}}" />
           </view>

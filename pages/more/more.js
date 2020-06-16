@@ -87,6 +87,7 @@ Page({
       }
     })
   },
+  //用不到
   bindViewTap: function (e) {
     wx.navigateTo({
       url: '../detail/detail',
@@ -97,6 +98,7 @@ Page({
     })
   },
   catchTapMovie(event) {
+    //console.log("here")
     var id = event.currentTarget.dataset.movieid;
     wx.navigateTo({
       url: '../detail/detail?movieId=' + id

@@ -8,7 +8,10 @@
   padding: 100rpx 50rpx 0 50rpx;
   box-sizing: border-box;
 }
-
+.mapImg{
+  height: 50rpx;
+  width: 50rpx;
+}
 .goBack {
   margin-top: 0rpx;
   width: 345rpx;

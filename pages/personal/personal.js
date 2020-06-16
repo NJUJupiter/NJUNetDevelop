@@ -1,4 +1,4 @@
-// pages/block/blc.js
+// pages/personal/personal.js
 Page({
 
   /**

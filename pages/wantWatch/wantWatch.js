@@ -80,11 +80,10 @@ Page({
       }
       this.loadData(this.data.start);
     },
-    handleRedirect(e) {
-      var id = e.currentTarget.dataset.id;
-      //页面跳转并传入当前id值
+    handleRedirect(event) {
+      var id = event.currentTarget.dataset.movieid;
       wx.navigateTo({
-        url: '../../pages/detail/detail?id=' + id,
+        url: '../detail/detail?movieId=' + id
       })
     },
     handleWachted(e){
