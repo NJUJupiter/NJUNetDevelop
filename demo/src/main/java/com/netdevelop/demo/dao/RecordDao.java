@@ -2,10 +2,12 @@ package com.netdevelop.demo.dao;
 
 import com.netdevelop.demo.po.Record;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
+@Repository
 public interface RecordDao {
 
     /**

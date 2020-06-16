@@ -82,4 +82,24 @@ public class StatusServiceImpl implements StatusService {
         return ResponseVO.buildSuccess(statusVOList);
 
     }
+
+    @Override
+    public ResponseVO updateMovieStatus(Integer userId, Integer movieId, Integer state) {
+        int effectNum=statusDao.updateMovieStatus(userId,movieId,state);
+        if(effectNum>0){
+            return ResponseVO.buildSuccess();
+        }else{
+            return ResponseVO.buildFailure("更新想看状态失败");
+        }
+    }
+
+    @Override
+    public ResponseVO deleteMovieStatus(Integer userId, Integer movieId) {
+        int effectNum=statusDao.deleteCommentStatus(userId,movieId);
+        if(effectNum>0){
+            return ResponseVO.buildSuccess();
+        }else{
+            return ResponseVO.buildFailure("删除想看状态失败");
+        }
+    }
 }

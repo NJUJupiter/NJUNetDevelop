@@ -42,4 +42,14 @@ public class StatusController {
     public ResponseVO getAllStatus(){
         return statusService.getAllStatus();
     }
+
+    @GetMapping("/updateMovieStatus")
+    public ResponseVO updateMovieStatus(@RequestParam Integer userId,@RequestParam Integer movieId,@RequestParam Integer state){
+        return statusService.updateMovieStatus(userId,movieId,state);
+    }
+
+    @GetMapping("/deleteMovieStatus")
+    public ResponseVO deleteMovieStatus(@RequestParam Integer userId,@RequestParam Integer movieId){
+        return statusService.deleteCommentStatus(userId,movieId);
+    }
 }

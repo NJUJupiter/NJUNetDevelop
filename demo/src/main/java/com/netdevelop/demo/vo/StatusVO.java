@@ -33,6 +33,11 @@ public class StatusVO {
      * 回复id，为回复状态时replyId为-1
      */
     private Integer replyId;
+
+    /**
+     * 电影id，为电影想看时状态时其他为-1
+     */
+    private Integer movieId;
     public Integer getId() {
         return id;
     }
@@ -63,5 +68,13 @@ public class StatusVO {
 
     public void setState(Integer state) {
         this.state = state;
+    }
+
+    public Integer getMovieId() {
+        return movieId;
+    }
+
+    public void setMovieId(Integer movieId) {
+        this.movieId = movieId;
     }
 }

@@ -2,9 +2,11 @@ package com.netdevelop.demo.dao;
 
 import com.netdevelop.demo.po.Status;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+@Repository
 public interface StatusDao {
 
     /**
@@ -31,6 +33,25 @@ public interface StatusDao {
      * @return
      */
     int updateReplyStatus(@Param("userId") Integer userId,@Param("replyId") Integer replyId, @Param("state")Integer state);
+
+    /**
+     *
+     * @param userId
+     * @param movieId
+     * @param state
+     * @return
+     */
+    int updateMovieStatus(@Param("userId") Integer userId,@Param("movieId") Integer movieId, @Param("state")Integer state);
+
+
+    /**
+     * 删除评论状态
+     * @param userId
+     * @param movieId
+     * @return
+     */
+    int deleteMovieStatus(@Param("userId") Integer userId,@Param("movieId") Integer movieId);
+
 
     /**
      * 删除评论状态

@@ -1,5 +1,7 @@
 package com.netdevelop.demo.vo;
 
+import java.util.List;
+
 public class MovieVO {
     //主键ID
     private Integer id;
@@ -15,6 +17,16 @@ public class MovieVO {
 
     //电影描述
     private String description;
+
+    private List<PerformerVO> performers;
+
+    public List<PerformerVO> getPerformers() {
+        return performers;
+    }
+
+    public void setPerformers(List<PerformerVO> performers) {
+        this.performers = performers;
+    }
 
     public void setDescription(String description){
         this.description=description;

@@ -51,4 +51,22 @@ public interface StatusService {
      */
     ResponseVO getAllStatus();
 
+    /**
+     * 更新回复状态
+     * @param userId
+     * @param movieId
+     * @param state
+     * @return
+     */
+    ResponseVO updateMovieStatus( Integer userId,Integer movieId,Integer state);
+
+    /**
+     * 删除评论状态
+     * @param userId
+     * @param movieId
+     * @return
+     */
+    ResponseVO deleteMovieStatus( Integer userId,Integer movieId);
+
+
 }

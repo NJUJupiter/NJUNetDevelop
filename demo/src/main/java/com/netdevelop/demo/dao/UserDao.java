@@ -2,7 +2,9 @@ package com.netdevelop.demo.dao;
 
 import com.netdevelop.demo.po.User;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
+@Repository
 public interface UserDao {
     /**
      * 根据用户Id返回该用户信息

@@ -19,6 +19,14 @@
         update status set state=#{state} where user_id=#{userId} and reply_id=#{replyId}
     </update>
 
+    <update id="updateMovieStatus">
+        update status set state=#{state} where user_id=#{userId} and movie_id=#{movieId}
+    </update>
+
+    <delete id="deleteMovieStatus">
+        delete from status
+        where user_id=#{userId} and movie_id=#{movieId}
+    </delete>
 
     <delete id="deleteCommentStatus">
         delete from status

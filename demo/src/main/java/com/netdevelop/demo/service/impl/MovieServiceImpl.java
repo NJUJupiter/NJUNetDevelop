@@ -3,7 +3,9 @@ package com.netdevelop.demo.service.impl;
 import com.netdevelop.demo.dao.MovieDao;
 import com.netdevelop.demo.po.Movie;
 import com.netdevelop.demo.service.MovieService;
+import com.netdevelop.demo.service.PerformerService;
 import com.netdevelop.demo.vo.MovieVO;
+import com.netdevelop.demo.vo.PerformerVO;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,6 +17,8 @@ import java.util.List;
 public class MovieServiceImpl implements MovieService {
     @Autowired
     private MovieDao movieDao;
+    @Autowired
+    private PerformerService performerService;
     @Override
     public List<MovieVO> getSpecifiedMovieType(int type) {
         List<Movie> movies=movieDao.getSpecifiedMovieType(type);
@@ -22,6 +26,8 @@ public class MovieServiceImpl implements MovieService {
         for(Movie movie:movies){
             MovieVO movieVO=new MovieVO();
             BeanUtils.copyProperties(movie,movieVO);
+            List<PerformerVO> performerVOS=performerService.getPerformerByMovieId(movieVO.getId());
+            movieVO.setPerformers(performerVOS);
             movieVOS.add(movieVO);
         }
         return movieVOS;
@@ -32,6 +38,8 @@ public class MovieServiceImpl implements MovieService {
         Movie movie=movieDao.queryMovieById(movieId);
         MovieVO movieVO=new MovieVO();
         BeanUtils.copyProperties(movie,movieVO);
+        List<PerformerVO> performerVOS=performerService.getPerformerByMovieId(movieVO.getId());
+        movieVO.setPerformers(performerVOS);
         return movieVO;
     }
 

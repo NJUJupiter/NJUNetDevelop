@@ -1,8 +1,11 @@
 package com.netdevelop.demo.controller;
 
 
+import com.netdevelop.demo.po.Reply;
 import com.netdevelop.demo.service.CommentService;
+import com.netdevelop.demo.service.ReplyService;
 import com.netdevelop.demo.vo.CommentVO;
+import com.netdevelop.demo.vo.ReplyVO;
 import com.netdevelop.demo.vo.ResponseVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -14,6 +17,8 @@ public class CommentController {
     @Autowired
     private CommentService commentService;
 
+    @Autowired
+    private ReplyService replyService;
 
     @GetMapping("/getCommentsByMid")
     public ResponseVO getCommentsBymid(@RequestParam Integer movieId){
@@ -54,5 +59,10 @@ public class CommentController {
         return ResponseVO.buildSuccess(commentService.getLimitedComment(movieId,limited,offset));
     }
 
+    @PostMapping("/insertReply")
+    public ResponseVO addReply(@RequestBody ReplyVO replyVO){
+        replyService.insertReply(replyVO);
+        return ResponseVO.buildSuccess(true);
+    }
 
 }

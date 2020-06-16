@@ -22,6 +22,25 @@ public class Status {
      */
     private Integer state;
 
+    /**
+     * 回复id，为回复状态时replyId为-1
+     */
+    private Integer replyId;
+
+    /**
+     *
+     * @return
+     */
+    private Integer movieId;
+
+    public Integer getMovieId() {
+        return movieId;
+    }
+
+    public void setMovieId(Integer movieId) {
+        this.movieId = movieId;
+    }
+
     public Integer getReplyId() {
         return replyId;
     }
@@ -30,10 +49,7 @@ public class Status {
         this.replyId = replyId;
     }
 
-    /**
-     * 回复id，为回复状态时replyId为-1
-     */
-    private Integer replyId;
+
     public Integer getId() {
         return id;
     }

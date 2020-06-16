@@ -98,6 +98,7 @@ CREATE TABLE `Status` (
                           `user_id` int(11) DEFAULT NULL,
                           `comment_id` int(11) DEFAULT NULL,
                           `reply_id` int(11) DEFAULT NULL,
+                          `movie_id` int(11) DEFAULT NULL,
                           `state` int(11) DEFAULT NULL,
                           PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
@@ -131,6 +132,69 @@ BEGIN;
 /*!40000 ALTER TABLE `User` ENABLE KEYS */;
 COMMIT;
 
+
+--
+-- Table structure for table `expect`
+--
+
+DROP TABLE IF EXISTS `Expect`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `Expect` (
+                        `id` int(11) NOT NULL AUTO_INCREMENT,
+                        `movie_id` int(11) default Null,
+                        `user_id` int(11) DEFAULT NULL,
+                        `userName` varchar(255) default NULL,
+                        `userAvatar` varchar(255) DEFAULT NULL,
+                        `longitude` double DEFAULT NULL,
+                        `latitude` double DEFAULT NULL,
+                        PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+--
+-- Dumping data for table `User`
+--
+
+BEGIN;
+/*!40000 ALTER TABLE `Expect` DISABLE KEYS */;
+/*!40000 ALTER TABLE `Expect` ENABLE KEYS */;
+COMMIT;
+
+
+--
+-- Table structure for table `performer`
+--
+
+DROP TABLE IF EXISTS `Performer`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `Performer` (
+                          `id` int(11) NOT NULL AUTO_INCREMENT,
+                          `movie_id` int(11) default Null,
+                          `performer_name` varchar(255) DEFAULT NULL,
+                          `performer_avatar` varchar(255) default NULL,
+                          PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+--
+-- Dumping data for table `Performer`
+--
+
+BEGIN;
+/*!40000 ALTER TABLE `Performer` DISABLE KEYS */;
+insert into `Performer` VALUES (1,1,'文牧野','https://img3.doubanio.com/view/celebrity/s_ratio_celebrity/public/p1563174692.41.webp');
+insert into `Performer` VALUES (2,1,'徐峥','https://img1.doubanio.com/view/celebrity/s_ratio_celebrity/public/p43738.webp');
+insert into `Performer` VALUES (3,1,'王传君','https://img1.doubanio.com/view/celebrity/s_ratio_celebrity/public/p1496577458.38.webp');
+insert into `Performer` VALUES (4,1,'周一围','https://img3.doubanio.com/view/celebrity/s_ratio_celebrity/public/p1514533436.1.webp');
+insert into `Performer` VALUES (5,1,'章宇','https://img1.doubanio.com/view/celebrity/s_ratio_celebrity/public/p1542778239.29.webp');
+/*!40000 ALTER TABLE `Performer` ENABLE KEYS */;
+COMMIT;
+
+--
 --
 -- Table structure for table `Comment`
 --
