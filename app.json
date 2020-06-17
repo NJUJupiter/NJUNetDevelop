@@ -34,12 +34,6 @@
         "text": "首页"
       },
       {
-        "pagePath": "pages/map/map",
-        "iconPath": "assets/nav/movie-off.png",
-        "selectedIconPath": "assets/nav/movie-on.png",
-        "text": "想看"
-      },
-      {
         "pagePath": "pages/wantWatch/wantWatch",
         "iconPath": "assets/nav/movie-off.png",
         "selectedIconPath": "assets/nav/movie-on.png",

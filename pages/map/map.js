@@ -1,5 +1,5 @@
 let store=require("../../utils/store")
-
+var util=require("../../utils/util")
 Page({
   data: {
     showModalStatus: false,
@@ -9,6 +9,7 @@ Page({
     longitude: "",
     userList:[],
     userInfo:{},
+    time:"",
     markers: [
     //   {
     //   id: 1,
@@ -31,6 +32,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var TIME = util.formatDate(new Date());
+    this.setData({
+      time: TIME,
+    });
+    console.log(TIME)
     var that = this;  
     var id =options.id
     console.log("AA "+id)
@@ -48,40 +54,40 @@ Page({
         })
       }
     })
-    this.setData({
-      markers:[
-        {id: 1, movieId: 2, userId: 3, userName: "我i67QAQ", userAvatar: "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png",longitude:105.739203,latitude:34.571483},
-        {id: 2, movieId: 2, userId: 4, userName: "RTW是个狠人", userAvatar: "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png",longitude:105.727315,latitude:34.585687 }
-      ],
-      userList:[
-        {userId: 3, userName: "我i67QAQ", userAvatar: "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"},
-        {userId: 4, userName: "RTW是个狠人", userAvatar: "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"}
-      ],
-    })
-    // wx.request({
-    //   url: 'http://localhost:8080/demo/expect/getExpectByMovieId',
-    //   method: "GET",
-    //   data:{
-    //     movieId:that.data.movieId,
-    //   },
-    //   header: {
-    //     "content-type": "application/x-www-form-urlencoded;charset=utf-8",
-    //     //token: app.globalData.token
-    //   },
-    //   success: res => {
-    //     console.log(res)
-    //     if (res.data.success) {
-    //       that.setData({
-    //         markers:res.data.content
-    //       })
-    //       console.log(that.data.markers)
-    //     } else {
-    //       wx.showToast({
-    //         title: '加载出错',
-    //       })
-    //     }
-    //   }
+    // this.setData({
+    //   markers:[
+    //     {id: 1, movieId: 2, userId: 3, userName: "我i67QAQ", userAvatar: "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png",longitude:105.739203,latitude:34.571483},
+    //     {id: 2, movieId: 2, userId: 4, userName: "RTW是个狠人", userAvatar: "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png",longitude:105.727315,latitude:34.585687 }
+    //   ],
+    //   userList:[
+    //     {userId: 3, userName: "我i67QAQ", userAvatar: "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"},
+    //     {userId: 4, userName: "RTW是个狠人", userAvatar: "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"}
+    //   ],
     // })
+    wx.request({
+      url: 'http://localhost:8080/demo/expect/getExpectByMovieId',
+      method: "GET",
+      data:{
+        movieId:that.data.movieId,
+      },
+      header: {
+        "content-type": "application/x-www-form-urlencoded;charset=utf-8",
+        //token: app.globalData.token
+      },
+      success: res => {
+        console.log(res)
+        if (res.data.success) {
+          that.setData({
+            markers:res.data.content
+          })
+          console.log(that.data.markers)
+        } else {
+          wx.showToast({
+            title: '加载出错',
+          })
+        }
+      }
+    })
   },
 
   showModal:function(event){
