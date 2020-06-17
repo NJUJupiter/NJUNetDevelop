@@ -1,0 +1,45 @@
+.list {
+  width: 90%;
+  height: 104rpx;
+  padding: 0 32rpx;
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+}
+.left{
+  padding-top: 10px;
+}
+.avatar{
+  display: inline-block;
+  width: 40rpx;
+  height: 40rpx;
+}
+.userName{
+  display: inline-block;
+  font-size:30rpx;
+  color:#13227a;
+}
+.right{
+  left: 200px;
+}
+.next {
+  padding-top: 10px;
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.text{
+  font-size:30rpx;
+  color:#333;
+}
+.space {
+  width: 100vw;
+  height: 16rpx;
+  background: #F4F5F9;
+}
+.line {
+  width:718px;
+  height:1px;
+  background:#EEEEEE;
+  margin-left: 32rpx;
+}

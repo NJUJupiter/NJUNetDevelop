@@ -1,11 +1,207 @@
 /* pages/map/map.wxss */
-.page-body{
-	height:100%;
-  width:100%;
-  display:flex;
-	flex-direction:column;
+@import "/template/listModal/listModal.wxss";
+page{
+  height: 100%;
 }
-.page-map{
-  flex:1;
-	width:100%;
+.index_bt1 {
+  position: absolute;
+  bottom: 350rpx;
+  left: 620rpx;
+  width: 100%;
+  display: flex;
 }
+.xiaoer{
+  width: 120rpx;
+  height: 120rpx;
+}
+/*底部弹窗开始 -使屏幕变暗  */
+.commodity_screen {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.2;
+  overflow: hidden;
+  z-index: 1000;
+  color: #fff;
+}
+/*对话框 */
+.commodity_attr_box {
+  height: 280rpx;
+  width: 100%;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 2000;
+  background: #fff;
+  padding-top: 0rpx;
+}
+ 
+.placeBox{
+  width: 100%;
+  height: 150rpx;
+}
+ 
+.placeViewLt{
+  display: inline-block;
+  width: 620rpx;
+  height: 140rpx;
+ 
+  vertical-align: middle;
+}
+ 
+.viewTitle{
+  display: block;
+  font-size: 38rpx;
+  color: #3F51B5;
+  margin-left: 20rpx;
+  padding-top: 34rpx;
+}
+ .viewAvatar{
+  display: inline-block;
+  width: 60rpx;
+  height:60rpx;
+  vertical-align: middle;
+ }
+
+.viewDis{
+  display: inline-block;
+  font-size: 26rpx;
+  color: gray;
+  margin-left: 20rpx;
+}
+ 
+.viewPersonal{
+  display: inline-block;
+  font-size: 28rpx;
+  color: black;
+  margin-left: 0rpx;
+}
+.placeViewRt{
+  display: inline-block;
+  width: 100rpx;
+  height: 100rpx;
+  padding-top: 6rpx;
+  vertical-align: middle;
+}
+
+ 
+.viewIcon{
+  display: block;
+  height: 100rpx;
+  width: 100%;
+  border-top: 1px solid #ebebeb;
+  padding-top: 40rpx;
+}
+ 
+.indexIcon{
+  display: inline-block;
+  width: 50rpx;
+  height: 50rpx;
+  margin-left:45%;
+  vertical-align: middle;
+}
+
+
+/* 想看列表 */
+ 
+/*mask*/
+.drawer_screen {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background: #000;
+  opacity: 0.5;
+  overflow: hidden;
+}
+ 
+/*content*/
+.drawer_box {
+  width: 650rpx;
+  overflow: hidden;
+  position: fixed;
+  top: 50%;
+  left: 0;
+  z-index: 1001;
+  background: #FAFAFA;
+  margin: -150px 50rpx 0 50rpx;
+  border-radius: 3px;
+}
+ 
+.drawer_title{
+  padding:15px;
+  font: 20px "microsoft yahei";
+  text-align: center;
+  color: #db639b;
+}
+.drawer_content {
+  height: 210px;
+  overflow-y: scroll; /*超出父盒子高度可滚动*/
+}
+ 
+.btn_ok{
+  padding: 10px;
+  font: 20px "microsoft yahei";
+  text-align: center;
+  border-top: 1px solid #E8E8EA;
+  color: #d4237a;
+}
+ 
+.top{
+	padding-top:8px;
+}
+.bottom {
+	padding-bottom:8px;
+}
+.title {
+	height: 30px;
+	line-height: 30px;
+	width: 160rpx;
+	text-align: center;
+	display: inline-block;
+	font: 300 28rpx/30px "microsoft yahei";
+}
+ 
+.input_base {
+	border: 2rpx solid #ccc;
+	padding-left: 10rpx;
+	margin-right: 50rpx;
+}
+.input_h30{
+	height: 30px;
+	line-height: 30px;
+}
+.input_h60{
+	height: 60px;
+}
+.input_view{
+	font: 12px "microsoft yahei";
+	background: #fff;
+	color:#000;
+	line-height: 30px;
+}
+ 
+input {
+	font: 12px "microsoft yahei";
+	background: #fff;
+	color:#000 ;
+}
+radio{
+	margin-right: 20px;
+}
+.grid { display: -webkit-box; display: box; }
+.col-0 {-webkit-box-flex:0;box-flex:0;}
+.col-1 {-webkit-box-flex:1;box-flex:1;}
+.fl { float: left;}
+.fr { float: right;}
+.btn-area{ width: 100%;}
+.btn_no{ float:left;width: 40%; margin-left: 5%;border: 0px;}
+.btn_ok{ float:left;width: 40%; margin-left: 10%;margin-right: 5%; border: 0px;}
+
+ 

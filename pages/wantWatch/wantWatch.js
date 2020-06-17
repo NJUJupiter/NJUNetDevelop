@@ -17,60 +17,60 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.setData({
-      showLoading: false,
-      showMore: true,
-      list:[{
-        movieName: "奇迹男孩 Wonder",
-        imgUrl: "https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2507709428.jpg",
-        score: "6",
-        director:"zzx",
-        actors:"wr/zzx/67",
-        likes:"100"
-      },
-      {
-        movieName: "奇迹男孩 Wonder",
-        imgUrl: "https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2507709428.jpg",
-        score: "8.6",
-        director:"zzx",
-        actors:"wr/zzx/67",
-        likes:"100"
-      },
-      ]
-    })
-    
-    console.log(this.data.list)
-    // 获取电影
-    // wx.request({
-    //   url: 'http://localhost:8080/demo/expect/getExpectByUserId',
-    //   method: "GET",
-    //   data:{
-    //     userId:this.data.userId
+    // this.setData({
+    //   showLoading: false,
+    //   showMore: true,
+    //   list:[
+    //     {
+    //     movieName: "奇迹男孩 Wonder",
+    //     imgUrl: "https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2507709428.jpg",
+    //     score: "6",
+    //     director:"zzx",
+    //     actors:"wr/zzx/67",
+    //     likes:"100"
     //   },
-    //   header: {
-    //     "content-type": "application/x-www-form-urlencoded;charset=utf-8",
-    //     //token: app.globalData.token
+    //   {
+    //     movieName: "奇迹男孩 Wonder",
+    //     imgUrl: "https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2507709428.jpg",
+    //     score: "8.6",
+    //     director:"zzx",
+    //     actors:"wr/zzx/67",
+    //     likes:"100"
     //   },
-    //   success: res => {
-    //     console.log(res)
-    //     if (res.data.success) {
-    //       this.setData({
-    //         list:res.data.content,
-    //         showLoading: false,
-    //         showMore: true,
-    //         start: start + 1 //页数递增
-    //       })
-    //       console.log(this.data.list)
-    //     } else {
-    //       wx.showToast({
-    //         title: '加载出错',
-    //       })
-    //       this.setData({
-    //         showMore: false
-    //       })
-    //     }
-    //   }
+    //   ]
     // })
+    // console.log(this.data.list)
+    //获取电影
+    wx.request({
+      url: 'http://localhost:8080/demo/expect/getExpectMovieByUserId',
+      method: "GET",
+      data:{
+        // userId:this.data.userId
+        userId:3
+      },
+      header: {
+        "content-type": "application/x-www-form-urlencoded;charset=utf-8",
+        //token: app.globalData.token
+      },
+      success: res => {
+        console.log(res)
+        if (res.data.success) {
+          this.setData({
+            list:res.data.content,
+            showLoading: false,
+            showMore: true,
+          })
+          console.log(this.data.list)
+        } else {
+          wx.showToast({
+            title: '加载出错',
+          })
+          this.setData({
+            showMore: false
+          })
+        }
+      }
+    })
   },
 
     handleScrollToLower(e) {
@@ -80,11 +80,13 @@ Page({
       }
       this.loadData(this.data.start);
     },
+
     handleRedirect(event) {
       var id = event.currentTarget.dataset.movieid;
+      console.log(id)
       wx.navigateTo({
-        url: '../detail/detail?movieId=' + id
-      })
+      url: '../detail/detail?movieId=' + id
+    })
     },
     handleWachted(e){
       console.log("点击了看过按钮");

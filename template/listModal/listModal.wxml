@@ -1,0 +1,17 @@
+<!--template/listModal/listModal.wxml-->
+<template name="template-list">
+<scroll-view style="height:1100px;" scroll-y="{{true}}" scroll-top="0" 
+    bindscrolltolower="handleScrollToLower">
+      <block wx:for="{{userList}}" wx:key="{{index}}">
+        <view class="list" catchtap="loadUserList" data-movieid='{{item.id}}'>
+          <view class="left">
+            <image class="avatar" src="{{item.userAvatar}}" />
+            <view class="userName">{{item.userName}}</view>
+          </view>
+            <image class="next" src="/assets/icon/next.png"></image>
+          
+        </view>
+        <view class="line"></view>
+      </block>
+    </scroll-view>
+</template>

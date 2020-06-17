@@ -1,4 +1,5 @@
 /* pages/wantWatch/wantWatch.wxss */
+@import "/template/block/block.wxss";
 .list{
   display:flex;
   border-bottom: 1px solid #dfdfdf;

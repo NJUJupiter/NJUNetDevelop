@@ -10,7 +10,9 @@
     "pages/more/more",
     "template/block/block",
     "pages/map/map",
-    "pages/personal/personal"
+    "pages/personal/personal",
+    "template/listModal/listModal",
+    "pages/sign/sign"
   ],
   "window": {
     "backgroundTextStyle": "dark",
@@ -30,6 +32,12 @@
         "iconPath": "assets/nav/home-off.png",
         "selectedIconPath": "assets/nav/home-on.png",
         "text": "首页"
+      },
+      {
+        "pagePath": "pages/map/map",
+        "iconPath": "assets/nav/movie-off.png",
+        "selectedIconPath": "assets/nav/movie-on.png",
+        "text": "想看"
       },
       {
         "pagePath": "pages/wantWatch/wantWatch",
