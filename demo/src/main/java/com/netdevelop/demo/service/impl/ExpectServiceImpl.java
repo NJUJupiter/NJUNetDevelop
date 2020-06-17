@@ -4,12 +4,15 @@ import com.netdevelop.demo.dao.ExpectDao;
 import com.netdevelop.demo.po.Expect;
 import com.netdevelop.demo.po.Record;
 import com.netdevelop.demo.service.ExpectService;
+import com.netdevelop.demo.service.MovieService;
 import com.netdevelop.demo.vo.ExpectVO;
+import com.netdevelop.demo.vo.MovieVO;
 import com.netdevelop.demo.vo.ResponseVO;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -18,6 +21,9 @@ public class ExpectServiceImpl implements ExpectService {
 
     @Autowired
     private ExpectDao expectDao;
+
+    @Autowired
+    private MovieService movieService;
 
     @Override
     public ResponseVO insertExpect(ExpectVO expectVO) {
@@ -60,6 +66,16 @@ public class ExpectServiceImpl implements ExpectService {
             return expectVO;
         }).collect(Collectors.toList());
         return expectVOS;
+    }
+
+    @Override
+    public List<MovieVO> getExpectMovieByUserId(Integer userId) {
+        List<Expect> expects=expectDao.getExpectByUserId(userId);
+        List<MovieVO> movieVOList=new LinkedList<>();
+        for(Expect expect:expects){
+            movieVOList.add(movieService.queryMovieById(expect.getMovieId()));
+        }
+        return movieVOList;
     }
 
     @Override

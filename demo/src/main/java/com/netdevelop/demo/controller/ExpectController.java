@@ -34,6 +34,11 @@ public class ExpectController {
         return ResponseVO.buildSuccess(expectService.getExpectByUserId(userId));
     }
 
+    @GetMapping("/getExpectMovieByUserId")
+    public ResponseVO getExpectMovieByUserId(@RequestParam Integer userId){
+        return ResponseVO.buildSuccess(expectService.getExpectMovieByUserId(userId));
+    }
+
     @GetMapping("/getExpectByMovieId")
     public ResponseVO getExpectByMovieId(@RequestParam Integer movieId){
         return ResponseVO.buildSuccess(expectService.getExpectByMovieId(movieId));

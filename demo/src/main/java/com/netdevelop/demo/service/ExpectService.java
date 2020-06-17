@@ -2,6 +2,7 @@ package com.netdevelop.demo.service;
 
 import com.netdevelop.demo.po.Expect;
 import com.netdevelop.demo.vo.ExpectVO;
+import com.netdevelop.demo.vo.MovieVO;
 import com.netdevelop.demo.vo.ResponseVO;
 import org.apache.ibatis.annotations.Param;
 
@@ -37,6 +38,14 @@ public interface ExpectService {
      * @return
      */
     List<ExpectVO> getExpectByUserId(Integer userId);
+
+    /**
+     * 根据用户id获取用户所有的想看状态
+     * @param userId
+     * @return
+     */
+    List<MovieVO> getExpectMovieByUserId(Integer userId);
+
 
     /**
      * 根据电影id获得所有想看状态
