@@ -247,13 +247,40 @@ CREATE TABLE `Reply` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `Comment`
+-- Dumping data for table `Reply`
 --
 
 BEGIN;
 /*!40000 ALTER TABLE `Reply` DISABLE KEYS */;
 /*!40000 ALTER TABLE `Reply` ENABLE KEYS */;
 COMMIT;
+
+
+--
+-- Table structure for table `Sign`
+--
+DROP TABLE IF EXISTS `Sign`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `Sign` (
+                         `id` int(11) NOT NULL AUTO_INCREMENT,
+                         `user_id` int(11) DEFAULT NULL,
+                         `s_year` int(11) DEFAULT NULL,
+                         `s_month` int(11) DEFAULT NULL,
+                         `s_day` int(11) DEFAULT NULL,
+                         PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `Check`
+--
+
+BEGIN;
+/*!40000 ALTER TABLE `Sign` DISABLE KEYS */;
+/*!40000 ALTER TABLE `Sign` ENABLE KEYS */;
+COMMIT;
+
 
 
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
