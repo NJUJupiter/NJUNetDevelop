@@ -18,6 +18,14 @@ public interface RecordDao {
     List<Integer> queryMovieIdByUserId(@Param("userId") int userId);
 
     /**
+     * 根据UserId去查询该用户所浏览记录
+     * @param userId
+     * @return
+     */
+    List<Record> queryRecordByUserId(@Param("userId") int userId);
+
+
+    /**
      * 添加一条浏览记录
      * @param record
      * @return
@@ -36,5 +44,5 @@ public interface RecordDao {
      * @param watchTime
      * @return
      */
-    int updateRecord(@Param("userId") int userId, @Param("movieId") int movieId,@Param("watchTime") LocalDateTime watchTime);
+    int updateRecord(@Param("userId") int userId, @Param("movieId") int movieId,@Param("watchTime") String watchTime);
 }

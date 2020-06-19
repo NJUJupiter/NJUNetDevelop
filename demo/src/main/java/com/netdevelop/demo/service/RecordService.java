@@ -12,7 +12,7 @@ public interface RecordService {
      * @param userId
      * @return
      */
-    List<MovieVO> queryMovieIdByUserId(int userId);
+    List<RecordVO> getRecordsByUserId(int userId);
 
     /**
      * 添加一条浏览记录

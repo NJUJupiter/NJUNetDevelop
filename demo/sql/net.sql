@@ -71,7 +71,7 @@ CREATE TABLE `Record` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `user_id` int(11) NOT NULL,
   `movie_id` int(11) DEFAULT NULL,
-  `watch_time` datetime DEFAULT NULL,
+  `watch_time` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -115,7 +115,7 @@ DROP TABLE IF EXISTS `User`;
 CREATE TABLE `User` (
                         `id` int(11) NOT NULL AUTO_INCREMENT,
                         `userName` varchar(255) DEFAULT NULL,
-                        `userImg` varchar(11) NOT NULL,
+                        `userImg` varchar(255) NOT NULL,
                         `openId` varchar(255) DEFAULT NULL,
                         `sessionKey` varchar(255) DEFAULT NULL,
                         PRIMARY KEY (`id`)

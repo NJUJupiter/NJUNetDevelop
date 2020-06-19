@@ -1,6 +1,9 @@
 package com.netdevelop.demo.vo;
 
+import com.netdevelop.demo.po.Movie;
+
 import java.time.LocalDateTime;
+import java.util.List;
 
 public class RecordVO {
     private Integer id;
@@ -9,8 +12,25 @@ public class RecordVO {
     //该条记录对应的电影Id
     private Integer movieId;
 
+    private MovieVO movie;
     //评论创建的时间
-    private LocalDateTime watchTime;
+    private String watchTime;
+
+    public MovieVO getMovie() {
+        return movie;
+    }
+
+    public void setMovie(MovieVO movie) {
+        this.movie = movie;
+    }
+
+    public String getWatchTime() {
+        return watchTime;
+    }
+
+    public void setWatchTime(String watchTime) {
+        this.watchTime = watchTime;
+    }
 
     public Integer getId() {
         return id;
@@ -36,11 +56,4 @@ public class RecordVO {
         this.movieId = movieId;
     }
 
-    public LocalDateTime getWatchTime() {
-        return watchTime;
-    }
-
-    public void setWatchTime(LocalDateTime watchTime) {
-        this.watchTime = watchTime;
-    }
 }

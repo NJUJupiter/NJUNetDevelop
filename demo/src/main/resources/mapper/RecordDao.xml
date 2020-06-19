@@ -10,6 +10,12 @@
         where user_id=#{userId} order by watch_time desc
     </select>
 
+
+    <select id="queryRecordByUserId" resultType="com.netdevelop.demo.po.Record">
+        select *
+        from record
+        where user_id=#{userId} order by watch_time desc
+    </select>
     <insert id="insertRecord"  useGeneratedKeys="true" keyProperty="id" keyColumn="id"
             parameterType="com.netdevelop.demo.po.Record">
         insert  into

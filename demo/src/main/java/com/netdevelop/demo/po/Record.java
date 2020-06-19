@@ -12,7 +12,7 @@ public class Record {
     private Integer movieId;
 
     //评论创建的时间
-    private LocalDateTime watchTime;
+    private String watchTime;
 
     public Integer getId() {
         return id;
@@ -38,11 +38,11 @@ public class Record {
         this.movieId = movieId;
     }
 
-    public LocalDateTime getWatchTime() {
+    public String getWatchTime() {
         return watchTime;
     }
 
-    public void setWatchTime(LocalDateTime watchTime) {
+    public void setWatchTime(String watchTime) {
         this.watchTime = watchTime;
     }
 }

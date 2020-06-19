@@ -21,7 +21,7 @@ public class RecordController {
 
     @GetMapping("/getRecordByUid")
     public ResponseVO getRecordByUid(@RequestParam Integer userId){
-        return ResponseVO.buildSuccess(recordService.queryMovieIdByUserId(userId));
+        return ResponseVO.buildSuccess(recordService.getRecordsByUserId(userId));
     }
 
 }
