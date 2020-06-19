@@ -21,7 +21,7 @@ Page({
     movie: {},
     pageHead: '',
     isLike:store.getItem("isLike")||[],
-    fav:'false',
+    fav:'',
     isclose:true,
     latitude:'',
     longitude:'',
@@ -92,23 +92,25 @@ Page({
       }      
     })
     var isLike=store.getItem("isLike")
-    for(var i=0;i<that.data.list.length;i++){
-      that.data.list[i].state='false'
-      that.setData({
+    for(var i=0;i<_this.data.list.length;i++){
+      _this.data.list[i].state='false'
+      _this.setData({
       [`list[${i}].state`]:'false'
       })
     }
     for(var i=0;i<isLike.length;i++){
-      if(list.indexOf(isLike[i])>-1){
-      that.data.list[i].state='true'
-        that.setData({
+      if(_this.data.list.indexOf(isLike[i])>-1){
+      _this.data.list[i].state='true'
+        _this.setData({
           [`list[${isLike[i]}].state`]:'true'
           })
       }
     }
+    console.log(_this.data.id+"   "+store.getItem('fav'+_this.data.id)+">>>")
     _this.setData({
       fav: store.getItem('fav'+_this.data.id)||'false'
     })
+    console.log(_this.data.fav+"<<<")
   },
 
   /**
@@ -416,7 +418,7 @@ Page({
             })
           }
           for(var i=0;i<isLike.length;i++){
-            if(list.indexOf(isLike[i])>-1){
+            if(that.data.list.indexOf(isLike[i])>-1){
             that.data.list[i].state='true'
               that.setData({
                 [`list[${isLike[i]}].state`]:'true'
@@ -437,7 +439,7 @@ Page({
             })
           }
           for(var i=0;i<isLike.length;i++){
-            if(list.indexOf(isLike[i])>-1){
+            if(that.data.list.indexOf(isLike[i])>-1){
             that.data.list[i].state='true'
               that.setData({
                 [`list[${isLike[i]}].state`]:'true'
