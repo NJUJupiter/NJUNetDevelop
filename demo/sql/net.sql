@@ -240,7 +240,7 @@ CREATE TABLE `Reply` (
                            `to_name` varchar(255) DEFAULT NULL,
                            `to_avatar` varchar(255) DEFAULT NULL,
                            `content` varchar(255) DEFAULT NULL,
-                           `favor` int(11) DEFAULT NULL,
+                           `favor` int(11) DEFAULT 0,
                            `create_time` varchar(255) DEFAULT NULL,
                            PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8;

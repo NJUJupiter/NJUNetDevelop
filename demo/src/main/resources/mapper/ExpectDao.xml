@@ -24,8 +24,8 @@
     <insert id="insertExpect" useGeneratedKeys="true" keyProperty="id" keyColumn="id"
             parameterType="com.netdevelop.demo.po.Expect">
         insert into
-        expect(movie_id,user_id,userName,userAvatar,longtitude,latitude)
-        values (#{movieId},#{userId},#{userName},#{userAvatar},#{longtitude},#{latitude})
+        expect(movie_id,user_id,userName,userAvatar,longitude,latitude)
+        values (#{movieId},#{userId},#{userName},#{userAvatar},#{longitude},#{latitude})
     </insert>
 
     <delete id="deleteExpect">
