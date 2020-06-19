@@ -3,6 +3,9 @@
 const store = require('../../utils/store.js')
 const util = require('../../utils/util.js')
 const app = getApp()
+import{
+  baseURL
+}from '../../api/config'
 var mydata = {
   end: 0,
   replyUserName: ""
@@ -16,7 +19,13 @@ Page({
     list: [],
     id: 0,
     movie: {},
-    pageHead: ''
+    pageHead: '',
+    isLike:store.getItem("isLike")||[],
+    fav:'false',
+    isclose:true,
+    latitude:'',
+    longitude:'',
+    userId:store.getItem("userId"),
   },
 
   /**
@@ -55,11 +64,11 @@ Page({
         "content-type": "application/x-www-form-urlencoded;charset=utf-8",
       },
       success: res => {
-        console.log("testRes")
-        console.log(res)
+        // console.log("testRes")
+        // console.log(res)
         _this.data.movie = res.data.content
         _this.data.pageHead = res.data.content.movieName
-        console.log(res.data.content.movieName)
+        // console.log(res.data.content.movieName)
         console.log(_this.data.pageHead)
         _this.setData({
           movie: _this.data.movie,
@@ -71,6 +80,34 @@ Page({
           title: _this.data.pageHead + " 电影详情",
         })
       }
+    })
+    wx.request({
+      url:baseURL+'/comment/getCommentsByMid',
+      method:"GET",
+      data:{
+        movieId: _this.data.id
+      },
+      success: res=>{
+
+      }      
+    })
+    var isLike=store.getItem("isLike")
+    for(var i=0;i<that.data.list.length;i++){
+      that.data.list[i].state='false'
+      that.setData({
+      [`list[${i}].state`]:'false'
+      })
+    }
+    for(var i=0;i<isLike.length;i++){
+      if(list.indexOf(isLike[i])>-1){
+      that.data.list[i].state='true'
+        that.setData({
+          [`list[${isLike[i]}].state`]:'true'
+          })
+      }
+    }
+    _this.setData({
+      fav: store.getItem('fav'+_this.data.id)||'false'
     })
   },
 
@@ -154,8 +191,77 @@ Page({
       replyUserName: mydata.replyUserName,
       reply: true
     })
-    console.log("testReply")
-    console.log(mydata.replyUserName)
+    // console.log("testReply")
+    // console.log(mydata.replyUserName)
+  },
+  thumbsup: function(e){
+    console.log("here")
+    var id=e.currentTarget.dataset.id.id
+    this.like(id)
+  },
+  like:function(item_id){
+    var that=this
+    var isLike=store.getItem("isLike")||[]
+    for(var i=0;i<that.data.list.length;i++){
+      if(that.data.list[i].id==item_id){
+        var num=that.data.list[i].likes
+        if(isLike.indexOf(item_id)>-1){
+          for(var j in isLike){
+            if(isLike[j]==item_id){
+              isLike.splice(j,1);
+            }
+          }
+          num--;
+          that.setData({
+            [`list[${i}].likes`]: num,
+            [`list[${i}].state`]:'false'
+          })
+          store.setItem("list",that.data.list)
+          store.setItem("isLike",isLike)
+          wx.showToast({
+            title:"取消点赞！",
+          })
+          wx.request({
+            url:baseURL+'/comment/updateCommentLike',
+            data:{
+              id:item_id,
+              change:-1
+            },
+            success:res=>{
+              console.log(res)
+            }
+          })
+        }
+        else{
+          ++num;
+          that.setData({
+            [`list[${i}].likes`]:num,
+            [`list[${i}].state`]:'true'
+          })
+          console.log(that.data.list)
+          isLike.unshift(item_id)
+          that.setData({
+            isLike:isLike
+          })
+          store.setItem("list",that.data.list)
+          store.setItem("isLike",isLike)
+          wx.showToast({
+            title:"点赞成功！"
+          })
+          wx.request({
+            url:baseURL+'/comment/updateCommentLike',
+            data:{
+              id:item_id,
+              change:1
+            },
+            success:res=>{
+              console.log(res)
+            }
+          })
+        }
+        break;
+      }
+    }
   },
   // 合并数组
   addArr(arr1, arr2) {
@@ -163,6 +269,76 @@ Page({
       arr1.push(arr2[i]);
     }
     return arr1;
+  },
+  getLoc: function(){
+    var that=this
+    wx.getLocation({
+      success: function(res){
+        console.log(res)
+        that.setData({
+          longitude:res.longitude,
+          latitude:res.latitude
+        })
+        store.setItem("longitude",res.longitude)
+        store.setItem("latitude",res.latitude)
+      }
+    })
+    that.setData({
+      isclose:true
+    })
+  },
+  disfavor: function(){
+    // wx.request({
+    //   url:baseURL+'/expect/deleteExpect',
+    //   data:
+    // })
+  },
+  goLoc:function(){
+    if(this.data.fav=='false'){
+      this.setData({
+        isclose:false
+      })
+    }
+    else(disfavor())
+  },
+  
+  favor: function(e){
+    var that=this
+    that.setData({
+      fav: 'true',
+      isclose:true
+    })
+    store.setItem('fav'+that.data.id,'true')
+    if(e==1){
+      wx.getLocation({
+        success: function(res){
+          console.log(res)
+          that.setData({
+            longitude:res.longitude,
+            latitude:res.latitude
+          })
+          store.setItem("longitude",res.longitude)
+          store.setItem("latitude",res.latitude)
+        }
+      })
+    }
+    wx.request({
+      url:baseURL+'/expect/insertExpect',
+      method:'POST',
+      data:{
+        movieId:that.data.id,
+        userId:that.data.userId,
+        userName:store.getItem("userNick"),
+        userAvatar:store.getItem("userAva"),
+        latitude:store.getItem("latitude"),
+        longitude:store.getItem("longitude")
+      },
+      success:res=>{
+        console.log("<<<"+res)
+        wx.showToast("收藏成功！")
+      }
+
+    })
   },
   deleteComment: function (e) {
     console.log(e);
@@ -191,7 +367,7 @@ Page({
             }
           })
         } else if (res.cancel) {
-          console.log('用户点击取消')
+          // console.log('用户点击取消')
         }
       }
     })
@@ -209,8 +385,8 @@ Page({
   getPageInfo(page, callback) {
     var that = this;
     //util.showLoading(); 有空再加
-    console.log("getPageInfo");
-    console.log("page" + page);
+    // console.log("getPageInfo");
+    // console.log("page" + page);
     var limited = 6;
     var offset = (page - 1) * 6;
     wx.request({
@@ -225,19 +401,49 @@ Page({
         "content-type": "application/x-www-form-urlencoded;charset=utf-8",
       },
       success: res => {
-        console.log("getPageTest")
-        console.log(res);
+        // console.log("getPageTest")
+        // console.log(res);
+        var isLike=store.getItem("isLike")
         if (page == 1) {
           that.data.list = res.data.content;
           that.setData({
             list: that.data.list
           })
+          for(var i=0;i<that.data.list.length;i++){
+            that.data.list[i].state='false'
+            that.setData({
+            [`list[${i}].state`]:'false'
+            })
+          }
+          for(var i=0;i<isLike.length;i++){
+            if(list.indexOf(isLike[i])>-1){
+            that.data.list[i].state='true'
+              that.setData({
+                [`list[${isLike[i]}].state`]:'true'
+                })
+            }
+          }
+          // console.log(that.data.list)
           mydata.end = 0;
         } else {
           // 当前页为其他页
           var list = that.data.list;
           if (res.data.length != 0) {
             list = that.addArr(list, res.data.content);
+          for(var i=0;i<that.data.list.length;i++){
+            that.data.list[i].state='false'
+            that.setData({
+            [`list[${i}].state`]:'false'
+            })
+          }
+          for(var i=0;i<isLike.length;i++){
+            if(list.indexOf(isLike[i])>-1){
+            that.data.list[i].state='true'
+              that.setData({
+                [`list[${isLike[i]}].state`]:'true'
+                })
+            }
+          }
             that.setData({
               list: list
             })
@@ -255,7 +461,7 @@ Page({
   submitForm(e) {
     var form = e.detail.value;
     var that = this;
-    console.log(store.getItem('userId'));
+    // console.log(store.getItem('userId'));
     if (form.comment == "") {
       util.showLog('请输入评论');
       return;
@@ -270,6 +476,7 @@ Page({
           content: form.comment,
           userId: store.getItem('userId'),
           userName: store.getItem('userNick'),
+          likes:0,
           //replyCommentId: mydata.commentId,
           //replyUserName: mydata.replyUserName,
           // createTime:util.formatTime(new Date()),
@@ -320,7 +527,7 @@ Page({
         //   //token: app.globalData.token
         // },
         success: res => {
-          console.log(res)
+          // console.log(res)
           if (res.data.success) {
             wx.showToast({
               title: "评论成功"

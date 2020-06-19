@@ -1,4 +1,5 @@
 <!--detail.wxml-->
+<import src="/template/getLoc/getLoc.wxml" />
 <scroll-view scroll-top="{{scrollTop}}" scroll-y="true" style="height:100%;" class="list" bindscrolltolower="bindDownLoad" bindscrolltoupper="refresh">
   <view class="container">
     <view class="goBack">
@@ -16,6 +17,10 @@
     <view class="movieInfoText">
       <text class="releaseTimeOfMovie">上映日期：{{movie.releaseTime}}</text>
     </view>
+    <view class='item-favor'style='width: 50rpx; height: 50rpx; display:flex; 'bindtap='goLoc'>
+                  <image src='../../assets/icon/fav.png' mode='widthFix' hidden="{{fav=='true'}}"></image>
+                  <image src='../../assets/icon/favy.png' mode='widthFix' hidden="{{fav=='false'}}"></image>
+    </view>
     <view class="recommend">
       <text class="recommendOfMovie">电影简介：\n{{movie.description}}</text>
     </view>
@@ -23,16 +28,21 @@
   <view class="pro-con">
     <block wx:for="{{list}}">
       <view class="pro-box">
-        <view class="head">
+        <view class="head" style="display:flex">
           <image class="img" src="{{item.userAvatar}}" mode="aspectFit"></image>
           <view class="box">
             <view class="shead clear">
               <view class="names fl">{{item.userName}}
                   <view wx:if="{{!item.replyUserName == \" \"}}">
                   -> {{item.replyUserName}}
-                </view>
+                  </view>
               </view>
             </view>
+          </view>
+          <view class='item-like'style='width: 80rpx; height: 80rpx; display:flex; ' bindtap='thumbsup' data-id='{{item}}'>
+                  <image src='../../assets/icon/like.png' mode='widthFix' hidden="{{item.state=='true'}}"></image>
+                  <image src='../../assets/icon/like1.png' mode='widthFix' hidden="{{item.state=='false'}}"></image>
+            {{item.likes}}
           </view>
         </view>
         <view class="addr-info">
@@ -67,3 +77,4 @@
     </view>
   </view>
 </form>
+<template is="apifmLoc" data="{{isclose:isclose}}" />

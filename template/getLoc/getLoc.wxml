@@ -1,0 +1,19 @@
+<template name="apifmLoc">
+  <view class="apifmLoc" hidden="{{isclose}}">
+    <view class="s-b">
+      <view class="s-l-b">
+        <text>授权位置</text>
+      </view>
+      <view class="s-t-b">
+        <view class="s-t-i">
+          <text>·</text>请授权小程序位置</view>
+        <view class="s-t-i">
+          <text>·</text>为了显示您附近想看这部电影的人</view>
+        <view class="s-t-i">
+          <text>·</text>只是为了给您提供更好的服务</view>
+      </view>
+      <button class="l" bindtap="favor"data-id='1' >允许</button>
+      <button class="c" bindtap="favor" data-id='2' type="default">暂不授权</button>
+    </view>
+  </view>
+</template>
