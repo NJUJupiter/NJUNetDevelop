@@ -37,6 +37,62 @@ public class CommentServiceImpl implements CommentService {
     }
 
     @Override
+    public List<CommentVO> queryCommentOrderByTime(int movieId) {
+        List<Comment>  commentList=commentDao.queryCommentOrderByTime(movieId);
+        List<CommentVO> commentVOS=new LinkedList<>();
+        for(Comment comment:commentList){
+            CommentVO commentVO=new CommentVO();
+            BeanUtils.copyProperties(comment,commentVO);
+            List<ReplyVO> replies=replyService.selectReplyByCommentId(comment.getId());
+            commentVO.setReplies(replies);
+            commentVOS.add(commentVO);
+        }
+        return commentVOS;
+    }
+
+    @Override
+    public List<CommentVO> queryCommentOrderByFavor(int movieId) {
+        List<Comment>  commentList=commentDao.queryCommentOrderByFavor(movieId);
+        List<CommentVO> commentVOS=new LinkedList<>();
+        for(Comment comment:commentList){
+            CommentVO commentVO=new CommentVO();
+            BeanUtils.copyProperties(comment,commentVO);
+            List<ReplyVO> replies=replyService.selectReplyByCommentId(comment.getId());
+            commentVO.setReplies(replies);
+            commentVOS.add(commentVO);
+        }
+        return commentVOS;
+    }
+
+    @Override
+    public List<CommentVO> queryCommentOrderByScoreAsc(int movieId) {
+        List<Comment>  commentList=commentDao.queryCommentOrderByScoreAsc(movieId);
+        List<CommentVO> commentVOS=new LinkedList<>();
+        for(Comment comment:commentList){
+            CommentVO commentVO=new CommentVO();
+            BeanUtils.copyProperties(comment,commentVO);
+            List<ReplyVO> replies=replyService.selectReplyByCommentId(comment.getId());
+            commentVO.setReplies(replies);
+            commentVOS.add(commentVO);
+        }
+        return commentVOS;
+    }
+
+    @Override
+    public List<CommentVO> queryCommentOrderByScoreDesc(int movieId) {
+        List<Comment> commentList=commentDao.queryCommentOrderByScoreDesc(movieId);
+        List<CommentVO> commentVOS=new LinkedList<>();
+        for(Comment comment:commentList){
+            CommentVO commentVO=new CommentVO();
+            BeanUtils.copyProperties(comment,commentVO);
+            List<ReplyVO> replies=replyService.selectReplyByCommentId(comment.getId());
+            commentVO.setReplies(replies);
+            commentVOS.add(commentVO);
+        }
+        return commentVOS;
+    }
+
+    @Override
     public List<CommentVO> queryCommentByuserId(int userId) {
         List<Comment>  commentList=commentDao.queryCommentByuserId(userId);
         List<CommentVO> commentVOS=new LinkedList<>();

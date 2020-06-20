@@ -44,4 +44,36 @@ public interface CommentDao {
      * @return
      */
     int updateCommentLike(@Param("id")Integer id, @Param("change")Integer change);
+
+    /**
+     * 评论的时间降序
+     * @param movieId
+     * @return
+     */
+    List<Comment> queryCommentOrderByTime(@Param("movieId") int movieId);
+
+
+    /**
+     * 评论的点赞降序
+     * @param movieId
+     * @return
+     */
+    List<Comment> queryCommentOrderByFavor(@Param("movieId") int movieId);
+
+
+    /**
+     * 评论的评分降序
+     * @param movieId
+     * @return
+     */
+    List<Comment> queryCommentOrderByScoreDesc(@Param("movieId") int movieId);
+
+
+    /**
+     * 评论的评分升序
+     * @param movieId
+     * @return
+     */
+    List<Comment> queryCommentOrderByScoreAsc(@Param("movieId") int movieId);
+
 }

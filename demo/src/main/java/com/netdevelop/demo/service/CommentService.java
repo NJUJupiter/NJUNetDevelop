@@ -14,6 +14,36 @@ public interface CommentService {
     List<CommentVO> queryCommentByMovieId(int movieId);
 
     /**
+     * 时间降序
+     * @param movieId
+     * @return
+     */
+    List<CommentVO> queryCommentOrderByTime(int movieId);
+
+    /**
+     * 点赞降序
+     * @param movieId
+     * @return
+     */
+    List<CommentVO> queryCommentOrderByFavor(int movieId);
+
+    /**
+     * 评分升序
+     * @param movieId
+     * @return
+     */
+    List<CommentVO> queryCommentOrderByScoreAsc(int movieId);
+
+    /**
+     * 评分降序
+     * @param movieId
+     * @return
+     */
+    List<CommentVO> queryCommentOrderByScoreDesc(int movieId);
+
+
+
+    /**
      * 根据用户id返回该用户所有的评论
      * @param userId
      * @return

@@ -11,13 +11,6 @@ import java.util.List;
 public interface RecordDao {
 
     /**
-     * 根据UserId去查询该用户所浏览的所有电影
-     * @param userId
-     * @return
-     */
-    List<Integer> queryMovieIdByUserId(@Param("userId") int userId);
-
-    /**
      * 根据UserId去查询该用户所浏览记录
      * @param userId
      * @return

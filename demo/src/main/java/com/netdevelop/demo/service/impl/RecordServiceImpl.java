@@ -1,6 +1,7 @@
 package com.netdevelop.demo.service.impl;
 
 import com.netdevelop.demo.dao.RecordDao;
+import com.netdevelop.demo.po.Movie;
 import com.netdevelop.demo.po.Record;
 import com.netdevelop.demo.service.MovieService;
 import com.netdevelop.demo.service.RecordService;
@@ -62,6 +63,15 @@ public class RecordServiceImpl implements RecordService {
         }else{
             throw new RuntimeException("浏览者Id和电影不能为空！");
         }
+    }
+
+    @Override
+    public List<MovieVO> getRecordMovieByUid(int userId) {
+        List<Record> recordList=recordDao.queryRecordByUserId(userId);
+        List<MovieVO> movieVOList=recordList.stream().map(r->{
+            return movieService.queryMovieById(r.getMovieId());
+        }).collect(Collectors.toList());
+        return movieVOList;
     }
 
 

@@ -20,7 +20,6 @@ public class HttpUtil {
         StringBuilder sb = new StringBuilder(urlPath);
         if (params != null && !params.isEmpty()) { // 说明有参数
             sb.append("?");
-
             Set<Entry<String, Object>> set = params.entrySet();
             for (Entry<String, Object> entry : set) { // 遍历map里面的参数
                 String key = entry.getKey();

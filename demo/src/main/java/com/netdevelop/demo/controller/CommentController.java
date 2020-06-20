@@ -25,6 +25,50 @@ public class CommentController {
         return ResponseVO.buildSuccess(commentService.queryCommentByMovieId(movieId));
     }
 
+    /**
+     * 时间倒序
+     * @param movieId
+     * @return
+     */
+    @GetMapping("/getCommentsByMidTD")
+    public ResponseVO getCommentsByMidTD(@RequestParam Integer movieId){
+        return ResponseVO.buildSuccess(commentService.queryCommentOrderByTime(movieId));
+    }
+
+
+    /**
+     * 评分倒序
+     * @param movieId
+     * @return
+     */
+    @GetMapping("/getCommentsByMidSD")
+    public ResponseVO getCommentsByMidSD(@RequestParam Integer movieId){
+        return ResponseVO.buildSuccess(commentService.queryCommentOrderByScoreDesc(movieId));
+    }
+
+
+    /**
+     * 评分正序
+     * @param movieId
+     * @return
+     */
+    @GetMapping("/getCommentsByMidSA")
+    public ResponseVO getCommentsByMidSA(@RequestParam Integer movieId){
+        return ResponseVO.buildSuccess(commentService.queryCommentOrderByScoreAsc(movieId));
+    }
+
+
+    /**
+     * 点赞倒序
+     * @param movieId
+     * @return
+     */
+    @GetMapping("/getCommentsByMidFD")
+    public ResponseVO getCommentsByMidFD(@RequestParam Integer movieId){
+        return ResponseVO.buildSuccess(commentService.queryCommentOrderByFavor(movieId));
+    }
+
+
     @PostMapping("/addComment")
     public ResponseVO addComment(@RequestBody CommentVO comment){
 
