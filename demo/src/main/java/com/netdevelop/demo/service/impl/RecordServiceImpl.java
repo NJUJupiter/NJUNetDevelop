@@ -42,10 +42,9 @@ public class RecordServiceImpl implements RecordService {
     public int insertRecord(RecordVO recordVO) {
         if(recordVO.getUserId()>0&&recordVO.getMovieId()>0){
             try {
-                int exist=recordDao.existMovieId(recordVO.getUserId(),recordVO.getMovieId());
-                if(exist>0){
-                    recordDao.updateRecord(recordVO.getUserId(),recordVO.getMovieId(),recordVO.getWatchTime());
-                    return exist;
+                Record exist=recordDao.existMovieId(recordVO.getUserId(),recordVO.getMovieId());
+                if(exist!=null){
+                    return recordDao.updateRecord(recordVO.getUserId(),recordVO.getMovieId(),recordVO.getWatchTime());
                 }else{
                     Record record=new Record();
                     BeanUtils.copyProperties(recordVO,record);

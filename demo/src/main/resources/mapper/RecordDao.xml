@@ -23,8 +23,8 @@
         values (#{userId},#{movieId},#{watchTime})
     </insert>
 
-    <select id="existMovieId" resultType="int">
-        select movie_id
+    <select id="existMovieId" resultType="com.netdevelop.demo.po.Record">
+        select *
         from record
         where user_id=#{userId} and movie_id=#{movieId}
     </select>

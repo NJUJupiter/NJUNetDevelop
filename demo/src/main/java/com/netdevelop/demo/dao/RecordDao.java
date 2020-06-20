@@ -35,7 +35,7 @@ public interface RecordDao {
     /**
      * 判断是否看过该电影
      */
-    int existMovieId(@Param("userId") int userId,@Param("movieId") int movieId);
+    Record existMovieId(@Param("userId") int userId,@Param("movieId") int movieId);
 
     /**
      * 已经浏览过则更新时间
