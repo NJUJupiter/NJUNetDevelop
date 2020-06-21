@@ -25,49 +25,6 @@ public class CommentController {
         return ResponseVO.buildSuccess(commentService.queryCommentByMovieId(movieId));
     }
 
-    /**
-     * 时间倒序
-     * @param movieId
-     * @return
-     */
-    @GetMapping("/getCommentsByMidTD")
-    public ResponseVO getCommentsByMidTD(@RequestParam Integer movieId){
-        return ResponseVO.buildSuccess(commentService.queryCommentOrderByTime(movieId));
-    }
-
-
-    /**
-     * 评分倒序
-     * @param movieId
-     * @return
-     */
-    @GetMapping("/getCommentsByMidSD")
-    public ResponseVO getCommentsByMidSD(@RequestParam Integer movieId){
-        return ResponseVO.buildSuccess(commentService.queryCommentOrderByScoreDesc(movieId));
-    }
-
-
-    /**
-     * 评分正序
-     * @param movieId
-     * @return
-     */
-    @GetMapping("/getCommentsByMidSA")
-    public ResponseVO getCommentsByMidSA(@RequestParam Integer movieId){
-        return ResponseVO.buildSuccess(commentService.queryCommentOrderByScoreAsc(movieId));
-    }
-
-
-    /**
-     * 点赞倒序
-     * @param movieId
-     * @return
-     */
-    @GetMapping("/getCommentsByMidFD")
-    public ResponseVO getCommentsByMidFD(@RequestParam Integer movieId){
-        return ResponseVO.buildSuccess(commentService.queryCommentOrderByFavor(movieId));
-    }
-
 
     @PostMapping("/addComment")
     public ResponseVO addComment(@RequestBody CommentVO comment){
@@ -92,6 +49,7 @@ public class CommentController {
     }
 
     /**
+     * type 1,2,3,4 分别代表时间倒序，点赞倒序，评分倒序，评分正序
      * 当offset大于评论总长时返回null
      * @param movieId
      * @param limited
@@ -99,8 +57,8 @@ public class CommentController {
      * @return
      */
     @GetMapping("/getLimitedComments")
-    public ResponseVO getLimitedComments(@RequestParam Integer movieId, @RequestParam Integer limited, @RequestParam Integer offset){
-        return ResponseVO.buildSuccess(commentService.getLimitedComment(movieId,limited,offset));
+    public ResponseVO getLimitedComments(@RequestParam Integer movieId, @RequestParam Integer limited, @RequestParam Integer offset, @RequestParam Integer type){
+        return ResponseVO.buildSuccess(commentService.getLimitedComment(movieId,limited,offset,type));
     }
 
     @PostMapping("/insertReply")
