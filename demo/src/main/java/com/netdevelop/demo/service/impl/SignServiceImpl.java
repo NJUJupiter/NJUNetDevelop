@@ -18,9 +18,9 @@ public class SignServiceImpl implements SignService {
 
     @Override
     public ResponseVO insertSign(SignVO signVO) {
-        Integer year=signVO.getDate().getYear();
-        Integer month=signVO.getDate().getMonthValue();
-        Integer day=signVO.getDate().getDayOfMonth();
+        Integer year=Integer.parseInt(signVO.getDate().substring(0,4));
+        Integer month=Integer.parseInt(signVO.getDate().substring(5,7));
+        Integer day=Integer.parseInt(signVO.getDate().substring(7));
         Sign sign=signDao.querySign(signVO.getUserId(),year,month,day);
         if(null==sign){
             Sign curSign=new Sign();

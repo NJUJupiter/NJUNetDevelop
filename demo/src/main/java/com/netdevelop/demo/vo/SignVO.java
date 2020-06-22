@@ -17,7 +17,7 @@ public class SignVO {
     /**
      * 进行签到的时间
      */
-    private LocalDateTime date;
+    private String date;
 
 
     public Integer getId() {
@@ -36,11 +36,11 @@ public class SignVO {
         this.userId = userId;
     }
 
-    public LocalDateTime getDate() {
+    public String getDate() {
         return date;
     }
 
-    public void setDate(LocalDateTime date) {
+    public void setDate(String date) {
         this.date = date;
     }
 }
