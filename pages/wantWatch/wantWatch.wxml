@@ -1,0 +1,13 @@
+ <view class="page">
+  <block wx:if="{{showLoading}}">
+      <view class="page-loading">
+        <image class="loading-img" src="../../images/loading.gif" />
+        <text>玩命加载中...</text>
+      </view>
+    </block>
+  <block wx:else>
+    <import src="/template/block/block"/>
+        <view><template is="template-block" data="{{list}}"/></view> 
+  </block>    
+ </view>
+ 

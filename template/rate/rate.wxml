@@ -1,0 +1,14 @@
+<!--template/rate/rate.wxml-->
+<template name="template-rate-stars">
+  <view class='rate-stars'>
+    <!--数组长度为5，共5次循环显示5颗星星-->
+    <block wx:for="{{[1,2,3,4,5]}}">
+      <!--全黄星星-->
+      <image wx:if="{{score/2>=index+1}}" src='/images/rate/star_fill_whole.png' />
+      <!--半黄半灰星星-->
+      <image wx:elif="{{score/2>=index && stars%2!=0}}" src='/images/rate/star_fill_half.png' />
+      <!--全灰星星-->
+      <image wx:else src='/images/rate/star_fill_none.png' />
+    </block>
+  </view>
+</template>

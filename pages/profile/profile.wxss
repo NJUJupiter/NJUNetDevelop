@@ -28,6 +28,11 @@ page,view,image,input {
   margin-bottom: 20rpx;
   font-size: 14px;
 }
+
+.userinfo-btn{
+  margin-bottom: 20rpx;
+  font-size: 14px;
+}
 .asset {
   display: flex;
   border-top: 1px solid #eee;

@@ -1,0 +1,61 @@
+<!--pages/map/map.wxml-->
+<import src="/template/listModal/listModal.wxml"/>
+    <map
+      id="myMap"
+      style="width: 100%; height: 100%;"
+      latitude="{{latitude}}"
+      longitude="{{longitude}}"
+      markers="{{markers}}"
+      covers="{{covers}}"
+      bindmarkertap='showModal' data-id="{{markers}}"
+      enable-zoom
+      enable-scroll
+      show-location
+      show-compass
+      show-scale
+    >
+    <!--屏幕背景变暗的背景  -->
+    <cover-view class="commodity_screen" bindtap="hideModal" wx:if="{{showModalStatus}}"></cover-view>
+    <!--弹出框  -->
+    <cover-view animation="{{animationData}}" class="commodity_attr_box" wx:if="{{showModalStatus}}">
+ 
+      <cover-view class='placeBox'>
+        <cover-view class='placeViewLt'>
+          <cover-view class='viewTitle'>
+            <cover-image class='viewAvatar' src='{{userInfo.userAvatar}}'></cover-image>
+             {{userInfo.userName}}
+            </cover-view>
+          <cover-view class='viewDis'>ta也喜欢这部电影</cover-view>
+        </cover-view>
+        <cover-view class='placeViewRt'>
+          <cover-image src='/images/home.png'></cover-image>
+        </cover-view>
+      </cover-view>
+ 
+      <cover-view class='viewIcon' bindtap="hideModal">
+      <cover-image class='indexIcon' src='/images/shut.png'></cover-image>
+      </cover-view>
+ 
+    </cover-view>
+
+    <!-- 想看列表 -->
+    <cover-view class='index_bt1'>
+      <cover-image class='xiaoer' bindtap="powerDrawer" data-statu="open" src="/images/list.png"  />
+      <!--mask-->
+      <view class="drawer_screen" bindtap="powerDrawer" data-statu="close" wx:if="{{showListStatus}}"></view>
+      <!--content-->
+      <!--使用animation属性指定需要执行的动画-->
+      <view animation="{{animationData}}" class="drawer_box" wx:if="{{showListStatus}}">
+        <!--drawer content-->
+        <view class="drawer_title">ta们也想看</view>
+        <view class="drawer_content">
+          <template is="template-list" data="{{userList}}"></template>
+        </view>
+      <view class="btn_ok" bindtap="powerDrawer" data-statu="close">确定</view>
+      </view>
+    </cover-view>
+ 
+
+</map>
+
+

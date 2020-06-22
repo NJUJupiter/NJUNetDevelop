@@ -1,0 +1,18 @@
+<!--template/poster/poster.wxml-->
+<import src="/template/rate/rate.wxml" />
+<!--封装成名称为template-poster的模板-->
+<template name="template-poster">
+<view class='movie' catchtap='catchTapMovie' data-movieid='{{id}}'>
+  <!--海报图-->
+  <image class="poster" src='{{imgUrl}}'></image>
+  <!--电影名称-->
+  <text class='movie-name'>{{movieName}}</text>
+  <!--评分星星和数字-->
+  <view class='ratingbar'>
+    <!--评分条-->
+    <template is="template-rate-stars" data="{{score}}" />
+    <!--评分分数-->
+    <text class='ratingbar-score'>{{score}}</text>
+  </view>
+</view>
+</template>

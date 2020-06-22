@@ -4,7 +4,15 @@
     "pages/profile/profile",
     "pages/detail/detail",
     "pages/comments/comments",
-    "pages/history/history"
+    "pages/history/history",
+    "pages/search/search",
+    "pages/wantWatch/wantWatch",
+    "pages/more/more",
+    "template/block/block",
+    "pages/map/map",
+    "pages/personal/personal",
+    "template/listModal/listModal",
+    "pages/sign/sign"
   ],
   "window": {
     "backgroundTextStyle": "dark",
@@ -26,6 +34,12 @@
         "text": "首页"
       },
       {
+        "pagePath": "pages/wantWatch/wantWatch",
+        "iconPath": "assets/nav/movie-off.png",
+        "selectedIconPath": "assets/nav/movie-on.png",
+        "text": "想看"
+      },
+      {
         "pagePath": "pages/profile/profile",
         "iconPath": "assets/nav/my-off.png",
         "selectedIconPath": "assets/nav/my-on.png",
@@ -33,9 +47,15 @@
       }
     ]
   },
+  "plugins": {
+    "chooseLocation": {
+      "version": "1.0.0",
+      "provider": "wx76a9a06e5b4e693e"
+    }
+  },
   "permission": {
     "scope.userLocation": {
-      "desc": "?????????????????????" 
+      "desc": "��ȡ���ĵ���λ��չʾ������Ҳ�뿴��Ӱ����" 
     }
   },
 

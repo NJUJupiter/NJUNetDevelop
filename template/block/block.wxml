@@ -1,0 +1,53 @@
+<!--template/block/block.wxml-->
+<!--导入电影海报模板-->
+<import src="../poster/poster.wxml" />
+
+<!--封装成区块模板-->
+<template name="template-block">
+  <view>
+    <scroll-view style="height:1100px;" scroll-y="{{true}}" scroll-top="0" 
+    bindscrolltolower="handleScrollToLower">
+      <block wx:for="{{list}}" wx:key="{{index}}">
+        <view class="list" catchtap="handleRedirect" data-movieid='{{item.id}}'>
+          <view class="left">
+            <image src="{{item.imgUrl}}" />
+          </view>
+          <view class="middle">
+            <view class="row row-title">
+              {{item.movieName}}
+            </view>
+            <view class="row row-content">
+              评分：{{item.score}}
+            </view>
+            <view class="row row-content">
+              导演：<view wx:for="{{item.director}}" wx:for-item="director" wx:key="{{index}}">
+                {{director}}
+              </view>
+            </view>
+            <view class="row row-content">
+              主演：{{item.actors}}
+            </view>  
+            <view class="row row-content">
+              简介：{{item.description}}
+            </view>  
+          </view>
+          <view class="right right-content">
+            <text>{{item.likes}}人喜欢</text>
+          </view>
+        </view>
+      </block>
+      
+      <block wx:if="{{showMore}}">
+        <view class="page-loading">
+            <image class="loading-img" src="../../images/loading.gif" />
+            <text>玩命加载中...</text>
+          </view>
+      </block>
+      <block wx:else>
+        <view class="page-loading">
+           <text>没有更多内容了</text> 
+        </view>
+      </block>
+    </scroll-view>
+  </view>
+</template>

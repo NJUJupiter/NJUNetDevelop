@@ -1,4 +1,5 @@
 /**detail.wxss**/
+@import "/template/rate/rate.wxss";
 @import "/template/getLoc/getLoc.wxss";
 .container {
   height: 100%;
@@ -9,7 +10,10 @@
   padding: 100rpx 50rpx 0 50rpx;
   box-sizing: border-box;
 }
-
+.mapImg{
+  height: 50rpx;
+  width: 50rpx;
+}
 .item-like{
   padding-right: 20rpx;
 }
@@ -109,17 +113,69 @@
   margin: 0 3px;
   padding: 0;
 }
-
 .pro-box .info .text .delete {
-  color: #f68135;
-  border-radius: 50rpx;
-  border: 1px solid #f68135;
-  font-size: 30 rpx;
   height: 50rpx;
-  line-height: 50rpx;
+  background:  #f8f8f8;
+  border-radius: 50rpx;
+  border: 1px solid #06526d;
+  color: #000;
   text-align: center;
+  line-height: 46rpx;
+  font-size: 30rpx;
+  margin-right: 0;
 }
 
 .movieInfoText {
   text-align: center;
+}
+.release .gradeMovie{
+  padding:10rpx 0 15rpx 100rpx;
+  box-sizing: border-box;
+  position: relative;
+}
+.release .gradeMovie>view:last-of-type{
+  height: 40rpx;
+  margin-top:0rpx;
+}
+.release .gradeMovie>view:last-of-type view{
+  float: left;
+  width: 42rpx;
+  height: 42rpx;
+  margin-right: 25rpx;
+  background-size: 100% 100%;
+}
+.ratingbar {
+  margin-left: 200rpx;
+  display: flex;
+  flex-direction: row;
+}
+.rate-stars image {
+  height: 24rpx;
+  width: 24rpx;
+  padding-top: 5rpx;
+  padding-right: 4rpx;
+}
+.unfold{
+  color: #606060;
+  font-size: 10 rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  text-align: center;
+  border-radius: 50rpx;
+  background: #ffffff;
+  border: 0px solid #ffffff;
+}
+.fold{
+  color: #606060;
+  font-size: 10 rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  text-align: center;
+  border-radius: 50rpx;
+  background: #ffffff;
+  border: 0px solid #ffffff;
+}
+.picker{
+  padding: 13px;
+  background-color: #FFFFFF;
 }
