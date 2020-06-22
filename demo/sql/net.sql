@@ -129,6 +129,13 @@ CREATE TABLE `User` (
 
 BEGIN;
 /*!40000 ALTER TABLE `User` DISABLE KEYS */;
+INSERT INTO `User` VALUES(3,'我i67QAQ','https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png','wdnmd','zbc');
+INSERT INTO `User` VALUES(5,'代码敲不对','https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png','wdnmd','zbc');
+INSERT INTO `User` VALUES(3,'我i67QAQ','https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png','wdnmd','zbc');
+INSERT INTO `User` VALUES(8,'我靠，家暴吗','https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png','wdnmd','zbc');
+INSERT INTO `User` VALUES(9,'拒绝秃头','https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png','wdnmd','zbc');
+INSERT INTO `User` VALUES(10,'起飞','https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png','wdnmd','zbc');
+INSERT INTO `User` VALUES(11,'皮革厂 ','https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png','wdnmd','zbc');
 /*!40000 ALTER TABLE `User` ENABLE KEYS */;
 COMMIT;
 
@@ -154,11 +161,19 @@ CREATE TABLE `Expect` (
 
 
 --
--- Dumping data for table `User`
+-- Dumping data for table `Expect`
 --
 
 BEGIN;
 /*!40000 ALTER TABLE `Expect` DISABLE KEYS */;
+INSERT INTO `Expect` VALUES(1,2,3,'我i67QAQ','https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',105.739203,34.571483);
+INSERT INTO `Expect` VALUES(2,2,4,'RTW是个狠人','https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png',105.727315,34.585687);
+INSERT INTO `Expect` VALUES(3,2,5,'代码敲不对','https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',118.959447,32.119986);
+INSERT INTO `Expect` VALUES(4,3,3,'我i67QAQ','https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',105.739203,34.571483);
+INSERT INTO `Expect` VALUES(5,3,8,'我靠，家暴吗','https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',120.879295,32.030403);
+INSERT INTO `Expect` VALUES(6,1,9,'拒绝秃头','https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',120.696819,27.982336);
+INSERT INTO `Expect` VALUES(7,1,10,'起飞','https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',120.629023,31.321991);
+INSERT INTO `Expect` VALUES(8,1,11,'皮革厂 ','https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',115.850137,28.693477);
 /*!40000 ALTER TABLE `Expect` ENABLE KEYS */;
 COMMIT;
 
@@ -278,6 +293,10 @@ CREATE TABLE `Sign` (
 
 BEGIN;
 /*!40000 ALTER TABLE `Sign` DISABLE KEYS */;
+INSERT INTO `Sign` VALUES(1,3,2020,6,18);
+INSERT INTO `Sign` VALUES(2,3,2020,6,19);
+INSERT INTO `Sign` VALUES(3,3,2020,6,20);
+INSERT INTO `Sign` VALUES(4,3,2020,6,21);
 /*!40000 ALTER TABLE `Sign` ENABLE KEYS */;
 COMMIT;
 
