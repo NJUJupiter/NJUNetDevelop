@@ -82,11 +82,12 @@
   align-items: center;
 }
 .page-section-title-more-text{
-  color: #FFA4D3;
-  font-size: 24rpx;
+  color: #FF8888;
+  font-size: 30rpx;
 }
 .page-section-title-more-icon{
-  width: 12rpx;
-  height: 20rpx;
+  width: 20rpx;
+  height: 32rpx;
   padding-left: 6rpx; 
+  padding-top: 10rpx;
 }
