@@ -1,147 +1,184 @@
+
+let store=require("../../utils/store")
+
 Page({
- 
-  /**
-   * 页面的初始数据
-   */
   data: {
-    imgs: [],
-    placeholder: '请选择',
-    array: ['发电机', '充电器', '引擎动力', '其他'],
-    objectArray: [
-      {
-        id: 0,
-        name: '发电机'
-      },
-      {
-        id: 1,
-        name: '充电器'
-      },
-      {
-        id: 2,
-        name: '引擎动力'
-      },
-      {
-        id: 3,
-        name: '其他'
-      }
-    ],
- 
-    multiIndex: [0, 0, 0],
-    date: '2016-09-01',
-    time: '12:01',
-    region: ['广东省', '广州市', '海珠区'],
-    customItem: '全部'
+    userId:"",
+    userName:"",
+    userImg:"",
+    toView: 'green',
+    listXK:[],
+    listJL:[],
+    numXK:"",
+    numJL:"",
   },
-  // 上传图片
-  chooseImg: function (e) {
-    var that = this;
-    var imgs = this.data.imgs;
-    if (imgs.length >= 9) {
-      this.setData({
-        lenMore: 1
-      });
-      setTimeout(function () {
-        that.setData({
-          lenMore: 0
-        });
-      }, 2500);
-      return false;
-    }
-    wx.chooseImage({
-      // count: 1, // 默认9
-      sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
-      sourceType: ['album', 'camera'], // 可以指定来源是相册还是相机，默认二者都有
-      success: function (res) {
-        // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
-        var tempFilePaths = res.tempFilePaths;
-        var imgs = that.data.imgs;
-        // console.log(tempFilePaths + '----');
-        for (var i = 0; i < tempFilePaths.length; i++) {
-          if (imgs.length >= 9) {
-            that.setData({
-              imgs: imgs
-            });
-            return false;
-          } else {
-            imgs.push(tempFilePaths[i]);
-          }
+
+  onLoad:function(options){
+    var that=this
+    that.setData({
+      userId: options.id
+    })
+    //加载user信息
+    wx.request({
+      url: 'http://localhost:8080/demo/user/getUser',
+      method:"GET",
+      data:{
+        userId:this.data.userId
+      },
+      header: {
+        "content-type": "application/x-www-form-urlencoded;charset=utf-8",
+        //token: app.globalData.token
+      },
+      success: res => {
+        console.log(res.data.content)
+        if (res.data.success) {
+          this.setData({
+            userName:res.data.content.userName,
+            userImg:res.data.content.userImg
+          })
+          console.log(this.data)
+          wx.setNavigationBarTitle({
+            title: this.data.userName + " 的主页",
+          })
+        } else {
+          wx.showToast({
+            title: '加载出错',
+          })
         }
-        // console.log(imgs);
-        that.setData({
-          imgs: imgs
-        });
       }
-    });
+    })
+    
+    // 获取电影
+    wx.request({
+      url: 'http://localhost:8080/demo/expect/getExpectMovieByUserId',
+      method: "GET",
+      data:{
+        userId:this.data.userId
+      },
+      header: {
+        "content-type": "application/x-www-form-urlencoded;charset=utf-8",
+        //token: app.globalData.token
+      },
+      success: res => {
+        console.log(res)
+        if (res.data.success) {
+          this.setData({
+            listXK:res.data.content,
+            numXK:res.data.content.length
+          })
+        } else {
+          wx.showToast({
+            title: '加载出错',
+          })
+        }
+      }
+    })
+    // wx.request({
+    //   url: 'http://localhost:8080/demo/record/getRecordByUid',
+    //   method: "GET",
+    //   data:{
+    //     userId:this.data.userId
+    //   },
+    //   header: {
+    //     "content-type": "application/x-www-form-urlencoded;charset=utf-8",
+    //     //token: app.globalData.token
+    //   },
+    //   success: res => {
+    //     console.log(res)
+    //     if (res.data.success) {
+    //       var temp=[];
+    //       for (var i=0;i<data.content.length;i++){//data.content可能不对
+    //         temp.push(data.content[i].movie)
+    //       }
+    //       this.setData({
+    //         listJL:temp,
+    //         numJL:temp.length
+    //       })
+    //       console.log(this.data.listRM)
+    //     } else {
+    //       wx.showToast({
+    //         title: '加载出错',
+    //       })
+    //     }
+    //   }
+    // })
+    
   },
-  // 删除图片
-  deleteImg: function (e) {
-    var imgs = this.data.imgs;
-    var index = e.currentTarget.dataset.index;
-    imgs.splice(index, 1);
-    this.setData({
-      imgs: imgs
-    });
+  onLaunch: function () {
   },
-  // 预览图片
-  previewImg: function (e) {
-    //获取当前图片的下标
-    var index = e.currentTarget.dataset.index;
-    //所有图片
-    var imgs = this.data.imgs;
-    wx.previewImage({
-      //当前显示图片
-      current: imgs[index],
-      //所有图片
-      urls: imgs
+  onShareAppMessage() {
+    return {
+      title: 'scroll-view',
+      path: 'pages/index/index'
+    }
+  },
+
+
+  bindViewTap: function (e) {
+    wx.navigateTo({
+      url: '../detail/detail',
+      success: function (res) {
+        console.log(store.getItem("userId"))
+        res.eventChannel.emit('acceptDataFromOpenerPage', { id: e.currentTarget.dataset.id })
+      }
     })
   },
- 
+
   /**
-   * 生命周期函数--监听页面初次渲染完成
+   * 点击“更多”按钮，携带类别信息到“更多”页面
    */
-  onReady: function () {
- 
+  catchMore: function (event) {
+    //获得区块的标题
+    var title = event.currentTarget.dataset.title
+    console.log(title)
+    //跳转到“更多页”，将区块标题通过category携带过去
+    wx.navigateTo({
+      url: '../more/more?category=' + title
+    })
   },
- 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
- 
+  catchTapMovie(event) {
+    var id = event.currentTarget.dataset.movieid;
+    wx.navigateTo({
+      url: '../detail/detail?movieId=' + id
+    })
   },
- 
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
- 
+  upper(e) {
+    console.log(e)
   },
- 
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
- 
+
+  lower(e) {
+    console.log(e)
   },
- 
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
- 
+
+  scroll(e) {
+    console.log(e)
   },
- 
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
- 
+
+  scrollToTop() {
+    this.setAction({
+      scrollTop: 0
+    })
   },
- 
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
- 
+  search: function () {
+    wx.navigateTo({
+      url: '/pages/search/search'
+    })
+  },
+  tap() {
+    for (let i = 0; i < order.length; ++i) {
+      if (order[i] === this.data.toView) {
+        this.setData({
+          toView: order[i + 1],
+          scrollTop: (i + 1) * 200
+        })
+        break
+      }
+    }
+  },
+
+  tapMove() {
+    this.setData({
+      scrollTop: this.data.scrollTop + 10
+    })
   }
 })

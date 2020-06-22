@@ -1,1 +1,71 @@
 /* pages/personal/personal.wxss */
+@import "/template/poster/poster.wxss";
+page,view,image,input {
+  display: block;
+  box-sizing: border-box;
+}
+.personal {
+  height: 100%;
+  overflow: hidden;
+  overflow-y: hidden;
+  /* background: #f8f8f8; */
+}
+.userinfo {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+  width: 750rpx;
+  height: 350rpx;
+  background-image: url("https://pic2.zhimg.com/v2-ad84ce766dc485a7fddae160b107787a_r.jpg");
+  background-repeat:no-repeat; background-size:100% 100%;-moz-background-size:100% 100%;
+}
+.userinfo-avatar {
+  margin-top: 50rpx;
+	width: 160rpx;
+	height: 160rpx;
+  border: 1rpx solid #eee;
+  border-radius: 50%;
+}
+.scroll-view_H{
+  white-space: nowrap;
+}
+.scroll-view-item_H{
+  margin-top:5rpx;
+  margin-left:5rpx;
+  margin-right:5rpx;
+  display: inline-block;
+  width: 138rpx;
+  height: 198rpx;
+  background:rgb(166, 226, 253);
+}
+.block-movie-row{
+  display: flex;
+  flex-direction: row;
+  padding: 20rpx 0 20rpx 20rpx;
+  background-color: white;
+}
+.block-movie-card {
+  display: flex;
+  flex-direction: row;
+  margin-right: 10rpx;
+}
+.page-section-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 30rpx 20rpx 0rpx 20rpx;
+}
+.page-section-title-more{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.page-section-title-more-text{
+  color: #333333;
+  font-size: 24rpx;
+}
+.page-section-title-more-icon{
+  width: 12rpx;
+  height: 20rpx;
+  padding-left: 6rpx; 
+}

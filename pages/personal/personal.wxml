@@ -1,18 +1,47 @@
-<view class="numberInfo">
- ** 信息录入</view>
+<!--profile.wxml-->
+<import src="/template/poster/poster.wxml" />
+<view class="personal">
+	<view class="userinfo">
+		<image class="userinfo-avatar" src="{{userImg}}"></image>
+		<text class="userinfo-nickname">{{ nick }}</text>
+	</view>
+  
+  <view class="space"></view>
+  <view class="page-section">
+      <view class="page-section-title">
+           <text>想看电影</text>
+      </view>
+      <view class="page-section-spacing">
+      <scroll-view class="scroll-view_H" scroll-x="true" bindscroll="scroll" style="width: 100%">
+       <view class='block-movie-row'>
+        <block wx:for="{{listXK}}" wx:for-item="poster" wx:key="id">
+          <!--单个电影海报-->
+          <view class='block-movie-card' bindtap="bindViewTap" data-id='{{poster.id}}'>
+            <template is="template-poster" data="{{...poster}}" />
+          </view>
+        </block>
+      </view>
+     </scroll-view>
+     </view>
+   </view>
+  <view class="line"></view>
+  <!-- <view class="page-section">
+      <view class="page-section-title">
+           <text>看过{{data.numJL}}</text>
+      </view>
+      <view class="page-section-spacing">
+      <scroll-view class="scroll-view_H" scroll-x="true" bindscroll="scroll" style="width: 100%">
+       <view class='block-movie-row'>
+        <block wx:for="{{listJL}}" wx:for-item="poster" wx:key="id">
+          <view class='block-movie-card' bindtap="bindViewTap" data-id='{{poster.id}}'>
+            <template is="template-poster" data="{{...poster}}" />
+          </view>
+        </block>
+      </view>
+     </scroll-view>
+     </view>
+   </view> -->
+  <view class="line"></view>
 
-<view class="weui-uploader">
-  <view class="img-v weui-uploader__bd">
-    <view class='pic' wx:for="{{imgs}}" wx:for-item="item" wx:key="*this">
-        <image class='weui-uploader__img '
-                src="{{item}}"
-                data-index="{{index}}" mode="aspectFill" bindtap="previewImg">
-                  <icon type='cancel' class="delete-btn" data-index="{{index}}" catchtap="deleteImg"></icon>
-        </image>
-    </view>
-     
-      <!-- 用来提示用户上传图片 -->
-      <view class="weui-uploader__input-box pic" bindtap="chooseImg"> </view>
-  </view>
-  <button class="upload-img-btn" bindtap="chooseImg" type='primary'>拍照  / 上传</button>
 </view>
+<template is="apifmLogin" data="{{isclose:isclose,userId:userId}}" />

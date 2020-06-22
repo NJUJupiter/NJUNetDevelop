@@ -1,13 +1,15 @@
 <!--profile.wxml-->
 <import src="/template/login/index.wxml" />
 <view class="profile">
+  <view wx:if="{{userId!=''}}" class="sign" catchtap="toSign" data-id="userId">
+      <image class="signImg" src="/images/sign.png"></image>
+  </view>
 	<view wx:if="{{userId!=''}}" class="userinfo">
+    
 		<image wx:if="{{userId!=''}}" class="userinfo-avatar" src="{{ ava}}" background-size="cover"></image>
 		<text class="userinfo-nickname">{{ nick }}</text>
-    <navigator url="/pages/personal/personal">
     <!-- 应该设置id -->
-    <button class="userinfo-btn" type="default" size="mini">个人主页</button>
-    </navigator>
+    <button class="userinfo-btn" type="default" size="mini" catchtap="toPersonal" data-id="{{userId}}">个人主页</button>
 	</view>
   <view wx:else class="userinfo" style="margin-bottom:50rpx;">
 		<image class="userinfo-avatar" src="/assets/nologin.png" background-size="cover"></image>

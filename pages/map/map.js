@@ -10,33 +10,13 @@ Page({
     userList:[],
     userInfo:{},
     time:"",
-    markers: [
-    //   {
-    //   id: 1,
-    //   latitude: 34.58544,
-    //   longitude: 105.72723,
-    //   name: 'T.I.T 创意园',
-    //   iconPath: '/images/location.png'
-    // },
-    // {
-    //   id: 2,
-    //   latitude: 34.571695,
-    //   longitude: 105.72723,
-    //   name: 'T.I.T 创意园',
-    //   iconPath: '/images/location.png'
-    // },
-  ],
+    markers: [],
   },
   
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var TIME = util.formatDate(new Date());
-    this.setData({
-      time: TIME,
-    });
-    console.log(TIME)
     var that = this;  
     var id =options.id
     console.log("AA "+id)
@@ -75,7 +55,6 @@ Page({
         //token: app.globalData.token
       },
       success: res => {
-        console.log(res)
         if (res.data.success) {
           that.setData({
             markers:res.data.content
@@ -88,8 +67,15 @@ Page({
         }
       }
     })
+    
   },
-
+  toPersonal:function(event) {
+    var id = event.currentTarget.dataset.id;
+    console.log(id)
+    wx.navigateTo({
+      url: '../personal/personal?id=' + id
+    })
+  },
   showModal:function(event){
     var id =event.markerId;
     var that=this;
@@ -123,7 +109,7 @@ Page({
     }.bind(this), 200)
   },
 //隐藏对话框
-hideModal: function() {
+ hideModal: function() {
   // 隐藏遮罩层
   var animation = wx.createAnimation({
     duration: 200,
@@ -146,7 +132,7 @@ hideModal: function() {
 
 
   //弹窗
-  powerDrawer: function (e) {
+ powerDrawer: function (e) {
     var currentStatu = e.currentTarget.dataset.statu;
     this.util(currentStatu)
   },

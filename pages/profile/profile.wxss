@@ -17,6 +17,15 @@ page,view,image,input {
 	align-items: center;
   width: 750rpx;
 }
+.sign{
+  width: 100%;
+  display: flex;
+}
+.signImg{
+  width: 60rpx;
+  height: 60rpx;
+  margin-left:20rpx
+}
 .userinfo-avatar {
 	width: 160rpx;
 	height: 160rpx;
