@@ -82,7 +82,7 @@
   align-items: center;
 }
 .page-section-title-more-text{
-  color: #333333;
+  color: #FFA4D3;
   font-size: 24rpx;
 }
 .page-section-title-more-icon{
