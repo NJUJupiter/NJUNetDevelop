@@ -1,20 +1,18 @@
 package com.netdevelop.demo.service.impl;
 
 import com.netdevelop.demo.dao.RecordDao;
-import com.netdevelop.demo.po.Movie;
 import com.netdevelop.demo.po.Record;
 import com.netdevelop.demo.service.MovieService;
 import com.netdevelop.demo.service.RecordService;
 import com.netdevelop.demo.vo.MovieVO;
-import com.netdevelop.demo.vo.PerformerVO;
+
 import com.netdevelop.demo.vo.RecordVO;
-import com.sun.prism.impl.Disposer;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.LinkedList;
+
 import java.util.List;
 import java.util.stream.Collectors;
 
