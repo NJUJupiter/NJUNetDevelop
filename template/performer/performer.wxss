@@ -1,0 +1,41 @@
+/* template/poster/poster.wxss */
+@import "/template/rate/rate.wxss";
+.movie {
+  display: flex;
+  flex-direction: column;
+  padding-right: 12rpx;  
+}
+.poster {
+  width: 180rpx;
+  height: 250rpx;
+  padding-bottom: 10rpx;
+}
+.movie-name {
+  color: #333333;
+  font-size: 24rpx;
+  line-height: 24rpx;
+  margin: 10rpx 0 5rpx 0;
+  /*固定宽度*/
+
+  width: 150rpx;
+
+  /*超出部分隐藏*/
+
+  overflow:hidden;
+
+  /*不换行*/
+
+  white-space:nowrap;
+
+  /*添加...*/
+
+  text-overflow:ellipsis;
+}
+.ratingbar {
+  display: flex;
+  flex-direction: row;
+}
+.ratingbar-score{
+  color: #999999;
+  font-size: 20rpx;
+}

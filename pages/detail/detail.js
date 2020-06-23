@@ -16,6 +16,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    isHide:true,
     sortType: ['按时间排序', '按点赞排序', '按评分排序', '按评分倒序'],
     objectSortType: [
       {
@@ -77,6 +78,16 @@ Page({
       }
     ]
   },
+
+  // zy 详情隐藏功能
+  showMoreMsg: function(event) { //点击显示全部内容
+    this.setData ({
+      isHide:!this.data.isHide
+    })
+    console.log(this.data.isHide)
+    console.log(this.data.movie)
+  },
+
 
   /**
    * 生命周期函数--监听页面加载
