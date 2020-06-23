@@ -683,6 +683,7 @@ Page({
           // createTime:new Date(),
           userAvatar: store.getItem('userAva'),
           score:that.data.rate,
+          likes:0,
         },
         // header: {
         //   "content-type": "application/x-www-form-urlencoded;charset=utf-8",
@@ -728,10 +729,11 @@ Page({
       foldList:tempList
     })
   },
-  bindPickerChange: function (e) {
-    console.log('picker发送选择改变，携带值为', e.detail.value)
-    this.setData({
-      sortIndex: e.detail.value
-    })
-  },
+  bindPickerChange: function (e) { 
+    console.log('picker发送选择改变，携带值为', e.detail.value) 
+    this.setData({ 
+      sortIndex: e.detail.value 
+    }) 
+    this.refresh(); 
+  }, 
 })

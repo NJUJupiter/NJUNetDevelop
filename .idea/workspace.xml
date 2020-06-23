@@ -2,26 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0694ef2f-7e79-4b64-b1fb-5c50e5b9b1be" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/icon/fav.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/icon/favy.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/icon/like.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/icon/like1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/template/getLoc/getLoc.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/template/getLoc/getLoc.wxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/template/getLoc/getLoc.wxss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/detail/detail.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/detail/detail.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/detail/detail.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/pages/detail/detail.wxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/detail/detail.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/pages/detail/detail.wxss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/index/index.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index/index.wxss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/profile/profile.wxml" beforeDir="false" afterPath="$PROJECT_DIR$/pages/profile/profile.wxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/profile/profile.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/pages/profile/profile.wxss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/wantWatch/wantWatch.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/wantWatch/wantWatch.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project.config.json" beforeDir="false" afterPath="$PROJECT_DIR$/project.config.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sitemap.json" beforeDir="false" afterPath="$PROJECT_DIR$/sitemap.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template/block/block.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/template/block/block.wxss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/store.js" beforeDir="false" afterPath="$PROJECT_DIR$/utils/store.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/util.js" beforeDir="false" afterPath="$PROJECT_DIR$/utils/util.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/index/index.json" beforeDir="false" afterPath="$PROJECT_DIR$/pages/index/index.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/more/more.wxss" beforeDir="false" afterPath="$PROJECT_DIR$/pages/more/more.wxss" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -34,7 +18,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pages/detail/detail.wxml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="266">
@@ -53,6 +37,15 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/utils/util.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="291">
+              <caret line="28" column="1" lean-forward="true" selection-start-line="28" selection-start-column="1" selection-end-line="28" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
   </component>
   <component name="Git.Settings">
@@ -67,6 +60,7 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/pages/detail/detail.wxml" />
+        <option value="$PROJECT_DIR$/pages/profile/profile.wxml" />
       </list>
     </option>
   </component>
@@ -98,6 +92,11 @@
             <path>
               <item name="NJUNetDevelop" type="b2602c69:ProjectViewProjectNode" />
               <item name="NJUNetDevelop" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="NJUNetDevelop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="NJUNetDevelop" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -138,13 +137,29 @@
       <workItem from="1592477287783" duration="1724000" />
       <workItem from="1592484877534" duration="129000" />
     </task>
+    <task id="LOCAL-00001" summary="Merge branch 'develop' of https://github.com/NJUJupiter/NJUNetDevelop into develop&#10;&#10;# Conflicts:&#10;#&#9;app.json&#10;#&#9;pages/detail/detail.js&#10;#&#9;pages/detail/detail.wxml&#10;#&#9;pages/detail/detail.wxss&#10;#&#9;pages/index/index.json&#10;#&#9;pages/index/index.wxss&#10;#&#9;pages/profile/profile.wxml&#10;#&#9;pages/profile/profile.wxss&#10;#&#9;pages/wantWatch/wantWatch.js&#10;#&#9;template/block/block.wxss&#10;#&#9;utils/util.js">
+      <created>1592918614385</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1592918614385</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Merge branch 'develop' of https://github.com/NJUJupiter/NJUNetDevelop into develop&#10;&#10;# Conflicts:&#10;#&#9;app.json&#10;#&#9;pages/index/index.wxss&#10;#&#9;pages/profile/profile.wxml&#10;#&#9;pages/profile/profile.wxss&#10;#&#9;utils/util.js">
+      <created>1592921371357</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1592921371357</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3389000" />
+    <option name="totallyTimeSpent" value="5954000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="7" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24966975" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -157,9 +172,9 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info active="true" anchor="bottom" id="Version Control" order="8" sideWeight="0.4993395" visible="true" weight="0.3286119" />
-      <window_info anchor="bottom" id="Terminal" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5006605" side_tool="true" weight="0.3286119" />
+      <window_info active="true" anchor="bottom" id="Version Control" order="8" sideWeight="0.49867898" visible="true" weight="0.3286119" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.4993395" weight="0.3286119" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.501321" side_tool="true" weight="0.3286119" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -210,7 +225,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="feat: 回复折叠与排序" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: 回复折叠与排序" />
+    <MESSAGE value="Merge branch 'develop' of https://github.com/NJUJupiter/NJUNetDevelop into develop&#10;&#10;# Conflicts:&#10;#&#9;app.json&#10;#&#9;pages/detail/detail.js&#10;#&#9;pages/detail/detail.wxml&#10;#&#9;pages/detail/detail.wxss&#10;#&#9;pages/index/index.json&#10;#&#9;pages/index/index.wxss&#10;#&#9;pages/profile/profile.wxml&#10;#&#9;pages/profile/profile.wxss&#10;#&#9;pages/wantWatch/wantWatch.js&#10;#&#9;template/block/block.wxss&#10;#&#9;utils/util.js" />
+    <MESSAGE value="Merge branch 'develop' of https://github.com/NJUJupiter/NJUNetDevelop into develop&#10;&#10;# Conflicts:&#10;#&#9;app.json&#10;#&#9;pages/index/index.wxss&#10;#&#9;pages/profile/profile.wxml&#10;#&#9;pages/profile/profile.wxss&#10;#&#9;utils/util.js" />
+    <option name="LAST_COMMIT_MESSAGE" value="Merge branch 'develop' of https://github.com/NJUJupiter/NJUNetDevelop into develop&#10;&#10;# Conflicts:&#10;#&#9;app.json&#10;#&#9;pages/index/index.wxss&#10;#&#9;pages/profile/profile.wxml&#10;#&#9;pages/profile/profile.wxss&#10;#&#9;utils/util.js" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/pages/detail/detail.wxml">
@@ -227,6 +244,13 @@
             <element signature="n#style#0;n#view#1;n#view#0;n#block#0;n#view#2;n#scroll-view#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#view#0;n#view#0;n#view#1;n#view#0;n#form#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/util.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="291">
+          <caret line="28" column="1" lean-forward="true" selection-start-line="28" selection-start-column="1" selection-end-line="28" selection-end-column="1" />
         </state>
       </provider>
     </entry>
