@@ -28,7 +28,7 @@
           <cover-view class='viewDis'>ta也喜欢这部电影</cover-view>
         </cover-view>
         <cover-view class='placeViewRt'>
-          <cover-image src='/images/home.png'></cover-image>
+          <cover-image src='/images/home.png' catchtap="toPersonal" data-id='{{userInfo.userId}}'></cover-image>
         </cover-view>
       </cover-view>
  
@@ -49,7 +49,7 @@
         <!--drawer content-->
         <view class="drawer_title">ta们也想看</view>
         <view class="drawer_content">
-          <template is="template-list" data="{{userList}}"></template>
+          <template is="template-list" data="{{markers}}"></template>
         </view>
       <view class="btn_ok" bindtap="powerDrawer" data-statu="close">确定</view>
       </view>

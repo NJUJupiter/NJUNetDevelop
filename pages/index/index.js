@@ -15,7 +15,7 @@ Page({
         //token: app.globalData.token
       },
       success: res => {
-        console.log(res)
+        //console.log(res)
         if (res.data.success) {
           this.setData({
             listRY:res.data.content
@@ -38,12 +38,12 @@ Page({
         //token: app.globalData.token
       },
       success: res => {
-        console.log(res)
+        //console.log(res)
         if (res.data.success) {
           this.setData({
             listRM:res.data.content
           })
-          console.log(this.data.listRM)
+          //console.log(this.data.listRM)
         } else {
           wx.showToast({
             title: '加载出错',
@@ -62,7 +62,7 @@ Page({
         //token: app.globalData.token
       },
       success: res => {
-        console.log(res)
+        //console.log(res)
         if (res.data.success) {
           this.setData({
             listBD:res.data.content
@@ -88,7 +88,17 @@ Page({
     toView: 'green',
     listRY:[],
     listRM:[],
-    listBD:[]
+    listBD:[],
+    indicatorDots: true,
+    vertical: false,
+    autoplay: true,
+    interval: 2000,
+    duration: 500,
+    imgSrc:[
+      "/images/ad4.jpg",
+      "/images/ad2.jpg",
+      "/images/ad1.jpg",
+    ]
   },
 
   bindViewTap: function (e) {

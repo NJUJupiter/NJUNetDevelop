@@ -1,0 +1,7 @@
+<import src="../../template/calendar/index.wxml"/>
+
+<view class="calendar-wrap">
+   <template is="calendar" data="{{...calendar}}" />
+  <button wx:if="{{isSigned}}" class="unsignbtn" disabled >已签到</button>
+  <button wx:else class="signbtn" bindtap="sign" >签到</button>
+</view>

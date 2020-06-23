@@ -2,13 +2,13 @@
 <template name="template-list">
 <scroll-view style="height:1100px;" scroll-y="{{true}}" scroll-top="0" 
     bindscrolltolower="handleScrollToLower">
-      <block wx:for="{{userList}}" wx:key="{{index}}">
+      <block wx:for="{{markers}}" wx:key="{{index}}">
         <view class="list" catchtap="loadUserList" data-movieid='{{item.id}}'>
-          <view class="left">
+          <view class="left" catchtap="toPersonal" data-id='{{item.userId}}'>
             <image class="avatar" src="{{item.userAvatar}}" />
             <view class="userName">{{item.userName}}</view>
           </view>
-            <image class="next" src="/assets/icon/next.png"></image>
+            <image class="next" src="/assets/icon/next.png" ></image>
           
         </view>
         <view class="line"></view>

@@ -12,11 +12,13 @@
     "pages/map/map",
     "pages/personal/personal",
     "template/listModal/listModal",
-    "pages/sign/sign"
+    "pages/sign/sign",
+    "pages/calendarTemplate/index",
+    "pages/calendarComponent/index"
   ],
   "window": {
     "backgroundTextStyle": "dark",
-    "navigationBarBackgroundColor": "#fff",
+    "navigationBarBackgroundColor": "#ff8888",
     "navigationBarTitleText": "",
     "navigationBarTextStyle": "black",
     "onReachBottomDistance": 50
