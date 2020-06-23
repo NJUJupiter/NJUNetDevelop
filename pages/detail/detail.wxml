@@ -1,5 +1,6 @@
 <!--detail.wxml-->
-<scroll-view scroll-top="{{scrollTop}}" scroll-y="true" style="height:100%;" class="list" bindscrolltolower="bindDownLoad" bindscrolltoupper="refresh">
+<import src="../../template/rate/rate.wxml" />
+<scroll-view scroll-top="{{scrollTop}}" scroll-y="true" style="height:{{scrollHeight}}px;" class="list" bindscrolltolower="bindDownLoad" bindscrolltoupper="refresh">
   <view class="container">
     <view class="goBack">
       <image style='width: 345rpx; height: 495rpx' mode='scaleToFill' src='{{movie.imgUrl}}'></image>
@@ -24,6 +25,15 @@
       <text class="recommendOfMovie">电影简介：\n{{movie.description}}</text>
     </view>
   </view>
+  <view class="pro-con-1">
+    <block class="section">
+      <picker bindchange="bindPickerChange" value="{{sortIndex}}" range="{{sortType}}">
+        <view class="picker">
+          {{sortType[sortIndex]}}
+        </view>
+      </picker>
+    </block>
+  </view>
   <view class="pro-con">
     <block wx:for="{{list}}">
       <view class="pro-box">
@@ -32,8 +42,11 @@
           <view class="box">
             <view class="shead clear">
               <view class="names fl">{{item.userName}}
-                  <view wx:if="{{!item.replyUserName == \" \"}}">
+                <view wx:if="{{!item.replyUserName == \" \"}}">
                   -> {{item.replyUserName}}
+                </view>
+                <view class='ratingbar'>
+                  <template is="template-rate-stars" data="{{score:item.score*2}}" />
                 </view>
               </view>
             </view>
@@ -48,12 +61,54 @@
           <view class="text">
             <text decode="true">{{item.createTime}}</text>
           </view>
-          <view class="text">
-            <button class="sharebtn" data-commentId="{{item.id}}" data-commentUserName="{{item.userName}}" bindtap="bindReply">回复</button>
+          <view wx:if="{{item.replies!=''}}">
+            <view wx:if="{{foldList[index]}}">
+              <button class="unfold" decode="true" data-xiabiao="{{index}}" bindtap='unfoldReplies'>展开</button>
+            </view>
+            <view wx:else>
+              <button class="fold" decode="true" data-xiabiao="{{index}}" bindtap='foldReplies'>折叠</button>
+            </view>
           </view>
-              <view wx:if="{{item.userId == userId}}" class="status text fr">
-                <button class="delete" decode="true" bindtap='deleteComment' data-CommentId="{{item.id}}">删除</button>
+          <view class="text">
+            <button class="sharebtn" data-commentId="{{item.id}}" data-commentUserName="{{item.userName}}" data-commentUserId="{{item.userId}}" bindtap="bindReply">回复</button>
+          </view>
+          <view wx:if="{{item.userId == userId}}" class="status text fr">
+            <button class="delete" decode="true" bindtap='deleteComment' data-CommentId="{{item.id}}">删除</button>
+          </view>
+        </view>
+        <view class="replies" wx:if="{{!foldList[index]}}">
+          <block wx:for="{{item.replies}}" wx:for-item="items">
+            <view class="pro-box">
+              <view class="head">
+                <image class="img" src="{{items.fromAvatar}}" mode="aspectFit"></image>
+                <view class="box">
+                  <view class="shead clear">
+                    <view class="names fl">{{items.fromName}}
+                      <view wx:if="{{!items.toName == \" \"}}">
+                        -> {{items.toName}}
+                      </view>
+                    </view>
+                  </view>
+                </view>
               </view>
+              <view class="addr-info">
+                <view class="addr-text">
+                  {{items.content}}
+                </view>
+              </view>
+              <view class="info">
+                <view class="text">
+                  <text decode="true">{{items.createTime}}</text>
+                </view>
+                <view class="text">
+                  <button class="sharebtn" data-commentId="{{item.id}}" data-commentUserName="{{items.fromName}}" data-commentUserId="{{items.fromId}}" bindtap="bindReply">回复</button>
+                </view>
+                <view wx:if="{{items.fromId == userId}}" class="status text fr">
+                  <button class="delete" decode="true" bindtap='deleteReply' data-ReplyId="{{items.id}}">删除</button>
+                </view>
+              </view>
+            </view>
+          </block>
         </view>
       </view>
     </block>
@@ -64,6 +119,12 @@
     <view  wx:if="{{reply}}" class="replyinfo1">
       回复<text class="text">{{replyUserName}}</text>
       <button class="cancel" bindtap="cancleReply">取消回复</button>
+    </view>
+    <view wx:else class="gradeMovie">
+        <view class='content'>
+          为电影评分<view wx:for="{{stars}}" wx:key="" style='background:url("{{item.flag==1?item.bgImg:item.bgfImg}}") no-repeat top; background-size:100%;' data-index="{{index}}" bindtap='score'>
+          </view>
+        </view>
     </view>
     <view class="replyinfo2">
       <textarea placeholder-class="input_null" fixed="true" maxlength="-1" show-confirm-bar="false" cursor-spacing="15" auto-height="true" placeholder="请输入回复" name="comment"></textarea>

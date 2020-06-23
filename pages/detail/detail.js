@@ -13,10 +13,60 @@ Page({
    * 页面的初始数据
    */
   data: {
+    sortType: ['按时间排序', '按点赞排序', '按评分排序', '按评分倒序'],
+    objectSortType: [
+      {
+        id: 0,
+        name: '按时间排序'
+      },
+      {
+        id: 1,
+        name: '按点赞排序'
+      },
+      {
+        id: 2,
+        name: '按评分排序'
+      },
+      {
+        id: 3,
+        name: '按评分倒序'
+      }
+    ],
+    sortIndex: 0,
+    initialList:[true,true,true,true,true,true],
+    foldList:[],
     list: [],
     id: 0,
     movie: {},
-    pageHead: ''
+    pageHead: '',
+    rate:5,
+    stars:[
+      {
+        flag:1,
+        bgImg: "../../images/rate/star_fill_none.png",
+        bgfImg:"../../images/rate/star_fill_whole.png"
+      },
+      {
+        flag: 1,
+        bgImg: "../../images/rate/star_fill_none.png",
+        bgfImg:"../../images/rate/star_fill_whole.png"
+      },
+      {
+        flag: 1,
+        bgImg: "../../images/rate/star_fill_none.png",
+        bgfImg:"../../images/rate/star_fill_whole.png"
+      },
+      {
+        flag: 1,
+        bgImg: "../../images/rate/star_fill_none.png",
+        bgfImg:"../../images/rate/star_fill_whole.png"
+      },
+      {
+        flag: 1,
+        bgImg: "../../images/rate/star_fill_none.png",
+        bgfImg:"../../images/rate/star_fill_whole.png"
+      }
+    ]
   },
 
   /**
@@ -45,7 +95,7 @@ Page({
       success: function (res) {
         console.log(res.windowHeight)
         _this.setData({
-          scrollHeight: res.windowHeight,
+          scrollHeight: res.windowHeight+360,
           userId: store.getItem('userId'),
         });
       }
@@ -75,6 +125,15 @@ Page({
           title: _this.data.pageHead + " 电影详情",
         })
       }
+    })
+    wx.request({
+      url: 'http://localhost:8080/demo/record/addRecord',
+      method: "POST",
+      data: {
+        userId: store.getItem('userId'),
+        movieId:_this.data.id,
+        watchTime:util.formatTime(new Date())
+      },
     })
   },
 
@@ -134,6 +193,23 @@ Page({
   onShareAppMessage: function () {
 
   },
+  score:function(e){
+    var that=this;
+    for(var i=0;i<that.data.stars.length;i++){
+      var allItem = 'stars['+i+'].flag';
+      that.setData({
+        [allItem]: 1
+      })
+    }
+    var index=e.currentTarget.dataset.index;
+    this.data.rate=index+1;
+    for(var i=0;i<=index;i++){
+      var item = 'stars['+i+'].flag';
+      that.setData({
+        [item]:2
+      })
+    }
+  },
   /**
    * 页面下拉刷新事件的处理函数
    */
@@ -141,7 +217,8 @@ Page({
     mydata.page = 1
     this.getPageInfo(mydata.page, function () {
       this.setData({
-        list: []
+        list: [],
+        foldList:[]
       })
     });
     mydata.end = 0;
@@ -158,15 +235,19 @@ Page({
     }
   },
   bindReply: function (e) {
+    console.log("testReply");
     console.log(e);
+    console.log("testReply");
     mydata.commentId = e.target.dataset.commentid;
     mydata.replyUserName = e.target.dataset.commentusername;
+    mydata.replyUserId=e.target.dataset.commentuserid;
     this.setData({
+      replyUserId: mydata.replyUserId,
       replyUserName: mydata.replyUserName,
       reply: true
     })
-    console.log("testReply")
-    console.log(mydata.replyUserName)
+    // console.log("testReply")
+    // console.log(mydata.replyUserName)
   },
   // 合并数组
   addArr(arr1, arr2) {
@@ -207,10 +288,44 @@ Page({
       }
     })
   },
+  deleteReply: function (e) {
+    console.log(e);
+    var that = this;
+    var replyId = e.target.dataset.replyid;
+
+    wx.showModal({
+      title: '删除回复',
+      content: '请确认是否删除该回复？',
+      success: function (res) {
+        if (res.confirm) {
+          wx.request({
+            url: 'http://localhost:8080/demo/comment/deleteReply',
+            method: "GET",
+            data: {
+              replyId: replyId
+            },
+            header: {
+              "content-type": "application/x-www-form-urlencoded;charset=utf-8",
+            },
+            success: res => {
+              that.refresh();
+              wx.showToast({
+                title: "删除成功"
+              })
+            }
+          })
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }
+      }
+    })
+  },
   cancleReply: function (e) {
     mydata.commentId = "";
     mydata.replyUserName = "";
+    mydata.replyUserId="";
     this.setData({
+      replyUserId:mydata.replyUserId,
       replyUserName: mydata.replyUserName,
       reply: false
     })
@@ -230,7 +345,8 @@ Page({
       data: {
         movieId: mydata.sourceId,
         limited: limited,
-        offset: offset
+        offset: offset,
+        type:parseInt(this.data.sortIndex)+1
       },
       header: {
         "content-type": "application/x-www-form-urlencoded;charset=utf-8",
@@ -240,17 +356,22 @@ Page({
         console.log(res);
         if (page == 1) {
           that.data.list = res.data.content;
+          that.data.foldList=that.data.initialList;
           that.setData({
-            list: that.data.list
+            list: that.data.list,
+            foldList:that.data.foldList
           })
           mydata.end = 0;
         } else {
           // 当前页为其他页
           var list = that.data.list;
-          if (res.data.length != 0) {
+          var tempList=that.data.foldList;
+          if (res.data.content != null) {
             list = that.addArr(list, res.data.content);
+            tempList=that.addArr(tempList,initialList);
             that.setData({
-              list: list
+              list: list,
+              foldList:tempList
             })
             mydata.end = 0;
           } else {
@@ -272,20 +393,20 @@ Page({
       return;
     }
     // 提交评论
-    if (mydata.reply==true) {
+    if (that.data.reply==true) {
       wx.request({
-        url: 'http://localhost:8080/demo/status/addComment',
+        url: 'http://localhost:8080/demo/comment/insertReply',
         method: "POST",
         data: {
-          movieId: mydata.sourceId,
+          commentId: mydata.commentId,
+          fromId:store.getItem('userId'),
+          fromName:store.getItem('userNick'),
+          fromAvatar:store.getItem('userAva'),
+          toId:mydata.replyUserId,
+          toName:mydata.replyUserName,
           content: form.comment,
-          userId: store.getItem('userId'),
-          userName: store.getItem('userNick'),
-          //replyCommentId: mydata.commentId,
-          //replyUserName: mydata.replyUserName,
-          // createTime:util.formatTime(new Date()),
-          createTime:new Date(),
-          userAvatar: store.getItem('userAva'),
+          createTime:util.formatTime(new Date()),
+          // createTime:new Date(),
         },
         // header: {
         //   "content-type": "application/x-www-form-urlencoded;charset=utf-8",
@@ -295,18 +416,20 @@ Page({
           console.log(res)
           if (res.data.success) {
             wx.showToast({
-              title: "评论成功"
+              title: "回复成功"
             })
             that.refresh();
             mydata.commentId = "";
             mydata.replyUserName = "";
+            mydata.replyUserId="";
             this.setData({
+              replyUserId:mydata.replyUserId,
               replyUserName: mydata.replyUserName,
               reply: false
             })
           } else {
             wx.showToast({
-              title: '评论失败，请检查您的网络',
+              title: '回复失败，请检查您的网络',
             })
           }
         }
@@ -322,9 +445,10 @@ Page({
           userName: store.getItem('userNick'),
           //replyCommentId: mydata.commentId,
           //replyUserName: mydata.replyUserName,
-          // createTime:util.formatTime(new Date()),
-          createTime:new Date(),
+          createTime:util.formatTime(new Date()),
+          // createTime:new Date(),
           userAvatar: store.getItem('userAva'),
+          score:that.data.rate,
         },
         // header: {
         //   "content-type": "application/x-www-form-urlencoded;charset=utf-8",
@@ -351,5 +475,30 @@ Page({
         }
       })
     }
-  }
+  },
+  unfoldReplies:function(e){
+    console.log(e.target.dataset.xiabiao)
+    console.log(this.data.foldList)
+    var tempList=this.data.foldList;
+    tempList[e.target.dataset.xiabiao]=false;
+    this.setData({
+      foldList:tempList
+    })
+  },
+  foldReplies:function(e){
+    console.log(e.target.dataset.xiabiao)
+    console.log(this.data.foldList)
+    var tempList=this.data.foldList;
+    tempList[e.target.dataset.xiabiao]=true;
+    this.setData({
+      foldList:tempList
+    })
+  },
+  bindPickerChange: function (e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      sortIndex: e.detail.value
+    })
+    this.refresh();
+  },
 })

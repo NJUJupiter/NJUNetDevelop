@@ -39,7 +39,11 @@
  
 /* the message of auction about goods & cars */
 .pro-con{
-	padding: 30rpx 30rpx 100rpx 30rpx;
+	padding: 20rpx 30rpx 170rpx 30rpx;
+	background: #f1f1f1;
+}
+.pro-con-1{
+	padding: 40rpx  30rpx 0rpx 30rpx;
 	background: #f1f1f1;
 }
 .pro-box{
@@ -86,13 +90,14 @@
 }
  .pro-box .sharebtn{
    height:50rpx;
-	 background: #f68135;
+	 background: #06526d;
    border-radius: 50rpx;
-   border: 1px solid #f68135;
+   border: 1px solid #06526d;
    color: #fff;
    text-align: center;
-   line-height: 50rpx;
-   font-size:30rpx;
+   line-height: 48rpx;
+	 font-size:30rpx;
+	 margin-right: 0;
 } 
  
 .pro-box .addr-info{
@@ -121,9 +126,9 @@
   padding: 0rpx,2rpx,0rpx,2rpx;
 } 
 .pro-box .addr-info .addr-text .color2{
-  color: #f68135;
+  color: #06526d;
   border-color: #ccc;
-  border: 1px solid #f68135;
+  border: 1px solid #06526d;
   border-radius:10px;
   margin-right: 5px;
   margin-left: 5px;
