@@ -1,2 +1,19 @@
 <!--pages/history/history.wxml-->
-<text>pages/history/history.wxml</text>
+<scroll-view>
+  <view class="outBox" wx:for="{{records}}" wx:for-item="record" wx:index="index1">
+    <view bindtap="bindViewTap" data-id='{{record.movie.id}}' class="box">
+      <view class="inner">
+      <view>
+        <image class="img1" src="{{record.movie.imgUrl}}"></image>
+      </view>
+      <view>
+        <view>{{record.movie.movieName}}</view>
+        <text class="inner2">上映时间：{{record.movie.releaseTime}}</text>
+        <text class="inner1">导演：{{record.movie.director}}</text>
+        <text class="inner1">主演：{{record.movie.actors}}</text>
+        <view class="inner3">浏览时间：{{record.watchTime}}</view>
+      </view>
+      </view>
+    </view>
+  </view>
+</scroll-view>

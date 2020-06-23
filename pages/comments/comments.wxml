@@ -1,5 +1,52 @@
 <scroll-view style="">
-  <view class="box">
+  <block class="box" wx:for="{{comments}}" wx:for-item="comment1" wx:for-index="index1">
+    <block wx:for="{{comments}}" wx:for-item="comment2" wx:for-index="index2">
+      <block wx:if="{{comment1.id==comment2.id}}">
+       <!-- wx:if="{{movie.id==comment.movieId&&Uid==comment.userId}}" -->
+        <view class="inner">
+          <view bindtap="bindViewTap" data-id='{{movies[index1].id}}'>
+            <image class="img1" src="{{movies[index1].imgUrl}}"></image>
+          </view>
+          <view>
+            <view bindtap="bindViewTap" data-id='{{movies[index1].id}}' class="font_header" >{{movies[index1].movieName}}</view>
+              <view class="time_header">
+                评论时间：{{comment1.createTime}}  
+              </view>
+            <!-- <text class="inner1">{{comment.content}}</text> -->
+            <block>
+              <text class="{{isHide[index1]?'hide':'show'}}" bindtap="showMoreMsg" data-index="{{index1}}">{{comment1.content}}</text>
+            </block>
+          </view>
+        </view>          
+      </block>
+    </block>
+  </block>
+
+
+  <!-- <block class="box" wx:for="{{comments}}" wx:for-item="comment" wx:for-index="index1">
+    <block wx:for="{{movies}}" wx:for-item="movie" wx:for-index="index2">
+      <block>
+       //wx:if="{{movie.id==comment.movieId&&Uid==comment.userId}}"
+        <view class="inner">
+          <view>
+            <image class="img1" src="{{movie.imgUrl}}"></image>
+          </view>
+          <view>
+            <view class="font_header" >{{movie.movieName}}</view>
+              <view class="time_header">
+                评论时间：{{comment.createTime}}  
+              </view>
+            //<text class="inner1">{{comment.content}}</text>
+            <block>
+              <text class="{{isHide[index1]?'hide':'show'}}" bindtap="showMoreMsg" data-index="{{index1}}">{{comment.content}}</text>
+            </block>
+          </view>
+        </view>          
+      </block>
+    </block>
+  </block> -->
+
+  <!-- <view class="box">
     <view class="inner">
      <view>
       <image class="img1" src="//inews.gtimg.com/newsapp_bt/0/10753699398/1000"></image>
@@ -9,94 +56,6 @@
        <text class="inner1">高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天</text>
      </view>
     </view>
-  </view>
-  <view class="box">
-    <view class="inner">
-     <view>
-      <image class="img1" src="//inews.gtimg.com/newsapp_bt/0/10753699398/1000"></image>
-     </view>
-     <view>
-       <view>天气之子</view>
-       <text class="inner1">高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天</text>
-     </view>
-    </view>
-  </view>
-  <view class="box">
-    <view class="inner">
-     <view>
-      <image class="img1" src="//inews.gtimg.com/newsapp_bt/0/10753699398/1000"></image>
-     </view>
-     <view>
-       <view>天气之子</view>
-       <text class="inner1">高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天</text>
-     </view>
-    </view>
-  </view>
-  <view class="box">
-    <view class="inner">
-     <view>
-      <image class="img1" src="/images/天气之子.png"></image>
-     </view>
-     <view>
-       <view>天气之子</view>
-       <text class="inner1">高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天</text>
-     </view>
-    </view>
-  </view>
-  <view class="box">
-    <view class="inner">
-     <view>
-      <image class="img1" src="/images/天气之子.png"></image>
-     </view>
-     <view>
-       <view>天气之子</view>
-       <text class="inner1">高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天</text>
-     </view>
-    </view>
-  </view>
-  <view class="box">
-    <view class="inner">
-     <view>
-      <image class="img1" src="/images/天气之子.png"></image>
-     </view>
-     <view>
-       <view>天气之子</view>
-       <text class="inner1">高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天</text>
-     </view>
-    </view>
-  </view>
-  <view class="box">
-    <view class="inner">
-     <view>
-      <image class="img1" src="/images/天气之子.png"></image>
-     </view>
-     <view>
-       <view>天气之子</view>
-       <text class="inner1">高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天</text>
-     </view>
-    </view>
-  </view>
-  <view class="box">
-    <view class="inner">
-     <view>
-      <image class="img1" src="/images/天气之子.png"></image>
-     </view>
-     <view>
-       <view>天气之子</view>
-       <text class="inner1">高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天</text>
-     </view>
-    </view>
-  </view>
-  <view class="box">
-    <view class="inner">
-     <view>
-      <image class="img1" src="/images/天气之子.png"></image>
-     </view>
-     <view>
-       <view>天气之子</view>
-       <text class="inner1">高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天高一那年夏天</text>
-     </view>
-    </view>
-  </view>
+  </view> -->
 
 </scroll-view>
