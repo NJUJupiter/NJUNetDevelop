@@ -32,7 +32,7 @@
             </view>  
           </view>
           <view class="right right-content">
-            <text>{{item.likes}}人喜欢</text>
+            <text>{{item.likes}}人想看</text>
           </view>
         </view>
       </block>

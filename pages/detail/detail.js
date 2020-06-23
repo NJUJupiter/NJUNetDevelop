@@ -183,6 +183,13 @@ Page({
     })
   },
 
+  //跳转到地图
+  getMap:function(event){
+    var id = event.currentTarget.dataset.id;
+    wx.navigateTo({
+      url: '../map/map?id=' + id
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

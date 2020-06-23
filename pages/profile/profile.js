@@ -23,6 +23,19 @@ Page({
   onLoad: function () {
   },
 
+  toPersonal:function(event) {
+    var id = event.currentTarget.dataset.id;
+    wx.navigateTo({
+      url: '../personal/personal?id=' + id
+    })
+  },
+
+  toSign:function(event) {
+    var id = event.currentTarget.dataset.id;
+    wx.navigateTo({
+      url: '../calendarTemplate/index?id=' + id
+    })
+  },
   //获取openId
 
   getSession(){

@@ -12,7 +12,9 @@
     "pages/map/map",
     "pages/personal/personal",
     "template/listModal/listModal",
-    "pages/sign/sign"
+    "pages/sign/sign",
+    "pages/calendarTemplate/index",
+    "pages/calendarComponent/index"
   ],
   "window": {
     "backgroundTextStyle": "dark",
