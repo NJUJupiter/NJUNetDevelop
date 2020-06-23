@@ -17,30 +17,30 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // this.setData({
-    //   showLoading: false,
-    //   showMore: true,
-    //   list:[
-    //     {
-    //     movieName: "奇迹男孩 Wonder",
-    //     imgUrl: "https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2507709428.jpg",
-    //     score: "6",
-    //     director:"zzx",
-    //     actors:"wr/zzx/67",
-    //     likes:"100"
-    //   },
-    //   {
-    //     movieName: "奇迹男孩 Wonder",
-    //     imgUrl: "https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2507709428.jpg",
-    //     score: "8.6",
-    //     director:"zzx",
-    //     actors:"wr/zzx/67",
-    //     likes:"100"
-    //   },
-    //   ]
-    // })
-    // console.log(this.data.list)
-    //获取电影
+    this.setData({
+      showLoading: false,
+      showMore: true,
+      list:[
+        {
+        movieName: "奇迹男孩 Wonder",
+        imgUrl: "https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2507709428.jpg",
+        score: "6",
+        director:"zzx",
+        actors:"wr/zzx/67",
+        likes:"100"
+      },
+      {
+        movieName: "奇迹男孩 Wonder",
+        imgUrl: "https://img1.doubanio.com/view/photo/s_ratio_poster/public/p2507709428.jpg",
+        score: "8.6",
+        director:"zzx",
+        actors:"wr/zzx/67",
+        likes:"100"
+      },
+      ]
+    })
+    console.log(this.data.list)
+    获取电影
     wx.request({
       url: 'http://localhost:8080/demo/expect/getExpectMovieByUserId',
       method: "GET",

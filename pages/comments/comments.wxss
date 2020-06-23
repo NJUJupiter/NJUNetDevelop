@@ -5,7 +5,7 @@
 }
 .box{
   border: 2px solid black;
-  margin: 10px;
+  margin: 15px;
   border-radius: 20rpx;
 }
 .inner{
@@ -20,5 +20,38 @@
   overflow: hidden;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 4;
+  margin:5px;
+}
+.font_header{
+  font-size:30rpx;
+}
+.time_header{
+  font-size:20rpx;
+  margin:4px;
+  color: gray;
+}
+
+
+
+/* 隐藏缩进 */
+.hide {
+  display: -webkit-box;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  font-size: 30rpx;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4;
+  margin:5px;
+}
+
+.show {
+  overflow: hidden;
+  text-overflow: ellipsis; 
+
+  display: -webkit-box;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  font-size: 30rpx;
   margin:5px;
 }

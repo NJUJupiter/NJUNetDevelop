@@ -1,2 +1,37 @@
 <!--pages/history/history.wxml-->
-<text>pages/history/history.wxml</text>
+<scroll-view>
+  <view class="outBox" wx:for="{{records}}" wx:for-item="record" wx:index="index1">
+    <view bindtap="bindViewTap" data-id='{{record.id}}' class="box">
+      <view class="inner">
+      <view>
+        <image class="img1" src="{{record.imgUrl}}"></image>
+      </view>
+      <view>
+        <view>{{record.movieName}}</view>
+        <text class="inner2">上映时间：{{record.releaseTime}}</text>
+        <text class="inner1">导演：{{record.director}}</text>
+        <text class="inner1">主演：{{record.actors}}</text>
+        <!-- <view class="inner3">浏览时间：2020/6/19</view> -->
+      </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- <view class="outBox">
+    <view bindtap="bindViewTap" class="box">
+      <view class="inner">
+      <view>
+        <image class="img1" src="//inews.gtimg.com/newsapp_bt/0/10753699398/1000"></image>
+      </view>
+      <view>
+        <view>天气之子</view>
+        <text class="inner2">上映时间：2019</text>
+        <text class="inner1">导演：新海诚</text>
+        <text class="inner1">主演：某某</text>
+        <text class="inner2">浏览时间：2020/6/19</text>
+      </view>
+      </view>
+    </view>
+  </view> -->
+
+</scroll-view>

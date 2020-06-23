@@ -16,7 +16,16 @@ Page({
     list: [],
     id: 0,
     movie: {},
-    pageHead: ''
+    pageHead: '',
+    isHide:true
+  },
+
+  showMoreMsg: function(event) { //点击显示全部内容
+    this.setData ({
+      isHide:!this.data.isHide
+    })
+    console.log(this.data.isHide)
+    console.log(this.data.movie)
   },
 
   /**

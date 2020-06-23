@@ -1,4 +1,6 @@
 <!--detail.wxml-->
+<import src="/template/performer/performer.wxml"/>
+
 <scroll-view scroll-top="{{scrollTop}}" scroll-y="true" style="height:100%;" class="list" bindscrolltolower="bindDownLoad" bindscrolltoupper="refresh">
   <view class="container">
     <view class="goBack">
@@ -20,8 +22,24 @@
       <image class="mapImg" src="/images/map.png"></image>
       <text class="mapInfo">想看的人</text>
     </view>
+
+    <!-- zy todo-演职人员 -->
+    <text class="movie_desc">演职人员：</text>
+    <scroll-view class="scroll-view_H" scroll-x="true" bindscroll="scroll" style="width: 100%">
+      <view class='block-performer-row'>
+        <block wx:for="{{movie.performers}}" wx:for-item="performer">
+          <!--单个演员海报-->
+          <view class='block-performer-card'>
+            <template is="template-performer" data="{{...performer}}" />
+          </view>
+        </block>
+      </view>
+    </scroll-view>
+
     <view class="recommend">
-      <text class="recommendOfMovie">电影简介：\n{{movie.description}}</text>
+      <!-- <text class="recommendOfMovie">电影简介：\n{{movie.description}}</text> -->
+      <text class="movie_desc">电影简介：</text>
+      <text class="{{isHide?'hide':'show'}}" bindtap="showMoreMsg">{{movie.description}}</text>
     </view>
   </view>
   <view class="pro-con">
