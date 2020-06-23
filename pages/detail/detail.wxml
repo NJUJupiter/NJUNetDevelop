@@ -1,4 +1,5 @@
 <!--detail.wxml-->
+<import src="/template/getLoc/getLoc.wxml" />
 <import src="../../template/rate/rate.wxml" />
 <scroll-view scroll-top="{{scrollTop}}" scroll-y="true" style="height:{{scrollHeight}}px;" class="list" bindscrolltolower="bindDownLoad" bindscrolltoupper="refresh">
   <view class="container">
@@ -17,6 +18,11 @@
     <view class="movieInfoText">
       <text class="releaseTimeOfMovie">上映日期：{{movie.releaseTime}}</text>
     </view>
+    <button  loading="{{loading}}" disabled="{{disabled}}" class='item-favor'style='display:flex; 'bindtap='goLoc'>
+                  <image src='../../assets/icon/fav0.svg' hidden="{{fav=='true'}}" style="width:50rpx; height:50rpx; margin-top:20rpx ;padding-right:10rpx"></image>
+                  <image src='../../assets/icon/fav1.svg'  hidden="{{fav=='false'}}"style="width:50rpx; height:50rpx; margin-top:20rpx;padding-right:10rpx"></image>
+                  <view >想看</view>
+    </button>
     <view class="map" catchtap="getMap" data-id='{{movie.id}}'>
       <image class="mapImg" src="/images/map.png"></image>
       <text class="mapInfo">想看的人</text>
@@ -37,19 +43,24 @@
   <view class="pro-con">
     <block wx:for="{{list}}">
       <view class="pro-box">
-        <view class="head">
+        <view class="head" style="display:flex">
           <image class="img" src="{{item.userAvatar}}" mode="aspectFit"></image>
           <view class="box">
             <view class="shead clear">
               <view class="names fl">{{item.userName}}
                 <view wx:if="{{!item.replyUserName == \" \"}}">
                   -> {{item.replyUserName}}
-                </view>
-                <view class='ratingbar'>
-                  <template is="template-rate-stars" data="{{score:item.score*2}}" />
-                </view>
+                  </view>
+                  <view class='ratingbar'>
+                    <template is="template-rate-stars" data="{{score:item.score*2}}" />
+                  </view>
               </view>
             </view>
+          </view>
+          <view class='item-like'style='width: 60rpx; height: 60rpx; display:flex; ' bindtap='thumbsup' data-id='{{item}}'>
+                  <image src='../../assets/icon/like.png' mode='widthFix' hidden="{{item.state=='true'}}"></image>
+                  <image src='../../assets/icon/like1.png' mode='widthFix' hidden="{{item.state=='false'}}"></image>
+            {{item.likes}}
           </view>
         </view>
         <view class="addr-info">
@@ -132,3 +143,4 @@
     </view>
   </view>
 </form>
+<template is="apifmLoc" data="{{isclose:isclose}}" />

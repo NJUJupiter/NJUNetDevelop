@@ -4,11 +4,11 @@
 	<view wx:if="{{userId!=''}}" class="userinfo">
 		<image wx:if="{{userId!=''}}" class="userinfo-avatar" src="{{ ava}}" background-size="cover"></image>
 		<text class="userinfo-nickname">{{ nick }}</text>
-    <navigator url="/pages/personal/personal">
+	  <navigator url="/pages/personal/personal">
     <!-- 应该设置id -->
     <button class="userinfo-btn" type="default" size="mini">个人主页</button>
     </navigator>
-	</view>
+  </view>
   <view wx:else class="userinfo" style="margin-bottom:50rpx;">
 		<image class="userinfo-avatar" src="/assets/nologin.png" background-size="cover"></image>
 		<button class="weui-btn mini-btn" plain="true" size="mini" bindtap="goLogin">微信登录</button>

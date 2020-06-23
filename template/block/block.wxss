@@ -73,10 +73,12 @@
 .page{
   margin-top:80rpx;
   height:100%;
+  background-color: #FFFCF4;
 }
 .page-loading{
   display:flex;
   text-align: center;
+  color: #CCCCCC;
   justify-content: center;
   align-items: center;
   padding-top:10rpx;

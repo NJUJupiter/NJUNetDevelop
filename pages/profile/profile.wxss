@@ -28,6 +28,7 @@ page,view,image,input {
   margin-bottom: 20rpx;
   font-size: 14px;
 }
+
 .userinfo-btn{
   margin-bottom: 20rpx;
   font-size: 14px;

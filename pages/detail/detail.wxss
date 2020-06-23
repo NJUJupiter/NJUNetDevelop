@@ -1,7 +1,9 @@
 /**detail.wxss**/
 @import "/template/rate/rate.wxss";
+@import "/template/getLoc/getLoc.wxss";
 .container {
   height: 100%;
+  background-color: #FFF9F9;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -13,6 +15,17 @@
   height: 50rpx;
   width: 50rpx;
 }
+.item_favor{
+  align-items:center;
+  justify-content:center;
+  width: 200rpx;
+  height: 24rpx;
+  background-color: #ffffff;
+}
+.item-like{
+  padding-right: 20rpx;
+}
+
 .goBack {
   margin-top: 0rpx;
   width: 345rpx;
@@ -104,11 +117,10 @@
   height: 64rpx;
   line-height: 64rpx;
   text-align: center;
-  color: #6c0;
+  color: #80A0DE;
   margin: 0 3px;
   padding: 0;
 }
-
 .pro-box .info .text .delete {
   height: 50rpx;
   background:  #f8f8f8;
@@ -124,7 +136,6 @@
 .movieInfoText {
   text-align: center;
 }
-
 .release .gradeMovie{
   padding:10rpx 0 15rpx 100rpx;
   box-sizing: border-box;
