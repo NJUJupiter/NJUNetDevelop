@@ -1,4 +1,5 @@
 var util=require("../../utils/util")
+var store=require("../../utils/store")
 import initCalendar, {
   getSelectedDay,
   setTodoLabels,
@@ -31,7 +32,7 @@ Page({
       url: 'http://localhost:8080/demo/sign/getSignByUserId',
       method: "GET",
       data:{
-        userId:3,//this.data.userId
+        userId:store.getItem("userId")
       },
       header: {
         "content-type": "application/x-www-form-urlencoded;charset=utf-8",
@@ -126,7 +127,7 @@ Page({
       url: 'http://localhost:8080/demo/sign/insert',
       method: "post",
       data:{
-        userId:3,//this.data.userId
+        userId:store.getItem("userId"),//this.data.userId
         date:time
       },
       header: {
@@ -138,6 +139,49 @@ Page({
           this.setData({
             isSigned:true
           })
+        } else {
+          wx.showToast({
+            title: '加载出错',
+          })
+        }
+      }
+    })
+    wx.request({
+      url: 'http://localhost:8080/demo/sign/getSignByUserId',
+      method: "GET",
+      data:{
+        userId:store.getItem("userId")
+      },
+      header: {
+        "content-type": "application/x-www-form-urlencoded;charset=utf-8",
+        //token: app.globalData.token
+      },
+      success: res => {
+        if (res.data.success) {
+          var datas=res.data.content
+          console.log(datas)
+          for (let index = 0; index < datas.length; index++) {
+            var year=datas[index].sYear;
+            var month=datas[index].sMonth;
+            var day=datas[index].sDay;
+            var sign1='-'
+            var sign2='-'
+            if(month<10){sign1='-0';}
+            if(day<10){sign2='-0'}
+            var temp=year+sign1+month+sign2+day;
+            console.log(temp)
+            console.log(time)
+            if(temp==time){
+              this.data.isSigned=true
+              console.log(this.data.isSigned)
+            }
+            else{
+              this.data.isSigned=false
+            }
+            console.log({year,month,day})
+            sdata.push({year,month,day})
+          }
+          console.log(sdata)
         } else {
           wx.showToast({
             title: '加载出错',

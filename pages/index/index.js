@@ -167,5 +167,5 @@ Page({
     this.setData({
       scrollTop: this.data.scrollTop + 10
     })
-  }
+  },
 })

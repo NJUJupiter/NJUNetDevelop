@@ -7,23 +7,29 @@
   justify-content: space-between;
 }
 .left{
-  padding-top: 10px;
+  display: flex;
+  align-items: center;
+
 }
 .avatar{
+  border-radius: 50%;
   display: inline-block;
-  width: 40rpx;
-  height: 40rpx;
+  width: 60rpx;
+  height: 60rpx;
 }
 .userName{
   display: inline-block;
   font-size:30rpx;
   color:#13227a;
+  height: 30rpx;
+  padding-left:30rpx;
+  padding-bottom: 0rpx;
 }
 .right{
   left: 200px;
 }
 .next {
-  padding-top: 10px;
+  padding-top: 15px;
   width: 40rpx;
   height: 40rpx;
 }

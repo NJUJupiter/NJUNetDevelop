@@ -90,9 +90,9 @@
 }
  .pro-box .sharebtn{
    height:50rpx;
-	 background: #06526d;
+	 background: rgb(247, 187, 187);
    border-radius: 50rpx;
-   border: 1px solid #06526d;
+   border: 1px solid #f8f8f8;
    color: #fff;
    text-align: center;
    line-height: 48rpx;

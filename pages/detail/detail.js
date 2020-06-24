@@ -274,7 +274,7 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   bindDownLoad: function () {
-    // console.log("onReachBottom");
+    console.log("onReachBottom");
     var that = this;
     if (mydata.end == 0) {
       mydata.page++;
@@ -609,7 +609,7 @@ Page({
         var isLike=store.getItem("isLike")
         if (page == 1) {
           that.data.list = res.data.content;
-          that.data.foldList=that.data.initialList;
+          that.data.foldList=JSON.parse(JSON.stringify(that.data.initialList));
           that.setData({
             list: that.data.list,
             foldList:that.data.foldList
@@ -635,8 +635,12 @@ Page({
           var list = that.data.list;
           var tempList=that.data.foldList;
           if (res.data.content != null) {
+            console.log(list)
+            console.log(res.data.content)
             list = that.addArr(list, res.data.content);
-            tempList=that.addArr(tempList,initialList);
+            console.log(tempList)
+            console.log(that.data.initialList)
+            tempList=that.addArr(tempList,that.data.initialList);
           for(var i=0;i<that.data.list.length;i++){
             that.data.list[i].state='false'
             that.setData({
