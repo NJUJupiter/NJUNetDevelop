@@ -17,6 +17,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log(this.data.userId)
     var that=this
     // this.setData({
     //   showLoading: false,
@@ -47,7 +48,7 @@ Page({
       method: "GET",
       data:{
         // userId:this.data.userId
-        userId:that.data.userId
+        userId:store.getItem("userId")
       },
       header: {
         "content-type": "application/x-www-form-urlencoded;charset=utf-8",

@@ -10,6 +10,8 @@ Page({
   data: {
     navigationBarTitle: "",//页面标题
     movies:[],
+    m:[],
+    n:[],
     allMovies: {
       "subjects": [{
         title: "奇迹男孩 Wonder",
@@ -45,29 +47,38 @@ Page({
    */
   onLoad: function (options) {
     var category = options.category;
-    var typer=1;
+    var type1=1;
+    var type2=2;
+    var type3=3;
     console.log(category);
   
     //根据区块标题，设置接口为对应的请求网址
     switch (category) {
       case "正在热映":
-        typer=1;
+        type1=1;
+        type2=2;
+        type3=3;
         break;
       case "热门电影":
-        typer=2;
+        type1=2;
+        type2=1;
+        type3=3;
         break;
       case "电影榜单":
-        typer=3;
+        type1=3;
+        type2=2;
+        type3=1;
         break;
     }
     //将区块标题存储起来，在onReady()中设为导航栏标题
-    this.data.navigationBarTitle = category;
-    console.log(typer)
+    wx.setNavigationBarTitle({
+      title: category,
+    })
     wx.request({
       url: 'http://localhost:8080/demo/movie/type',
       method: "GET",
       data:{
-        type:typer
+        type:type1
       },
       header: {
         "content-type": "application/x-www-form-urlencoded;charset=utf-8",
@@ -108,7 +119,6 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
   },
 
   /**

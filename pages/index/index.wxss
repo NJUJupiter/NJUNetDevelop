@@ -4,7 +4,6 @@
   margin-top: 10rpx;
   margin-bottom: 50rpx;
   width: 700rpx;
-  background:rgb(235, 233, 233);
 }
 .scroll-view_H{
   white-space: nowrap;

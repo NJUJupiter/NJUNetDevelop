@@ -38,8 +38,10 @@ page,view,image,input {
   font-size: 14px;
 }
 .userinfo-btn{
+  display: inline-block;
   margin-bottom: 20rpx;
   font-size: 14px;
+  padding-right: 20rpx;
 }
 .asset {
   display: flex;

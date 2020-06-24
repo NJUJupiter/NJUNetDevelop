@@ -1,0 +1,9 @@
+<!--template/performer/performer.wxml-->
+<template name="template-performer">
+<view class='movie'>
+  <!--海报图-->
+  <image class="poster" src='{{performerAvatar}}'></image>
+  <!--演员名称-->
+  <text class='movie-name'>{{performerName}}</text>
+</view>
+</template>

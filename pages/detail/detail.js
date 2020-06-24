@@ -16,6 +16,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+    isHide:true,
     sortType: ['按时间排序', '按点赞排序', '按评分排序', '按评分倒序'],
     objectSortType: [
       {
@@ -77,6 +78,16 @@ Page({
       }
     ]
   },
+
+  // zy 详情隐藏功能
+  showMoreMsg: function(event) { //点击显示全部内容
+    this.setData ({
+      isHide:!this.data.isHide
+    })
+    console.log(this.data.isHide)
+    console.log(this.data.movie)
+  },
+
 
   /**
    * 生命周期函数--监听页面加载
@@ -173,7 +184,6 @@ Page({
     _this.setData({
       fav: store.getItem('fav'+_this.data.id)||'false'
     })
-    console.log(_this.data.fav+"<<<")
   },
   //跳转到地图
   getMap:function(event){
@@ -187,8 +197,6 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    console.log("test")
-    console.log(this.data.movie)
   },
 
   /**
@@ -266,7 +274,7 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   bindDownLoad: function () {
-    console.log("onReachBottom");
+    // console.log("onReachBottom");
     var that = this;
     if (mydata.end == 0) {
       mydata.page++;
@@ -274,9 +282,9 @@ Page({
     }
   },
   bindReply: function (e) {
-    console.log("testReply");
+    // console.log("testReply");
     console.log(e);
-    console.log("testReply");
+    // console.log("testReply");
     mydata.commentId = e.target.dataset.commentid;
     mydata.replyUserName = e.target.dataset.commentusername;
     mydata.replyUserId=e.target.dataset.commentuserid;
@@ -289,7 +297,6 @@ Page({
     // console.log(mydata.replyUserName)
   },
   thumbsup: function(e){
-    console.log("here")
     var id=e.currentTarget.dataset.id.id
     this.like(id)
   },
@@ -322,7 +329,7 @@ Page({
               change:-1
             },
             success:res=>{
-              console.log(res)
+              // console.log(res)
             }
           })
         }
@@ -332,7 +339,7 @@ Page({
             [`list[${i}].likes`]:num,
             [`list[${i}].state`]:'true'
           })
-          console.log(that.data.list)
+          // console.log(that.data.list)
           isLike.unshift(item_id)
           that.setData({
             isLike:isLike
@@ -349,7 +356,7 @@ Page({
               change:1
             },
             success:res=>{
-              console.log(res)
+              // console.log(res)
             }
           })
         }
@@ -368,7 +375,7 @@ Page({
     var that=this
     wx.getLocation({
       success: function(res){
-        console.log(res)
+        // console.log(res)
         that.setData({
           longitude:res.longitude,
           latitude:res.latitude
@@ -381,20 +388,42 @@ Page({
       isclose:true
     })
   },
-  disfavor: function(){
-    // wx.request({
-    //   url:baseURL+'/expect/deleteExpect',
-    //   data:
-    // })
-  },
   goLoc:function(){
-    console.log("here")
+    // console.log("here")
+    var that=this
     if(this.data.fav=='false'){
       this.setData({
         isclose:false
       })
     }
-    else(disfavor())
+    else(
+      wx.request({
+        url:baseURL+'/expect/deleteExpectByUM',
+        method:'GET',
+        data:{
+          userId:that.data.userId,
+          movieId:that.data.id,
+        },
+        success:res=>{
+          console.log("删除成功")
+          that.setData({
+            fav: 'false'
+          })
+          store.setItem('fav'+that.data.id,'false')
+        }
+      }),
+      wx.request({
+        url:baseURL+'/movie/updateMovieLike',
+        method:'GET',
+        data:{
+          id:that.data.id,
+          change:-1,
+        },
+        success:res=>{
+          console.log("减少movielikes成功")
+        }
+      })
+    )
   },
 
   favor1: function(){
@@ -424,13 +453,24 @@ Page({
         userId:that.data.userId,
         userName:store.getItem("userNick"),
         userAvatar:store.getItem("userAva"),
-        latitude:store.getItem("latitude"),
-        longitude:store.getItem("longitude")
+        latitude:Number(store.getItem("latitude")),
+        longitude:Number(store.getItem("longitude"))
       },
       success:res=>{
         wx.showToast("收藏成功！")
       }
 
+    })
+    wx.request({
+      url:baseURL+'/movie/updateMovieLike',
+      method:'GET',
+      data:{
+        id:that.data.id,
+        change:1,
+      },
+      success:res=>{
+        console.log("添加movielikes成功")
+      }
     })
   },
   favor2: function(){
@@ -456,9 +496,20 @@ Page({
       }
 
     })
+    wx.request({
+      url:baseURL+'/movie/updateMovieLike',
+      method:'GET',
+      data:{
+        id:that.data.id,
+        change:1,
+      },
+      success:res=>{
+        console.log("添加movielikes成功")
+      }
+    })
   },
   deleteComment: function (e) {
-    console.log(e);
+    // console.log(e);
     var that = this;
     var commentId = e.target.dataset.commentid;
 
@@ -490,7 +541,7 @@ Page({
     })
   },
   deleteReply: function (e) {
-    console.log(e);
+    // console.log(e);
     var that = this;
     var replyId = e.target.dataset.replyid;
 
@@ -516,7 +567,7 @@ Page({
             }
           })
         } else if (res.cancel) {
-          console.log('用户点击取消')
+          // console.log('用户点击取消')
         }
       }
     })
@@ -536,8 +587,8 @@ Page({
   getPageInfo(page, callback) {
     var that = this;
     //util.showLoading(); 有空再加
-    console.log("getPageInfo");
-    console.log("page" + page);
+    // console.log("getPageInfo");
+    // console.log("page" + page);
     var limited = 6;
     var offset = (page - 1) * 6;
     wx.request({
@@ -612,8 +663,8 @@ Page({
         // wx.hideLoading();
       }
     })
-    console.log("testList")
-    console.log(this.data.list)
+    // console.log("testList")
+    // console.log(this.data.list)
   },
   submitForm(e) {
     var form = e.detail.value;
@@ -647,7 +698,7 @@ Page({
         //   //token: app.globalData.token
         // },
         success: res => {
-          console.log(res)
+          // console.log(res)
           if (res.data.success) {
             wx.showToast({
               title: "回复成功"
@@ -712,8 +763,8 @@ Page({
     }
   },
   unfoldReplies:function(e){
-    console.log(e.target.dataset.xiabiao)
-    console.log(this.data.foldList)
+    // console.log(e.target.dataset.xiabiao)
+    // console.log(this.data.foldList)
     var tempList=this.data.foldList;
     tempList[e.target.dataset.xiabiao]=false;
     this.setData({
@@ -721,8 +772,8 @@ Page({
     })
   },
   foldReplies:function(e){
-    console.log(e.target.dataset.xiabiao)
-    console.log(this.data.foldList)
+    // console.log(e.target.dataset.xiabiao)
+    // console.log(this.data.foldList)
     var tempList=this.data.foldList;
     tempList[e.target.dataset.xiabiao]=true;
     this.setData({
