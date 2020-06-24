@@ -9,7 +9,10 @@
 		<image wx:if="{{userId!=''}}" class="userinfo-avatar" src="{{ ava}}" background-size="cover"></image>
 		<text class="userinfo-nickname">{{ nick }}</text>
     <!-- 应该设置id -->
-    <button class="userinfo-btn" type="default" size="mini" catchtap="toPersonal" data-id="{{userId}}">个人主页</button>
+    <view style="display:flex">
+      <button class="userinfo-btn" type="default" size="mini" catchtap="toPersonal" data-id="{{userId}}">个人主页</button>
+      <button class="userinfo-btn" type="default" size="mini" catchtap="logOut" data-id="{{userId}}">退出登录</button>
+    </view>
 	</view>
   <view wx:else class="userinfo" style="margin-bottom:50rpx;">
 		<image class="userinfo-avatar" src="/assets/nologin.png" background-size="cover"></image>
