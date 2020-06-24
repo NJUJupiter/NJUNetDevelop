@@ -66,11 +66,11 @@ INSERT INTO `Movie` VALUES (13,'美丽人生','2020-01-03(中国大陆) / 1997-1
 　　法西斯政权即将倾覆，纳粹的集中营很快就要接受最后的清理，圭多编给儿子的游戏该怎么结束？他们一家能否平安的度过这黑暗的年代呢?',1,' 罗伯托·贝尼尼','温琴佐·切拉米 / 罗伯托·贝尼尼','罗伯托·贝尼尼 / 尼可莱塔·布拉斯基 / 乔治·坎塔里尼 / 朱斯蒂诺·杜拉诺 / 赛尔乔·比尼·布斯特里克',10,'https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2578474613.jpg',9.5);
 INSERT INTO `Movie` VALUES (14,'辛德勒的名单 ','1993-11-30(华盛顿首映) / 1994-02-04(美国)','1939年，波兰在纳粹德国的统治下，党卫军对犹太人进行了隔离统治。德国商人奥斯卡·辛德勒（连姆·尼森 Liam Neeson 饰）来到德军统治下的克拉科夫，开设了一间搪瓷厂，生产军需用品。凭着出众的社交能力和大量的金钱，辛德勒和德军建立了良好的关系，他的工厂雇用犹太人工作，大发战争财。
 　　1943年，克拉科夫的犹太人遭到了惨绝人寰的大屠杀，辛德勒目睹这一切，受到了极大的震撼，他贿赂军官，让自己的工厂成为集中营的附属劳役营，在那些疯狂屠杀的日子里，他的工厂也成为了犹太人的避难所。
-　　1944年，德国战败前夕，屠杀犹太人的行动越发疯狂，辛德勒向德军军官开出了1200人的名单，倾家荡产买下了这些犹太人的生命。在那些暗无天日的岁月里，拯救一个人，就是拯救全世界。',2,'史蒂文·斯皮尔伯格','托马斯·肯尼利 / 斯蒂文·泽里安','吕艳婷 / 囧森瑟夫 / 瀚墨 / 陈浩 / 绿绮',10,'https://img3.doubanio.com/view/photo/s_ratio_poster/public/p1461851991.jpg',9.3);
+　　1944年，德国战败前夕，屠杀犹太人的行动越发疯狂，辛德勒向德军军官开出了1200人的名单，倾家荡产买下了这些犹太人的生命。在那些暗无天日的岁月里，拯救一个人，就是拯救全世界。',2,'史蒂文·斯皮尔伯格','托马斯·肯尼利 / 斯蒂文·泽里安','吕艳婷 / 囧森瑟夫 / 瀚墨 / 陈浩 / 绿绮',10,'https://img3.doubanio.com/view/photo/s_ratio_poster/public/p492406163.jpg',9.3);
 INSERT INTO `Movie` VALUES (15,'盗梦空间','2010-09-01(中国大陆) / 2010-07-16(美国)','道姆·柯布（莱昂纳多·迪卡普里奥 Leonardo DiCaprio 饰）与同事阿瑟（约瑟夫·戈登-莱维特 Joseph Gordon-Levitt 饰）和纳什（卢卡斯·哈斯 Lukas Haas 饰）在一次针对日本能源大亨齐藤（渡边谦 饰）的盗梦行动中失败，反被齐藤利用。齐藤威逼利诱因遭通缉而流亡海外的柯布帮他拆分他竞争对手的公司，采取极端措施在其唯一继承人罗伯特·费希尔（希里安·墨菲 Cillian Murphy 饰）的深层潜意识中种下放弃家族公司、自立门户的想法。为了重返美国，柯布偷偷求助于岳父迈尔斯（迈克尔·凯恩 Michael Caine 饰），吸收了年轻的梦境设计师艾里阿德妮（艾伦·佩吉 Ellen Page 饰）、梦境演员艾姆斯（汤姆·哈迪 Tom Hardy 饰）和药剂师约瑟夫（迪利普·劳 Dileep Rao 饰）加入行动。在一层层递进的梦境中，柯布不仅要对付费希尔潜意识的本能反抗，还必须直面已逝妻子梅尔（玛丽昂·歌迪亚 Marion Cotillard 饰）的处处破坏，实际情况远比预想危险得多……',2,'克里斯托弗·诺兰','克里斯托弗·诺兰',' 莱昂纳多·迪卡普里奥 / 约瑟夫·高登-莱维特 / 艾伦·佩吉 / 汤姆·哈迪 / 渡边谦 ',10,'https://img9.doubanio.com/view/photo/s_ratio_poster/public/p513344864.jpg',9.3);
 INSERT INTO `Movie` VALUES (16,'机器人总动员',' 2008-06-27(美国)','公元2805年，人类文明高度发展，却因污染和生活垃圾大量增加使得地球不再适于人类居住。地球人被迫乘坐飞船离开故乡，进行一次漫长无边的宇宙之旅。临行前他们委托Buynlarge的公司对地球垃圾进行清理，该公司开发了名为WALL·E（Waste Allocation Loa d Lifters – Earth 地球废品分装员）的机器人担当此重任。
 　　这些机器人按照程序日复一日、年复一年辛勤工作，但随着时间的流逝和恶劣环境的侵蚀，WALL·E们接连损坏、停止运动。最后只有一个仍在进行这项似乎永无止境的工作。经历了漫长的岁月，它开始拥有了自己的意识。它喜欢将收集来的宝贝小心翼翼藏起，喜欢收工后看看几百年前的歌舞片，此外还有一只蟑螂朋友作伴。直到有一天，一艘来自宇宙的飞船打破了它一成不变的生活……
-　　本片荣获2009年第81届奥斯卡最佳动画长片奖。',2,'安德鲁·斯坦顿','安德鲁·斯坦顿 / 吉姆·里尔顿 / 彼特·道格特',' 本·贝尔特 / 艾丽莎·奈特 / 杰夫·格尔林 / 佛莱德·威拉特 / 西格妮·韦弗',10,'https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2549177902.jpeg',8.9);
+　　本片荣获2009年第81届奥斯卡最佳动画长片奖。',2,'安德鲁·斯坦顿','安德鲁·斯坦顿 / 吉姆·里尔顿 / 彼特·道格特',' 本·贝尔特 / 艾丽莎·奈特 / 杰夫·格尔林 / 佛莱德·威拉特 / 西格妮·韦弗',10,'https://img3.doubanio.com/view/photo/s_ratio_poster/public/p1461851991.jpg',8.9);
 INSERT INTO `Movie` VALUES (17,'星际穿越','2014-11-12(中国大陆) / 2014-11-07(美国)','近未来的地球黄沙遍野，小麦、秋葵等基础农作物相继因枯萎病灭绝，人类不再像从前那样仰望星空，放纵想象力和灵感的迸发，而是每日在沙尘暴的肆虐下倒数着所剩不多的光景。在家务农的前NASA宇航员库珀（马修·麦康纳 Matthew McConaughey 饰）接连在女儿墨菲（麦肯吉·弗依 Mackenzie Foy 饰）的书房发现奇怪的重力场现象，随即得知在某个未知区域内前NASA成员仍秘密进行一个拯救人类的计划。多年以前土星附近出现神秘虫洞，NASA借机将数名宇航员派遣到遥远的星系寻找适合居住的星球。在布兰德教授（迈克尔·凯恩 Michael Caine 饰）的劝说下，库珀忍痛告别了女儿，和其他三名专家教授女儿艾米莉亚·布兰德（安妮·海瑟薇 Anne Hathaway 饰）、罗米利（大卫·吉雅西 David Gyasi 饰）、多伊尔（韦斯·本特利 Wes Bentley 饰）搭乘宇宙飞船前往目前已知的最有希望的三颗星球考察。
 　　他们穿越遥远的星系银河，感受了一小时七年光阴的沧海桑田，窥见了未知星球和黑洞的壮伟与神秘。在浩瀚宇宙的绝望而孤独角落，总有一份超越了时空的笃定情怀将他们紧紧相连……',3,'克里斯托弗·诺兰',' 乔纳森·诺兰 / 克里斯托弗·诺兰',' 马修·麦康纳 / 安妮·海瑟薇 / 杰西卡·查斯坦 / 卡西·阿弗莱克 / 迈克尔·凯恩',10,'https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2206088801.jpg',9.3);
 INSERT INTO `Movie` VALUES (18,'大话西游之大圣娶亲 西遊記大結局之仙履奇緣','1995-02-04(中国香港) / 2014-10-24(中国大陆) / 2017-04-13(中国大陆重映)','至尊宝（周星驰 饰）被月光宝盒带回到五百年前，遇见紫霞仙子（朱茵 饰），被对方打上烙印成为对方的人，并发觉自己已变成孙悟空。
@@ -121,11 +121,11 @@ INSERT INTO `Movie` VALUES (37,'美丽人生','2020-01-03(中国大陆) / 1997-1
 　　法西斯政权即将倾覆，纳粹的集中营很快就要接受最后的清理，圭多编给儿子的游戏该怎么结束？他们一家能否平安的度过这黑暗的年代呢?',1,' 罗伯托·贝尼尼','温琴佐·切拉米 / 罗伯托·贝尼尼','罗伯托·贝尼尼 / 尼可莱塔·布拉斯基 / 乔治·坎塔里尼 / 朱斯蒂诺·杜拉诺 / 赛尔乔·比尼·布斯特里克',10,'https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2578474613.jpg',9.5);
 INSERT INTO `Movie` VALUES (38,'辛德勒的名单 ','1993-11-30(华盛顿首映) / 1994-02-04(美国)','1939年，波兰在纳粹德国的统治下，党卫军对犹太人进行了隔离统治。德国商人奥斯卡·辛德勒（连姆·尼森 Liam Neeson 饰）来到德军统治下的克拉科夫，开设了一间搪瓷厂，生产军需用品。凭着出众的社交能力和大量的金钱，辛德勒和德军建立了良好的关系，他的工厂雇用犹太人工作，大发战争财。
 　　1943年，克拉科夫的犹太人遭到了惨绝人寰的大屠杀，辛德勒目睹这一切，受到了极大的震撼，他贿赂军官，让自己的工厂成为集中营的附属劳役营，在那些疯狂屠杀的日子里，他的工厂也成为了犹太人的避难所。
-　　1944年，德国战败前夕，屠杀犹太人的行动越发疯狂，辛德勒向德军军官开出了1200人的名单，倾家荡产买下了这些犹太人的生命。在那些暗无天日的岁月里，拯救一个人，就是拯救全世界。',1,'史蒂文·斯皮尔伯格','托马斯·肯尼利 / 斯蒂文·泽里安','吕艳婷 / 囧森瑟夫 / 瀚墨 / 陈浩 / 绿绮',10,'https://img3.doubanio.com/view/photo/s_ratio_poster/public/p1461851991.jpg',9.3);
+　　1944年，德国战败前夕，屠杀犹太人的行动越发疯狂，辛德勒向德军军官开出了1200人的名单，倾家荡产买下了这些犹太人的生命。在那些暗无天日的岁月里，拯救一个人，就是拯救全世界。',1,'史蒂文·斯皮尔伯格','托马斯·肯尼利 / 斯蒂文·泽里安','吕艳婷 / 囧森瑟夫 / 瀚墨 / 陈浩 / 绿绮',10,'https://img3.doubanio.com/view/photo/s_ratio_poster/public/p492406163.jpg',9.3);
 INSERT INTO `Movie` VALUES (39,'盗梦空间','2010-09-01(中国大陆) / 2010-07-16(美国)','道姆·柯布（莱昂纳多·迪卡普里奥 Leonardo DiCaprio 饰）与同事阿瑟（约瑟夫·戈登-莱维特 Joseph Gordon-Levitt 饰）和纳什（卢卡斯·哈斯 Lukas Haas 饰）在一次针对日本能源大亨齐藤（渡边谦 饰）的盗梦行动中失败，反被齐藤利用。齐藤威逼利诱因遭通缉而流亡海外的柯布帮他拆分他竞争对手的公司，采取极端措施在其唯一继承人罗伯特·费希尔（希里安·墨菲 Cillian Murphy 饰）的深层潜意识中种下放弃家族公司、自立门户的想法。为了重返美国，柯布偷偷求助于岳父迈尔斯（迈克尔·凯恩 Michael Caine 饰），吸收了年轻的梦境设计师艾里阿德妮（艾伦·佩吉 Ellen Page 饰）、梦境演员艾姆斯（汤姆·哈迪 Tom Hardy 饰）和药剂师约瑟夫（迪利普·劳 Dileep Rao 饰）加入行动。在一层层递进的梦境中，柯布不仅要对付费希尔潜意识的本能反抗，还必须直面已逝妻子梅尔（玛丽昂·歌迪亚 Marion Cotillard 饰）的处处破坏，实际情况远比预想危险得多……',1,'克里斯托弗·诺兰','克里斯托弗·诺兰',' 莱昂纳多·迪卡普里奥 / 约瑟夫·高登-莱维特 / 艾伦·佩吉 / 汤姆·哈迪 / 渡边谦 ',10,'https://img9.doubanio.com/view/photo/s_ratio_poster/public/p513344864.jpg',9.3);
 INSERT INTO `Movie` VALUES (40,'机器人总动员',' 2008-06-27(美国)','公元2805年，人类文明高度发展，却因污染和生活垃圾大量增加使得地球不再适于人类居住。地球人被迫乘坐飞船离开故乡，进行一次漫长无边的宇宙之旅。临行前他们委托Buynlarge的公司对地球垃圾进行清理，该公司开发了名为WALL·E（Waste Allocation Loa d Lifters – Earth 地球废品分装员）的机器人担当此重任。
 　　这些机器人按照程序日复一日、年复一年辛勤工作，但随着时间的流逝和恶劣环境的侵蚀，WALL·E们接连损坏、停止运动。最后只有一个仍在进行这项似乎永无止境的工作。经历了漫长的岁月，它开始拥有了自己的意识。它喜欢将收集来的宝贝小心翼翼藏起，喜欢收工后看看几百年前的歌舞片，此外还有一只蟑螂朋友作伴。直到有一天，一艘来自宇宙的飞船打破了它一成不变的生活……
-　　本片荣获2009年第81届奥斯卡最佳动画长片奖。',1,'安德鲁·斯坦顿','安德鲁·斯坦顿 / 吉姆·里尔顿 / 彼特·道格特',' 本·贝尔特 / 艾丽莎·奈特 / 杰夫·格尔林 / 佛莱德·威拉特 / 西格妮·韦弗',10,'https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2549177902.jpeg',8.9);
+　　本片荣获2009年第81届奥斯卡最佳动画长片奖。',1,'安德鲁·斯坦顿','安德鲁·斯坦顿 / 吉姆·里尔顿 / 彼特·道格特',' 本·贝尔特 / 艾丽莎·奈特 / 杰夫·格尔林 / 佛莱德·威拉特 / 西格妮·韦弗',10,'https://img3.doubanio.com/view/photo/s_ratio_poster/public/p1461851991.jpg',8.9);
 INSERT INTO `Movie` VALUES (41,'星际穿越','2014-11-12(中国大陆) / 2014-11-07(美国)','近未来的地球黄沙遍野，小麦、秋葵等基础农作物相继因枯萎病灭绝，人类不再像从前那样仰望星空，放纵想象力和灵感的迸发，而是每日在沙尘暴的肆虐下倒数着所剩不多的光景。在家务农的前NASA宇航员库珀（马修·麦康纳 Matthew McConaughey 饰）接连在女儿墨菲（麦肯吉·弗依 Mackenzie Foy 饰）的书房发现奇怪的重力场现象，随即得知在某个未知区域内前NASA成员仍秘密进行一个拯救人类的计划。多年以前土星附近出现神秘虫洞，NASA借机将数名宇航员派遣到遥远的星系寻找适合居住的星球。在布兰德教授（迈克尔·凯恩 Michael Caine 饰）的劝说下，库珀忍痛告别了女儿，和其他三名专家教授女儿艾米莉亚·布兰德（安妮·海瑟薇 Anne Hathaway 饰）、罗米利（大卫·吉雅西 David Gyasi 饰）、多伊尔（韦斯·本特利 Wes Bentley 饰）搭乘宇宙飞船前往目前已知的最有希望的三颗星球考察。
 　　他们穿越遥远的星系银河，感受了一小时七年光阴的沧海桑田，窥见了未知星球和黑洞的壮伟与神秘。在浩瀚宇宙的绝望而孤独角落，总有一份超越了时空的笃定情怀将他们紧紧相连……',1,'克里斯托弗·诺兰',' 乔纳森·诺兰 / 克里斯托弗·诺兰',' 马修·麦康纳 / 安妮·海瑟薇 / 杰西卡·查斯坦 / 卡西·阿弗莱克 / 迈克尔·凯恩',10,'https://img3.doubanio.com/view/photo/s_ratio_poster/public/p2206088801.jpg',9.3);
 INSERT INTO `Movie` VALUES (42,'大话西游之大圣娶亲 西遊記大結局之仙履奇緣','1995-02-04(中国香港) / 2014-10-24(中国大陆) / 2017-04-13(中国大陆重映)','至尊宝（周星驰 饰）被月光宝盒带回到五百年前，遇见紫霞仙子（朱茵 饰），被对方打上烙印成为对方的人，并发觉自己已变成孙悟空。
@@ -236,12 +236,12 @@ CREATE TABLE `User` (
 
 BEGIN;
 /*!40000 ALTER TABLE `User` DISABLE KEYS */;
-INSERT INTO `User` VALUES(3,'我i67QAQ','https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png','wdnmd','zbc');
-INSERT INTO `User` VALUES(5,'代码敲不对','https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png','wdnmd','zbc');
-INSERT INTO `User` VALUES(8,'我靠，家暴吗','https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png','wdnmd','zbc');
-INSERT INTO `User` VALUES(9,'拒绝秃头','https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png','wdnmd','zbc');
-INSERT INTO `User` VALUES(10,'起飞','https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png','wdnmd','zbc');
-INSERT INTO `User` VALUES(11,'皮革厂 ','https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png','wdnmd','zbc');
+INSERT INTO `User` VALUES(3,'หลิวฟง','https://pic4.zhimg.com/80/v2-47474455526db5de047e51f22db8d40d_720w.jpg','wdnmd','zbc');
+INSERT INTO `User` VALUES(5,'быть вынужденным','https://pic3.zhimg.com/v2-ee7036ed128679cfecbbd9e16829763e_r.jpg','wdnmd','zbc');
+INSERT INTO `User` VALUES(8,'威廉姆·赛德勒','https://pic2.zhimg.com/v2-2d8320106fd17d33229fa705d2d62bb0_r.jpg','wdnmd','zbc');
+INSERT INTO `User` VALUES(9,'鲍勃·冈顿','https://pic4.zhimg.com/v2-a5f1e1540651340dcb7b8138abb903b7_r.jpg','wdnmd','zbc');
+INSERT INTO `User` VALUES(10,'摩根·弗里曼','https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTL6RckPVCPHtdJ8T7O0WfIw8p5BkB0CVPX6vH6ywz3ZmYLLHEniaJkWj5GjuviaVWCicxJetlM4wmGcg/132','wdnmd','zbc');
+INSERT INTO `User` VALUES(11,'蒂姆·罗宾斯','https://wx.qlogo.cn/mmopen/vi_32/TpkTGy3dgdq7ykc9Ze3PqLFxyMuUAvH6JLwvIGL3RrRX5lWGEH2XmtLbqiaQDwLiaNwNKDrh1LOb1QZSkPiaJWPrw/132','wdnmd','zbc');
 /*!40000 ALTER TABLE `User` ENABLE KEYS */;
 COMMIT;
 
@@ -272,14 +272,14 @@ CREATE TABLE `Expect` (
 
 BEGIN;
 /*!40000 ALTER TABLE `Expect` DISABLE KEYS */;
-INSERT INTO `Expect` VALUES(1,2,3,'我i67QAQ','https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',105.739203,34.571483);
-INSERT INTO `Expect` VALUES(2,2,4,'RTW是个狠人','https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png',105.727315,34.585687);
-INSERT INTO `Expect` VALUES(3,2,5,'代码敲不对','https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',118.959447,32.119986);
-INSERT INTO `Expect` VALUES(4,3,3,'我i67QAQ','https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',105.739203,34.571483);
-INSERT INTO `Expect` VALUES(5,3,8,'我靠，家暴吗','https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',120.879295,32.030403);
-INSERT INTO `Expect` VALUES(6,1,9,'拒绝秃头','https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',120.696819,27.982336);
-INSERT INTO `Expect` VALUES(7,1,10,'起飞','https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',120.629023,31.321991);
-INSERT INTO `Expect` VALUES(8,1,11,'皮革厂 ','https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png',115.850137,28.693477);
+INSERT INTO `Expect` VALUES(1,2,3,'หลิวฟง','https://pic4.zhimg.com/80/v2-47474455526db5de047e51f22db8d40d_720w.jpg',105.739203,34.571483);
+INSERT INTO `Expect` VALUES(2,2,4,'Je t ''aime','https://pic1.zhimg.com/80/v2-a46e0f74b454a73b0cc841d1c800a2e8_720w.jpg',105.727315,34.585687);
+INSERT INTO `Expect` VALUES(3,2,5,'быть вынужденным','https://pic3.zhimg.com/v2-ee7036ed128679cfecbbd9e16829763e_r.jpg',118.959447,32.119986);
+INSERT INTO `Expect` VALUES(4,3,3,'หลิวฟง','https://pic4.zhimg.com/80/v2-47474455526db5de047e51f22db8d40d_720w.jpg',105.739203,34.571483);
+INSERT INTO `Expect` VALUES(5,3,8,'威廉姆·赛德勒','https://pic2.zhimg.com/v2-2d8320106fd17d33229fa705d2d62bb0_r.jpg',120.879295,32.030403);
+INSERT INTO `Expect` VALUES(6,1,9,'鲍勃·冈顿','https://pic4.zhimg.com/v2-a5f1e1540651340dcb7b8138abb903b7_r.jpg',120.696819,27.982336);
+INSERT INTO `Expect` VALUES(7,1,10,'摩根·弗里曼','https://wx.qlogo.cn/mmopen/vi_32/Q0j4TwGTfTL6RckPVCPHtdJ8T7O0WfIw8p5BkB0CVPX6vH6ywz3ZmYLLHEniaJkWj5GjuviaVWCicxJetlM4wmGcg/132',120.629023,31.321991);
+INSERT INTO `Expect` VALUES(8,1,11,'蒂姆·罗宾斯','https://wx.qlogo.cn/mmopen/vi_32/TpkTGy3dgdq7ykc9Ze3PqLFxyMuUAvH6JLwvIGL3RrRX5lWGEH2XmtLbqiaQDwLiaNwNKDrh1LOb1QZSkPiaJWPrw/132',115.850137,28.693477);
 /*!40000 ALTER TABLE `Expect` ENABLE KEYS */;
 COMMIT;
 
