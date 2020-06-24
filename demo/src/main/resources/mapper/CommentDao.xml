@@ -9,6 +9,12 @@
         where movie_id=#{movieId}
     </select>
 
+    <select id="queryCommentByuserId" resultType="com.netdevelop.demo.po.Comment">
+        SELECT *
+        from comment
+        where user_id=#{userId}
+    </select>
+
     <select id="queryCommentOrderByTime" resultType="com.netdevelop.demo.po.Comment">
         SELECT *
         from comment

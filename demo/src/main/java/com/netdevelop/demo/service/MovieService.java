@@ -1,6 +1,7 @@
 package com.netdevelop.demo.service;
 
 import com.netdevelop.demo.vo.MovieVO;
+import com.netdevelop.demo.vo.ResponseVO;
 
 import java.util.List;
 
@@ -31,4 +32,12 @@ public interface MovieService {
      * @return
      */
     List<MovieVO> searchByKeyWords(String key);
+
+    /**
+     * 添加电影的点赞
+     * @param id
+     * @param change
+     * @return
+     */
+    ResponseVO updateMovieLike(Integer id,Integer change);
 }

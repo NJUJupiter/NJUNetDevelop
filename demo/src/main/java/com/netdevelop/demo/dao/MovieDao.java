@@ -35,4 +35,14 @@ public interface MovieDao {
      * 插入一部新电影
      */
     int insertMovie(Movie movie);
+
+
+    /**
+     * 更新的点赞数
+     * @param id
+     * @param change 增加或者减少的点赞数
+     * @return
+     */
+    int updateMovieLike(@Param("id")Integer id, @Param("change")Integer change);
+
 }
