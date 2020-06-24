@@ -8,7 +8,6 @@ import com.netdevelop.demo.service.RecordService;
 import com.netdevelop.demo.vo.MovieVO;
 import com.netdevelop.demo.vo.PerformerVO;
 import com.netdevelop.demo.vo.RecordVO;
-import com.sun.prism.impl.Disposer;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
