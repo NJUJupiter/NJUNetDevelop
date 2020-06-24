@@ -47,7 +47,7 @@ Page({
       method: "GET",
       data:{
         // userId:this.data.userId
-        userId:that.data.userId
+        userId:store.getItem("userId")
       },
       header: {
         "content-type": "application/x-www-form-urlencoded;charset=utf-8",
