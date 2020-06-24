@@ -5,33 +5,44 @@
 <import src="../../template/rate/rate.wxml" />
 <scroll-view scroll-top="{{scrollTop}}" scroll-y="true" style="height:{{scrollHeight}}px;" class="list" bindscrolltolower="bindDownLoad" bindscrolltoupper="refresh">
   <view class="container">
-    <view class="goBack">
+    <view class="head">
+      <view class="goBack">
       <image style='width: 345rpx; height: 495rpx' mode='scaleToFill' src='{{movie.imgUrl}}'></image>
       </view>
-    <view class="movieInfoText">
-      <text class="directorOfMovie">\n导演：{{movie.director}}</text>
+      <view>
+          <view class="title">
+            <text class="text">{{movie.movieName}}</text>
+          </view>
+          <view class="movieInfoText">
+            <text class="directorOfMovie">\n导演：{{movie.director}}</text>
+          </view>
+          <view class="movieInfoText">
+            <text class="writerOfMovie">编剧：{{movie.writer}}</text>
+          </view>
+          <view class="movieInfoText">
+            <text class="actorsOfMovie">主演：{{movie.actors}}</text>
+          </view>
+          <view class="movieupText">
+            <text class="releaseTimeOfMovie">上映日期：{{movie.releaseTime}}</text>
+          </view>
+      </view>
     </view>
-    <view class="movieInfoText">
-      <text class="writerOfMovie">编剧：{{movie.writer}}</text>
+    <view style="display: flex; justify-content:space-between; width:80%">
+       <button  class='item-favor'style='display:flex; 'bindtap='goLoc'>
+        <image src='../../assets/icon/fav0.svg' hidden="{{fav=='true'}}" style="width:50rpx; height:50rpx; margin-top:20rpx ;padding-right:10rpx"></image>
+        <image src='../../assets/icon/fav1.svg'  hidden="{{fav=='false'}}"style="width:50rpx; height:50rpx; margin-top:20rpx;padding-right:10rpx"></image>
+        <view class="wantSee">想看</view>
+        </button>
+       <button  class='item-watch'style='display:flex;' catchtap="getMap" data-id='{{movie.id}}'>
+        <view class="map" >
+          <image class="mapImg" src="/images/map.png"></image>
+          <text class="mapInfo" class="wantSeePeople">   想看的人</text>
+        </view>
+        </button>
     </view>
-    <view class="movieInfoText">
-      <text class="actorsOfMovie">主演：{{movie.actors}}</text>
-    </view>
-    <view class="movieInfoText">
-      <text class="releaseTimeOfMovie">上映日期：{{movie.releaseTime}}</text>
-    </view>
-    <button  loading="{{loading}}" disabled="{{disabled}}" class='item-favor'style='display:flex; 'bindtap='goLoc'>
-                  <image src='../../assets/icon/fav0.svg' hidden="{{fav=='true'}}" style="width:50rpx; height:50rpx; margin-top:20rpx ;padding-right:10rpx"></image>
-                  <image src='../../assets/icon/fav1.svg'  hidden="{{fav=='false'}}"style="width:50rpx; height:50rpx; margin-top:20rpx;padding-right:10rpx"></image>
-                  <view class="wantSee">想看</view>
-    </button>
-    <view class="map" catchtap="getMap" data-id='{{movie.id}}'>
-      <image class="mapImg" src="/images/map.png"></image>
-      <text class="mapInfo" class="wantSeePeople">   想看的人</text>
-    </view>
-
+   
+  
     <!-- zy todo-演职人员 -->
-    <text class="movieInfoText">演职人员：</text>
     <scroll-view class="scroll-view_H" scroll-x="true" bindscroll="scroll" style="width: 100%">
       <view class='block-performer-row'>
         <block wx:for="{{movie.performers}}" wx:for-item="performer">
@@ -103,7 +114,7 @@
             </view>
           </view>
           <view class="text">
-            <button class="sharebtn" data-commentId="{{item.id}}" data-commentUserName="{{item.userName}}" data-commentUserId="{{item.userId}}" bindtap="bindReply">回复</button>
+            <button class="sharebtn" data-commentId="{{item.id}}" data-commentUserName="{{item.userName}}" data-commentUserId="{{item.userId}}" bindtap="bindReply" style="background:rgb(247, 187, 187);  color: #000;border: 1px solid #f8f8f8">回复</button>
           </view>
           <view wx:if="{{item.userId == userId}}" class="status text fr">
             <button class="delete" decode="true" bindtap='deleteComment' data-CommentId="{{item.id}}">删除</button>

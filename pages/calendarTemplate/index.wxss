@@ -5,10 +5,10 @@
     height: 100vh;
 }
 .signbtn{
-    background-color:#ff629a;
+    background-color:#ff9494;
     color: #fff;
 }
 .unsignbtn{
-    background-color:pink;
+    background-color:rgb(253, 140, 140);
     color: #fff;
 }
