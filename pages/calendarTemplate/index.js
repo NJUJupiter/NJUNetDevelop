@@ -135,7 +135,9 @@ Page({
       },
       success: res => {
         if (res.data.success) {
-          this.data.isSigned=true
+          this.setData({
+            isSigned:true
+          })
         } else {
           wx.showToast({
             title: '加载出错',
