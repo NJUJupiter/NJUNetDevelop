@@ -1,6 +1,8 @@
 /**detail.wxss**/
 @import "/template/rate/rate.wxss";
 @import "/template/getLoc/getLoc.wxss";
+@import "/template/performer/performer.wxss";
+
 .container {
   height: 100%;
   background-color: #FFF9F9;
@@ -135,6 +137,7 @@
 
 .movieInfoText {
   text-align: center;
+  font-size: 35rpx;
 }
 .release .gradeMovie{
   padding:10rpx 0 15rpx 100rpx;
@@ -186,4 +189,61 @@
 .picker{
   padding: 13px;
   background-color: #FFFFFF;
+}
+
+
+
+
+/* zy */
+.movie_desc{
+  font-size: 40rpx;
+}
+.hide {
+  display: -webkit-box;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  font-size: 30rpx;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 6;
+  margin:5px;
+}
+
+.show {
+  overflow: hidden;
+  text-overflow: ellipsis; 
+
+  display: -webkit-box;
+  word-break: break-all;
+  text-overflow: ellipsis;
+  font-size: 30rpx;
+  margin:5px;
+}
+
+.block-performer-row{
+  display: flex;
+  flex-direction: row;
+  padding: 20rpx 0 20rpx 20rpx;
+  background-color: white;
+}
+
+.block-performer-card {
+  display: flex;
+  flex-direction: row;
+  margin-right: 10rpx;
+}
+
+.scroll-view_H{
+  white-space: nowrap;
+}
+
+.wantSee{
+  display: flex;
+  font-size: 36rpx;
+  text-align: center;
+}
+
+.wantSeePeople{
+  font-size: 36rpx;
+  text-align: center;
 }

@@ -14,7 +14,8 @@
     "template/listModal/listModal",
     "pages/sign/sign",
     "pages/calendarTemplate/index",
-    "pages/calendarComponent/index"
+    "pages/calendarComponent/index",
+    "template/performer/performer"
   ],
   "window": {
     "backgroundTextStyle": "dark",
