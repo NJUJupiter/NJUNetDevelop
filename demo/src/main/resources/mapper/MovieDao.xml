@@ -27,4 +27,9 @@
         values (#{movieName},#{releaseTime},#{description},#{type},#{director},#{writer},#{actors},#{likes},#{imgUrl},#{score})
     </insert>
 
+    <update id="updateMovieLike">
+        update movie set likes=likes+#{change} where id = #{id}
+    </update>
+
+
 </mapper>

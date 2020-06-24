@@ -6,6 +6,7 @@ import com.netdevelop.demo.service.MovieService;
 import com.netdevelop.demo.service.PerformerService;
 import com.netdevelop.demo.vo.MovieVO;
 import com.netdevelop.demo.vo.PerformerVO;
+import com.netdevelop.demo.vo.ResponseVO;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -92,5 +93,15 @@ public class MovieServiceImpl implements MovieService {
             }
         }
         return movieVOS;
+    }
+
+    @Override
+    public ResponseVO updateMovieLike(Integer id, Integer change) {
+        int effectNum=movieDao.updateMovieLike(id,change);
+        if(effectNum>0){
+            return ResponseVO.buildSuccess("点赞成功");
+        }else{
+            return ResponseVO.buildFailure("点赞失败");
+        }
     }
 }

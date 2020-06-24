@@ -30,4 +30,8 @@ public class MovieController {
     public ResponseVO searchByKeyWords(@RequestParam String key){
         return ResponseVO.buildSuccess(movieService.searchByKeyWords(key));
     }
+    @GetMapping("/updateMovieLike")
+    public ResponseVO updateMovieLike(@RequestParam Integer id,@RequestParam Integer change){
+        return ResponseVO.buildSuccess(movieService.updateMovieLike(id,change));
+    }
 }
